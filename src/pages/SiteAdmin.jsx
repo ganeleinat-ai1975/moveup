@@ -11,10 +11,11 @@ import { CorporateLecture } from '@/entities/CorporateLecture';
 import { PodcastEpisode } from '@/entities/PodcastEpisode';
 import { UploadFile } from '@/integrations/Core';
 import {
-  Save, Plus, Edit, Trash2, Palette, Star, MessageSquare,
-  Building2, Briefcase, Home, Loader2, Image as ImageIcon, Images, Mic, Info, User,
-  Book, Mail, ArrowDown, Menu, Share2, Cog, Settings, FileText, X,
-  Download, FileJson, Table
+  Save, Plus, Edit, Trash2, Palette, Type, Eye, Search, BarChart3, Code, Star, MessageSquare, Users,
+  Building2, Briefcase, Home, Loader2, Image as ImageIcon, PanelBottom, Images, Mic, List, Info, User,
+  Book, Mail, ArrowDown, Menu, Phone, Share2, Cog, Video as VideoIcon, TrendingUp, Award, Settings, FileText,
+  Calendar, CheckCircle, ChevronDown, ChevronUp, Globe, Send, SlidersHorizontal, UserCircle, Youtube, BookOpen, X,
+  Download, FileJson, Table, Database
 } from 'lucide-react';
 import { format } from 'date-fns';
 import { he } from 'date-fns/locale';

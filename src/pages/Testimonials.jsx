@@ -3,7 +3,7 @@ import { useLanguage } from '../components/LanguageContext';
 import { useSiteSettings } from '../components/SiteSettingsContext';
 import { Testimonial } from '@/entities/Testimonial';
 import { Star, Quote } from 'lucide-react';
-// This import might become redundant if MediaGallery is fully replaced by HeroVideo for this specific use-case, but keeping it for safety if it's used elsewhere or for fallback.
+import MediaGallery from '../components/media/MediaGallery'; // This import might become redundant if MediaGallery is fully replaced by HeroVideo for this specific use-case, but keeping it for safety if it's used elsewhere or for fallback.
 import HeroVideo from '../components/HeroVideo'; // New import
 import TopCTABanner from '../components/shared/TopCTABanner';
 import CtaSection from '../components/shared/CtaSection';
@@ -76,7 +76,7 @@ export default function Testimonials() {
                 loop
                 muted
                 playsInline
-                webkitPlaysinline="true"
+                webkit-playsinline="true"
                 preload="metadata"
               />
             </div>

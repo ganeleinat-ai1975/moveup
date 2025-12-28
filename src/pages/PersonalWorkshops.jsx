@@ -148,7 +148,7 @@ export default function PersonalWorkshops() {
                 loop
                 muted
                 playsInline
-                webkitPlaysinline="true"
+                webkit-playsinline="true"
                 preload="metadata"
               />
             </div>

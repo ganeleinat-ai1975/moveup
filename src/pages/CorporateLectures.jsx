@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { useLanguage } from '../components/LanguageContext';
 import { useSiteSettings } from '../components/SiteSettingsContext';
 import { CorporateLecture } from '@/entities/CorporateLecture';
-import { Clock, Users, ArrowLeft, ArrowRight, ChevronDown, ChevronUp, Paperclip, Check } from 'lucide-react';
+import { Building2, Clock, Users, ArrowLeft, ArrowRight, ChevronDown, ChevronUp, Paperclip, Check } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import MediaGallery from '../components/media/MediaGallery';
@@ -192,7 +192,7 @@ export default function CorporateLectures() {
                 loop
                 muted
                 playsInline
-                webkitPlaysinline="true"
+                webkit-playsinline="true"
                 preload="metadata"
               />
             </div>

@@ -2,7 +2,7 @@ import React from 'react';
 import { useLanguage } from '../components/LanguageContext';
 import { useSiteSettings } from '../components/SiteSettingsContext';
 import HeroVideo from '../components/HeroVideo';
-// This import is no longer used for mobile hero media
+import MediaGallery from '../components/media/MediaGallery'; // This import is no longer used for mobile hero media
 import TopCTABanner from '../components/shared/TopCTABanner';
 import CtaSection from '../components/shared/CtaSection';
 import { Loader2 } from 'lucide-react';
@@ -66,7 +66,7 @@ export default function About() {
                 loop
                 muted
                 playsInline
-                webkitPlaysinline="true"
+                webkit-playsinline="true"
                 preload="metadata"
               />
             </div>

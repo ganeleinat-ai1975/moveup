@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { DragDropContext, Droppable, Draggable } from '@hello-pangea/dnd';
 import { CorporateLecture } from '@/entities/CorporateLecture';
 import { PersonalWorkshop } from '@/entities/PersonalWorkshop';

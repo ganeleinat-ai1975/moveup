@@ -1,3 +1,4 @@
+import React from 'react';
 import { 
   Users, Award, TrendingUp, Clock, Building2, BookOpen, Target, 
   Lightbulb, Briefcase, Heart, Smile, Star, Coffee, Flag, Anchor,

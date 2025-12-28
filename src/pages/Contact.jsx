@@ -3,6 +3,7 @@ import { useLanguage } from '../components/LanguageContext';
 import { useSiteSettings } from '../components/SiteSettingsContext';
 import { Phone, Mail, MessageCircle, Instagram, Linkedin, Facebook, Youtube, Edit3, ChevronDown, ChevronUp } from 'lucide-react';
 import HeroVideo from '../components/HeroVideo';
+import MediaGallery from '../components/media/MediaGallery';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import TopCTABanner from '../components/shared/TopCTABanner';
@@ -59,7 +60,7 @@ export default function Contact() {
                 loop
                 muted
                 playsInline
-                webkitPlaysinline="true"
+                webkit-playsinline="true"
                 preload="metadata"
               />
             </div>

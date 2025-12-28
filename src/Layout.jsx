@@ -6,6 +6,7 @@ import Footer from './components/navigation/Footer';
 import { Loader2 } from 'lucide-react';
 import LogoCarousel from './components/home/LogoCarousel';
 import CookieConsent from './components/shared/CookieConsent';
+import { migrateSettings } from "@/functions/migrateSettings";
 
 function StyleInjector() {
   const { siteSettings } = useSiteSettings();

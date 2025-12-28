@@ -6,7 +6,7 @@ import { useSiteSettings } from '../components/SiteSettingsContext';
 import { sendNewsletterBrevo } from '@/functions/sendNewsletterBrevo';
 import {
   Mail, Upload, Users, Send, Loader2, CheckCircle,
-  XCircle, Search, Calendar, Trash2, Plus, X, FileCode, Layout, Edit3, Settings, Image
+  XCircle, Download, Search, Filter, Calendar, Trash2, Eye, Plus, X, FileCode, Layout, Edit3, Settings, Image
 } from 'lucide-react';
 import RichTextEditor from '../components/admin/RichTextEditor';
 

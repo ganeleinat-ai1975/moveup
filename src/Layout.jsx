@@ -185,44 +185,6 @@ export default function Layout({ children, currentPageName }) {
       document.head.appendChild(meta);
     }
 
-    // Alice & Bot Chat Widget Injection
-    try {
-      const currentPath = window.location.pathname;
-      const isAdmin = currentPath.startsWith('/admin');
-      const isEditing = window.location.href.includes('editMode=true');
-      const isLogin = currentPath.includes('login');
-
-      // Load only in frontend, not in admin / editing / login
-      if (!isAdmin && !isEditing && !isLogin) {
-
-        // Prevent duplicates
-        if (!document.getElementById('alice-and-bot-params')) {
-
-          // JSON params script
-          const paramsScript = document.createElement('script');
-          paramsScript.type = 'application/json';
-          paramsScript.id = 'alice-and-bot-params';
-          paramsScript.textContent = `{"participants":["MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAlTSHc37GdIH4WhF0rIsUonZXEe61zkRbPEZTQ3R7lUs0SXS+C2Qkq7iI06YQv7Odc3r3vwplkQsS1cqybA5OwrX9uqLJEr7xQkAdW1uhmxTF7RZ+J+0OFrsgxi6tVd4ZK04X5ql4veMXKBUxXvQbK+KaUWw0WoZ27Hoy5IelKNESKa+mbZtkE1WuZF/fJmtuIkTFX5NWBB9gSO5WWULFaMWrIxrkZHyz9WUYZ0xopD9JazKG0Ij7wjcuCj/y2wVvdg9fHturtv1HabsD/NAgpwp6z/AWkb3o8HPLskIfW8Xq1AWV03BI3X5Gau5TqAf/MQHCzcaVP1SCWunqoCA+wQIDAQAB"],"startOpen":false,"buttonText":"לגלי הבוטית","requesterId":"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAucIut1MBCc8XT5YafDewtJlca3B/A636sUkdA8C1nTHIarqnKzH/Cx82gHwon9AXjFsFV5C25m+AIt8RZo4o4GpM/0amRGVMKNFCQar86uYLr9pSTSB3N2Hb9v4KcI1CrcSMPuiPvjeVHmcBWroZJDX7/su4KDDMjV94PmTK5ysx/rKGq8YeQRjhbtZDezYJhIaih8p26Gae6Gae6UrN3NkbAV2RWsiiSh4ZvKrq/0vDHfE/RJ3rtYfzuUl3t+/4WHIbUI303sdZ+43UuJHVkIBOkRsI3ZEAZ9OzpRgjXXVfrCQiFAAcp/fLTobYl5cOMBwnvWb0Sk3qosNf3W1WF1CK5wIDAQAB"}`;
-          document.head.appendChild(paramsScript);
-
-          // Widget loader script
-          const loadScript = document.createElement('script');
-          loadScript.textContent = `
-            const widgetParams = JSON.parse(document.getElementById('alice-and-bot-params').textContent);
-            const s = document.createElement('script');
-            s.src = "https://storage.googleapis.com/alice-and-bot/widget/dist/widget.iife.js";
-            s.async = true;
-            s.onload = () => aliceAndBot.loadChatWidget(widgetParams);
-            document.head.appendChild(s);
-          `;
-          document.head.appendChild(loadScript);
-
-        }
-      }
-    } catch (err) {
-      console.error('Alice & Bot widget failed to load:', err);
-    }
-
     // Cleanup function to remove the script and meta when the component unmounts
     return () => {
       const existingScript = document.getElementById(scriptId);

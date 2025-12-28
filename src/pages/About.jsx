@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useLanguage } from '../components/LanguageContext';
 import { useSiteSettings } from '../components/SiteSettingsContext';
@@ -28,12 +29,8 @@ export default function About() {
     managers_section_title_he, managers_section_title_en,
     managers,
     page_media, page_media_position,
-    media_about, media_position_about,
     managers_section_bg_color, managers_section_text_color, managers_section_title_color, primary_color
   } = siteSettings;
-
-  const aboutMedia = media_about || page_media?.about || [];
-  const aboutMediaPosition = media_position_about || page_media_position?.about || "center center";
 
   return (
     <div className="bg-[var(--background-color)] min-h-screen">
@@ -42,12 +39,12 @@ export default function About() {
       {/* Hero Section */}
       <section className="relative bg-white overflow-hidden min-h-[60vh] md:min-h-[70vh] flex items-center justify-center">
         {/* Hero Media - Desktop */}
-        {(aboutMedia && aboutMedia.length > 0) && (
+        {(page_media?.about && page_media.about.length > 0) && (
           <div className="absolute inset-0 z-0 hidden md:block">
             <HeroVideo 
-              media={aboutMedia} 
+              media={page_media.about} 
               className="grid-cols-1"
-              mediaPosition={aboutMediaPosition}
+              mediaPosition={page_media_position?.about || "center center"}
               mobileAsImage={false}
             />
             <div className="absolute inset-0 bg-white/80 pointer-events-none"></div>
@@ -55,13 +52,13 @@ export default function About() {
         )}
 
         {/* Hero Media - Mobile */}
-        {(aboutMedia && aboutMedia.length > 0) && (
+        {(page_media?.about && page_media.about.length > 0) && (
           <div className="absolute inset-0 z-0 block md:hidden">
             <div className="w-full h-full">
               <video
-                src={aboutMedia[0]?.file_url}
+                src={page_media.about[0]?.file_url}
                 className="w-full h-full object-cover"
-                style={{ objectPosition: aboutMediaPosition }}
+                style={{ objectPosition: page_media_position?.about || "center center" }}
                 autoPlay
                 loop
                 muted

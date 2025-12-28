@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../components/LanguageContext';
 import { useSiteSettings } from '../components/SiteSettingsContext';
@@ -62,24 +63,21 @@ export default function Podcast() {
   const platformIcons = { spotify: Music, apple: Headphones, youtube: Youtube, google: Smartphone };
   const platformColors = { spotify: '#1DB954', apple: '#A855F7', youtube: '#FF0000', google: '#4285F4' };
 
-  const podcastMedia = siteSettings?.media_podcast || siteSettings?.page_media?.podcast || [];
-  const podcastMediaPosition = siteSettings?.media_position_podcast || siteSettings?.page_media_position?.podcast || "center center";
-
   return (
     <div className="min-h-screen" style={{ backgroundColor: siteSettings?.podcast_bg_color || '#f8f9fa' }}>
       {/* Top CTA Banner */}
       <TopCTABanner />
 
       {/* Hero */}
-      <section className="relative bg-white overflow-hidden min-h-[60vh] md:min-h-[70vh] flex items-center justify-center">
+      <section className="relative py-20 lg:py-32 bg-white overflow-hidden">
         {/* Hero Media - Desktop */}
-        {podcastMedia && podcastMedia.length > 0 && (
+        {siteSettings?.page_media?.podcast && (
           <div className="absolute inset-0 z-0 hidden md:block">
             <div className="w-full h-full">
               <HeroVideo
-                media={podcastMedia}
+                media={siteSettings.page_media.podcast}
                 className="grid-cols-1 h-full md:h-[70vh] flex items-center justify-center"
-                mediaPosition={podcastMediaPosition}
+                mediaPosition={siteSettings?.page_media_position?.podcast || "center center"}
                 mobileAsImage={false}
               />
             </div>
@@ -88,40 +86,33 @@ export default function Podcast() {
         )}
 
         {/* Hero Media - Mobile */}
-        {podcastMedia && podcastMedia.length > 0 && (
+        {siteSettings?.page_media?.podcast && (
           <div className="absolute inset-0 z-0 block md:hidden">
-            <div className="w-full h-full">
-              <video
-                src={podcastMedia[0]?.file_url}
-                className="w-full h-full object-cover"
-                style={{ objectPosition: podcastMediaPosition }}
-                autoPlay
-                loop
-                muted
-                playsInline
-                webkit-playsinline="true"
-                preload="metadata"
-              />
-            </div>
-            <div className="absolute inset-0 bg-white/80 pointer-events-none"></div>
+            <MediaGallery
+              media={siteSettings.page_media.podcast}
+              className="grid-cols-1 aspect-video"
+              mediaPosition={siteSettings?.page_media_position?.podcast || "center center"}
+              mobileAsImage={false}
+            />
+            <div className="absolute inset-0 bg-white/80 pointer-events-none" />
           </div>
         )}
 
-        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10 pointer-events-none">
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
           {(siteSettings?.podcast_page_title_he?.trim() || siteSettings?.podcast_page_title_en?.trim()) && (
-            <h1 className="text-4xl md:text-5xl font-bold gradient-text mb-8 pointer-events-auto">
+            <h1 className="text-4xl md:text-5xl font-bold gradient-text mb-8">
               {language === 'he' ? siteSettings.podcast_page_title_he : siteSettings.podcast_page_title_en}
             </h1>
           )}
           {(siteSettings?.podcast_description_he?.trim() || siteSettings?.podcast_description_en?.trim()) && (
             <div 
-              className="text-xl text-opacity-80 text-[var(--text-color)] leading-relaxed max-w-3xl mx-auto mb-8 pointer-events-auto"
+              className="text-xl text-opacity-80 text-[var(--text-color)] leading-relaxed max-w-3xl mx-auto mb-8"
               dangerouslySetInnerHTML={{ __html: language === 'he' ? siteSettings.podcast_description_he : siteSettings.podcast_description_en}}
             />
           )}
 
           {/* Platform Links */}
-          <div className="flex flex-wrap justify-center gap-4 pointer-events-auto">
+          <div className="flex flex-wrap justify-center gap-4">
             {[
               { key: 'spotify', url: siteSettings?.podcast_spotify_url, label: 'Spotify' },
               { key: 'apple',   url: siteSettings?.podcast_apple_url,   label: 'Apple Podcasts' },

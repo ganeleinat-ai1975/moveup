@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../components/LanguageContext';
 import { useSiteSettings } from '../components/SiteSettingsContext';
@@ -31,9 +32,6 @@ export default function Testimonials() {
     loadTestimonials();
   }, []);
 
-  const testimonialsMedia = siteSettings?.media_testimonials || siteSettings?.page_media?.testimonials || [];
-  const testimonialsMediaPosition = siteSettings?.media_position_testimonials || siteSettings?.page_media_position?.testimonials || "center center";
-
   const renderStars = (rating) => {
     return [...Array(5)].map((_, i) => (
       <Star
@@ -51,13 +49,13 @@ export default function Testimonials() {
       {/* Hero Section */}
       <section className="relative bg-white overflow-hidden min-h-[60vh] md:min-h-[70vh] flex items-center justify-center">
         {/* Hero Media - Desktop */}
-        {testimonialsMedia && testimonialsMedia.length > 0 && (
+        {siteSettings?.page_media?.testimonials && (
           <div className="absolute inset-0 z-0 hidden md:block">
             {/* The HeroVideo component itself should manage its dimensions within its parent container */}
             <HeroVideo 
-              media={testimonialsMedia} 
+              media={siteSettings.page_media.testimonials} 
               className="w-full h-full" // Ensure HeroVideo's root element fills its container
-              mediaPosition={testimonialsMediaPosition}
+              mediaPosition={siteSettings?.page_media_position?.testimonials || "center center"}
               mobileAsImage={false}
             />
             <div className="absolute inset-0 bg-white/80 pointer-events-none"></div>
@@ -65,13 +63,13 @@ export default function Testimonials() {
         )}
 
         {/* Hero Media - Mobile */}
-        {testimonialsMedia && testimonialsMedia.length > 0 && (
+        {siteSettings?.page_media?.testimonials && (
           <div className="absolute inset-0 z-0 block md:hidden">
             <div className="w-full h-full">
               <video
-                src={testimonialsMedia[0]?.file_url}
+                src={siteSettings.page_media.testimonials[0]?.file_url}
                 className="w-full h-full object-cover"
-                style={{ objectPosition: testimonialsMediaPosition }}
+                style={{ objectPosition: siteSettings?.page_media_position?.testimonials || "center center" }}
                 autoPlay
                 loop
                 muted

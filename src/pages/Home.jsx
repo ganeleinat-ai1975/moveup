@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { useLanguage } from '../components/LanguageContext';
 import { useSiteSettings } from '../components/SiteSettingsContext';
@@ -16,9 +17,6 @@ export default function Home() {
   const { language, t, direction } = useLanguage();
   const { siteSettings } = useSiteSettings();
   const [expandedFeatures, setExpandedFeatures] = useState({});
-
-  const homeMedia = siteSettings?.media_home || siteSettings?.page_media?.home || [];
-  const homeMediaPosition = siteSettings?.media_position_home || siteSettings?.page_media_position?.home || "center center";
 
   const toggleFeatureExpansion = (index) => {
     setExpandedFeatures(prev => ({ ...prev, [index]: !prev[index] }));
@@ -100,14 +98,14 @@ export default function Home() {
             )}
           </div>
 
-          {homeMedia && homeMedia.length > 0 && (
+          {siteSettings?.page_media?.home && siteSettings.page_media.home.length > 0 && (
             <div className="px-4 sm:px-6 lg:px-8 my-8">
               <div className="mx-auto" style={{ maxWidth: 'calc(100vw - 64px)' }}>
                 <div className="rounded-2xl shadow-elegant overflow-hidden">
                   <MediaGallery 
-                    media={homeMedia} 
+                    media={siteSettings.page_media.home} 
                     className="grid-cols-1 aspect-video mt-0 gap-0"
-                    mediaPosition={homeMediaPosition}
+                    mediaPosition={siteSettings?.page_media_position?.home || "center center"}
                   />
                 </div>
               </div>
@@ -157,13 +155,13 @@ export default function Home() {
                 )}
             </div>
 
-            {homeMedia && homeMedia.length > 0 && (
+            {siteSettings?.page_media?.home && siteSettings.page_media.home.length > 0 && (
                 <div className="w-full my-8">
                     <div className="rounded-2xl shadow-elegant overflow-hidden aspect-[4/3] mx-4">
                         <MediaGallery 
-                            media={homeMedia} 
+                            media={siteSettings.page_media.home} 
                             className="grid-cols-1 h-full w-full mt-0 gap-0"
-                            mediaPosition={homeMediaPosition}
+                            mediaPosition={siteSettings?.page_media_position?.home || "center center"}
                         />
                     </div>
                 </div>

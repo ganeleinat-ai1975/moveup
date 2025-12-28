@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { useLanguage } from '../components/LanguageContext';
 import { useSiteSettings } from '../components/SiteSettingsContext';
@@ -24,9 +25,6 @@ export default function Contact() {
     return `https://wa.me/${cleanNumber}`;
   };
 
-  const contactMedia = siteSettings?.media_contact || siteSettings?.page_media?.contact || [];
-  const contactMediaPosition = siteSettings?.media_position_contact || siteSettings?.page_media_position?.contact || "center center";
-
   return (
     <div className="bg-[var(--background-color)] min-h-screen">
       <TopCTABanner />
@@ -34,13 +32,13 @@ export default function Contact() {
       {/* Hero Section */}
       <section className="relative bg-white overflow-hidden min-h-[60vh] md:min-h-[70vh] flex items-center justify-center">
         {/* Hero Media - Desktop */}
-        {contactMedia && contactMedia.length > 0 && (
+        {siteSettings?.page_media?.contact && (
           <div className="absolute inset-0 z-0 hidden md:block">
             <div className="w-full h-full">
               <HeroVideo
-                media={contactMedia}
+                media={siteSettings.page_media.contact}
                 className="grid-cols-1 h-full md:h-[70vh] flex items-center justify-center"
-                mediaPosition={contactMediaPosition}
+                mediaPosition={siteSettings?.page_media_position?.contact || "center center"}
                 mobileAsImage={false}
               />
             </div>
@@ -49,13 +47,13 @@ export default function Contact() {
         )}
 
         {/* Hero Media - Mobile */}
-        {contactMedia && contactMedia.length > 0 && (
+        {siteSettings?.page_media?.contact && (
           <div className="absolute inset-0 z-0 block md:hidden">
             <div className="w-full h-full">
               <video
-                src={contactMedia[0]?.file_url}
+                src={siteSettings.page_media.contact[0]?.file_url}
                 className="w-full h-full object-cover"
-                style={{ objectPosition: contactMediaPosition }}
+                style={{ objectPosition: siteSettings?.page_media_position?.contact || "center center" }}
                 autoPlay
                 loop
                 muted

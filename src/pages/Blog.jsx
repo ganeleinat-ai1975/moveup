@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../components/LanguageContext';
 import { useSiteSettings } from '../components/SiteSettingsContext';
@@ -33,9 +34,6 @@ export default function Blog() {
 
   const ArrowIcon = direction === 'rtl' ? ArrowLeft : ArrowRight;
 
-  const blogMedia = siteSettings?.media_blog || siteSettings?.page_media?.blog || [];
-  const blogMediaPosition = siteSettings?.media_position_blog || siteSettings?.page_media_position?.blog || "center center";
-
   return (
     <div className="bg-[var(--background-color)] min-h-screen">
       {/* Top CTA Banner */}
@@ -44,13 +42,13 @@ export default function Blog() {
       {/* Hero Section */}
       <section className="relative bg-white overflow-hidden min-h-[60vh] md:min-h-[70vh] flex items-center justify-center">
         {/* Hero Media - Desktop */}
-        {blogMedia && blogMedia.length > 0 && (
+        {siteSettings?.page_media?.blog && (
           <div className="absolute inset-0 z-0 hidden md:block">
             <div className="w-full h-full">
               <HeroVideo 
-                media={blogMedia} 
+                media={siteSettings.page_media.blog} 
                 className="grid-cols-1 h-full md:h-[70vh] flex items-center justify-center"
-                mediaPosition={blogMediaPosition}
+                mediaPosition={siteSettings?.page_media_position?.blog || "center center"}
                 mobileAsImage={false}
               />
             </div>
@@ -59,13 +57,13 @@ export default function Blog() {
         )}
 
         {/* Hero Media - Mobile */}
-        {blogMedia && blogMedia.length > 0 && (
+        {siteSettings?.page_media?.blog && (
           <div className="absolute inset-0 z-0 block md:hidden">
             <div className="w-full h-full">
               <video
-                src={blogMedia[0]?.file_url}
+                src={siteSettings.page_media.blog[0]?.file_url}
                 className="w-full h-full object-cover"
-                style={{ objectPosition: blogMediaPosition }}
+                style={{ objectPosition: siteSettings?.page_media_position?.blog || "center center" }}
                 autoPlay
                 loop
                 muted

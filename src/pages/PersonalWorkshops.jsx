@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../components/LanguageContext';
 import { useSiteSettings } from '../components/SiteSettingsContext';
@@ -86,9 +87,6 @@ export default function PersonalWorkshops() {
 
   const ArrowIcon = direction === 'rtl' ? ArrowLeft : ArrowRight;
 
-  const personalWorkshopsMedia = siteSettings?.media_personal_workshops || siteSettings?.page_media?.personal_workshops || [];
-  const personalWorkshopsMediaPosition = siteSettings?.media_position_personal_workshops || siteSettings?.page_media_position?.personal_workshops || "center center";
-
   // Benefits data for personal workshops
   const benefits = [
     {
@@ -122,13 +120,13 @@ export default function PersonalWorkshops() {
       {/* Hero Section */}
       <section className="relative py-20 lg:py-32 bg-white overflow-hidden">
         {/* Hero Media - Desktop */}
-        {personalWorkshopsMedia && personalWorkshopsMedia.length > 0 && (
+        {siteSettings?.page_media?.personal_workshops && (
           <div className="absolute inset-0 z-0 hidden md:block">
             <div className="w-full h-full">
               <HeroVideo
-                media={personalWorkshopsMedia}
+                media={siteSettings.page_media.personal_workshops}
                 className="grid-cols-1 h-full md:h-[70vh] flex items-center justify-center"
-                mediaPosition={personalWorkshopsMediaPosition}
+                mediaPosition={siteSettings?.page_media_position?.personal_workshops || "center center"}
                 mobileAsImage={false}
               />
             </div>
@@ -137,21 +135,14 @@ export default function PersonalWorkshops() {
         )}
 
         {/* Hero Media - Mobile */}
-        {personalWorkshopsMedia && personalWorkshopsMedia.length > 0 && (
+        {siteSettings?.page_media?.personal_workshops && (
           <div className="absolute inset-0 z-0 block md:hidden">
-            <div className="w-full h-full">
-              <video
-                src={personalWorkshopsMedia[0]?.file_url}
-                className="w-full h-full object-cover"
-                style={{ objectPosition: personalWorkshopsMediaPosition }}
-                autoPlay
-                loop
-                muted
-                playsInline
-                webkit-playsinline="true"
-                preload="metadata"
-              />
-            </div>
+            <MediaGallery
+              media={siteSettings.page_media.personal_workshops}
+              className="grid-cols-1 aspect-video"
+              mediaPosition={siteSettings?.page_media_position?.personal_workshops || "center center"}
+              mobileAsImage={false}
+            />
             <div className="absolute inset-0 bg-white/80 pointer-events-none"></div>
           </div>
         )}

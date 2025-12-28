@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useMemo } from 'react';
 import { useLanguage } from '../components/LanguageContext';
 import { useSiteSettings } from '../components/SiteSettingsContext';
@@ -86,15 +87,8 @@ export default function CorporateLectures() {
   });
 
   const pageDetails = siteSettings?.corporate_pages?.[activeTab] || {};
-  
-  // Backward compatibility for media
-  const heroMediaKey = `corporate_lectures_${activeTab}`;
-  const newHeroMediaKey = `media_corporate_lectures_${activeTab}`;
-  
-  const heroMedia = siteSettings?.[newHeroMediaKey] || siteSettings?.page_media?.[heroMediaKey] || [];
-  
-  const heroMediaPositionKey = `media_position_corporate_lectures_${activeTab}`;
-  const heroMediaPosition = siteSettings?.[heroMediaPositionKey] || siteSettings?.page_media_position?.[heroMediaKey] || "center center";
+  const heroMedia = siteSettings?.page_media?.[`corporate_lectures_${activeTab}`] || [];
+  const heroMediaPosition = siteSettings?.page_media_position?.[`corporate_lectures_${activeTab}`] || "center center";
 
   const ArrowIcon = direction === 'rtl' ? ArrowLeft : ArrowRight;
 
@@ -164,7 +158,7 @@ export default function CorporateLectures() {
       </div>
 
       {/* Hero Section */}
-      <section className="relative bg-white overflow-hidden min-h-[60vh] md:min-h-[70vh] flex items-center justify-center">
+      <section className="relative py-20 lg:py-32 bg-white overflow-hidden">
         {/* Hero Media - Desktop */}
         {heroMedia.length > 0 && (
           <div className="absolute inset-0 z-0 hidden md:block">
@@ -183,19 +177,11 @@ export default function CorporateLectures() {
         {/* Hero Media - Mobile */}
         {heroMedia.length > 0 && (
           <div className="absolute inset-0 z-0 block md:hidden">
-            <div className="w-full h-full">
-              <video
-                src={heroMedia[0]?.file_url}
-                className="w-full h-full object-cover"
-                style={{ objectPosition: heroMediaPosition }}
-                autoPlay
-                loop
-                muted
-                playsInline
-                webkit-playsinline="true"
-                preload="metadata"
-              />
-            </div>
+            <MediaGallery
+              media={heroMedia}
+              className="grid-cols-1 aspect-video"
+              mediaPosition={heroMediaPosition}
+            />
             <div className="absolute inset-0 bg-white/80 pointer-events-none"></div>
           </div>
         )}

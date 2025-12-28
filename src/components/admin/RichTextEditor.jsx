@@ -26,7 +26,7 @@ export default function RichTextEditor({ value, onChange }) {
         onChange={onChange}
         modules={modules}
       />
-      <style>{`
+      <style jsx global>{`
         .ql-editor {
           direction: ${direction};
           min-height: 200px;

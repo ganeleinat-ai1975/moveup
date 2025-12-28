@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useSiteSettings } from '@/components/SiteSettingsContext';
 import { useLanguage } from '@/components/LanguageContext';
@@ -9,7 +8,7 @@ export default function LogoCarousel() {
   const { language } = useLanguage();
   const [isPaused, setIsPaused] = useState(false);
 
-  const logos = siteSettings?.page_media?.logo_carousel_logos || [];
+  const logos = siteSettings?.media_logo_carousel_logos || [];
   const title = language === 'he'
     ? siteSettings?.logo_carousel_title_he
     : siteSettings?.logo_carousel_title_en;

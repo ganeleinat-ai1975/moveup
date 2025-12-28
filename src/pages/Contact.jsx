@@ -59,7 +59,7 @@ export default function Contact() {
                 loop
                 muted
                 playsInline
-                webkit-playsinline="true"
+                webkitPlaysinline="true"
                 preload="metadata"
               />
             </div>

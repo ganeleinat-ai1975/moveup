@@ -99,7 +99,7 @@ export default function Podcast() {
                 loop
                 muted
                 playsInline
-                webkit-playsinline="true"
+                webkitPlaysinline="true"
                 preload="metadata"
               />
             </div>

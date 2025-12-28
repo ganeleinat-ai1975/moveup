@@ -70,7 +70,7 @@ export default function Blog() {
                 loop
                 muted
                 playsInline
-                webkit-playsinline="true"
+                webkitPlaysinline="true"
                 preload="metadata"
               />
             </div>

@@ -66,7 +66,7 @@ export default function About() {
                 loop
                 muted
                 playsInline
-                webkit-playsinline="true"
+                webkitPlaysinline="true"
                 preload="metadata"
               />
             </div>

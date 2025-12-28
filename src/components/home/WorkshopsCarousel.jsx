@@ -41,7 +41,7 @@ const WorkshopCard = ({ workshop, language, direction }) => {
                   loop
                   muted
                   playsInline
-                  webkit-playsinline="true" // For iOS Safari compatibility
+                  webkitPlaysinline="true" // For iOS Safari compatibility
                   preload="metadata"
                   aria-label={title}
                 />

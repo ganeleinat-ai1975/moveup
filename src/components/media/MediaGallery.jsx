@@ -45,7 +45,7 @@ export default function MediaGallery({ media, className = "", mediaPosition = "c
                       loop
                       muted
                       playsInline
-                      webkit-playsinline="true"
+                      webkitPlaysinline="true"
                       preload="metadata"
                     />
                   </div>

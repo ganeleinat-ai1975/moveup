@@ -76,7 +76,7 @@ export default function Testimonials() {
                 loop
                 muted
                 playsInline
-                webkit-playsinline="true"
+                webkitPlaysinline="true"
                 preload="metadata"
               />
             </div>

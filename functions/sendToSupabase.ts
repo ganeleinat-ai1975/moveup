@@ -1,22 +1,13 @@
 Deno.serve(async (req) => {
   try {
-    const {
-      first_name,
-      last_name,
-      email,
-      phone,
-      organization,
-      message
-    } = await req.json();
-
-    const name = `${first_name} ${last_name}`;
-
+    const { name, email } = await req.json();
+    
     const SUPABASE_API_KEY = Deno.env.get("SUPABASE_API_KEY");
-
+    
     if (!SUPABASE_API_KEY) {
       return Response.json({ error: 'SUPABASE_API_KEY not configured' }, { status: 500 });
     }
-
+    
     const response = await fetch("https://pokolplkzkzbihruraxck.supabase.co/rest/v1/contacts", {
       method: "POST",
       headers: {
@@ -26,12 +17,7 @@ Deno.serve(async (req) => {
       },
       body: JSON.stringify({
         name,
-        email,
-        first_name,
-        last_name,
-        phone,
-        organization,
-        message
+        email
       })
     });
 

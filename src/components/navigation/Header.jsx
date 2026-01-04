@@ -1,10 +1,9 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { useLanguage } from '../LanguageContext';
 import { useSiteSettings } from '../SiteSettingsContext';
-import { User } from '@/entities/User'; // Assuming User is directly imported
+import { base44 } from '@/api/base44Client';
 import { Menu, X, Globe, Settings, LogIn, LogOut, MoreVertical, Mail } from 'lucide-react';
 
 // Hook לניהול משתמש
@@ -15,7 +14,7 @@ function useUser() {
   React.useEffect(() => {
     const checkUser = async () => {
       try {
-        const currentUser = await User.me();
+        const currentUser = await base44.auth.me();
         setUser(currentUser);
       } catch (error) {
         setUser(null);
@@ -28,7 +27,7 @@ function useUser() {
 
   const login = async () => {
     try {
-      await User.login();
+      base44.auth.redirectToLogin();
     } catch (error) {
       console.log('Login error:', error);
     }
@@ -36,7 +35,7 @@ function useUser() {
 
   const logout = async () => {
     try {
-      await User.logout();
+      await base44.auth.logout();
       setUser(null);
     } catch (error) {
       console.log('Logout error:', error);

@@ -121,8 +121,8 @@ export default function WomensDay2026() {
         )}
 
         {/* Title container */}
-        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
+        <div className="absolute inset-0 flex items-center justify-center z-10">
+          <h1 className="text-4xl md:text-6xl font-bold text-white px-4">
             {language === 'he' 
               ? (siteSettings?.page_title_he || 'יום הנשים 2026')
               : (siteSettings?.page_title_en || "Women's Day 2026")

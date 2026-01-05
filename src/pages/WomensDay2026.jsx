@@ -30,6 +30,8 @@ export default function WomensDay2026() {
       if (featuredIds.length > 0) {
         const allLectures = await base44.entities.CorporateLecture.filter({ is_published: true });
         const featured = allLectures.filter(lecture => featuredIds.includes(lecture.id));
+        // Sort by order in featured_lecture_ids array
+        featured.sort((a, b) => featuredIds.indexOf(a.id) - featuredIds.indexOf(b.id));
         setLectures(featured);
       }
     } catch (error) {
@@ -148,10 +150,12 @@ export default function WomensDay2026() {
                     className="bg-[var(--background-color)] rounded-2xl overflow-hidden shadow-elegant hover-lift smooth-transition scroll-mt-24"
                   >
                     {lecture.media_gallery && lecture.media_gallery.length > 0 && (
-                      <MediaGallery 
-                        media={lecture.media_gallery}
-                        className="h-48"
-                      />
+                      <div className="aspect-[4/3] overflow-hidden">
+                        <MediaGallery 
+                          media={lecture.media_gallery}
+                          className="h-full"
+                        />
+                      </div>
                     )}
                     
                     <div className="p-6">
@@ -299,6 +303,23 @@ export default function WomensDay2026() {
           </div>
         </section>
       )}
+
+      {/* Share Link Section */}
+      <section className="py-12 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <Button
+            onClick={() => {
+              const url = window.location.origin + window.location.pathname;
+              navigator.clipboard.writeText(url);
+              alert(t('הקישור הועתק ללוח', 'Link copied to clipboard'));
+            }}
+            className="bg-[var(--primary-color)] text-white px-8 py-4 rounded-full font-semibold hover:bg-[var(--secondary-color)] smooth-transition shadow-elegant hover-lift flex items-center gap-2 mx-auto"
+          >
+            <Share2 className="w-5 h-5" />
+            {t('קישור "פורצות קדימה ביום הנשים הבנ״ל"', 'Share "Breaking Forward at International Women\'s Day"')}
+          </Button>
+        </div>
+      </section>
 
       <CtaSection />
     </div>

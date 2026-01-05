@@ -3,11 +3,12 @@ import { base44 } from '@/api/base44Client';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { Save, Plus, Trash2, Loader2 } from 'lucide-react';
+import { Save, Plus, Trash2, Loader2, GripVertical } from 'lucide-react';
 import MediaUploader from '../media/MediaUploader';
 import MediaPositionSelector from '../media/MediaPositionSelector';
 import IconSelector from './IconSelector';
 import RichTextEditor from './RichTextEditor';
+import { DragDropContext, Droppable, Draggable } from '@hello-pangea/dnd';
 
 const Section = ({ title, children }) => (
   <div className="bg-white p-6 rounded-lg shadow-sm">
@@ -62,6 +63,17 @@ export default function WomensDay2026Tab({ settings, handleUpdate, onMediaChange
       : [...selectedLectureIds, lectureId];
     setSelectedLectureIds(newIds);
     handleUpdate('featured_lecture_ids', newIds);
+  };
+
+  const handleDragEnd = (result) => {
+    if (!result.destination) return;
+    
+    const items = Array.from(selectedLectureIds);
+    const [reorderedItem] = items.splice(result.source.index, 1);
+    items.splice(result.destination.index, 0, reorderedItem);
+    
+    setSelectedLectureIds(items);
+    handleUpdate('featured_lecture_ids', items);
   };
 
   return (
@@ -126,9 +138,9 @@ export default function WomensDay2026Tab({ settings, handleUpdate, onMediaChange
         </div>
       </Section>
 
-      <Section title={t('כרטיסי הרצאות', 'Lecture Cards')}>
+      <Section title={t('בחירת כרטיסי הרצאות', 'Select Lecture Cards')}>
         <p className="text-sm text-gray-600 mb-4">
-          {t('בחרי את ההרצאות שתרצי להציג בדף זה. ההרצאות שנבחרו יוצגו לפי הסדר שבו הן נבחרו.', 'Select the lectures you want to display on this page. Selected lectures will appear in the order they are selected.')}
+          {t('בחרי את ההרצאות שתרצי להציג בדף זה.', 'Select the lectures you want to display on this page.')}
         </p>
         
         {loading ? (
@@ -176,6 +188,63 @@ export default function WomensDay2026Tab({ settings, handleUpdate, onMediaChange
           </div>
         )}
       </Section>
+
+      {selectedLectureIds.length > 0 && (
+        <Section title={t('סדר כרטיסי ההרצאות', 'Order of Lecture Cards')}>
+          <p className="text-sm text-gray-600 mb-4">
+            {t('גררי כדי לשנות את סדר ההצגה של הכרטיסים.', 'Drag to change the display order of the cards.')}
+          </p>
+          <DragDropContext onDragEnd={handleDragEnd}>
+            <Droppable droppableId="lectures">
+              {(provided) => (
+                <div {...provided.droppableProps} ref={provided.innerRef} className="space-y-2">
+                  {selectedLectureIds.map((lectureId, index) => {
+                    const lecture = allLectures.find(l => l.id === lectureId);
+                    if (!lecture) return null;
+                    
+                    return (
+                      <Draggable key={lectureId} draggableId={lectureId} index={index}>
+                        {(provided, snapshot) => (
+                          <div
+                            ref={provided.innerRef}
+                            {...provided.draggableProps}
+                            {...provided.dragHandleProps}
+                            className={`flex items-center gap-3 p-3 bg-white border rounded-lg ${
+                              snapshot.isDragging ? 'shadow-lg' : 'shadow-sm'
+                            }`}
+                          >
+                            <GripVertical className="w-5 h-5 text-gray-400" />
+                            <div className="flex-1">
+                              <p className="font-medium text-[var(--text-color)]">{lecture.title_he}</p>
+                              <p className="text-sm text-gray-600">
+                                {lecture.type === 'workshop' && t('סדנה', 'Workshop')}
+                                {lecture.type === 'lecture' && t('הרצאה', 'Lecture')}
+                                {lecture.type === 'consulting' && t('ייעוץ', 'Consulting')}
+                              </p>
+                            </div>
+                            <Button
+                              variant="ghost"
+                              size="icon"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                toggleLectureSelection(lectureId);
+                              }}
+                              className="text-red-500 hover:text-red-700"
+                            >
+                              <Trash2 className="w-4 h-4" />
+                            </Button>
+                          </div>
+                        )}
+                      </Draggable>
+                    );
+                  })}
+                  {provided.placeholder}
+                </div>
+              )}
+            </Droppable>
+          </DragDropContext>
+        </Section>
+      )}
 
       <Section title={t('אזור יתרונות', 'Benefits Area')}>
         <div className="grid md:grid-cols-2 gap-4 mb-6">

@@ -36,6 +36,7 @@ import MediaPositionSelector from '../components/media/MediaPositionSelector';
 import IconSelector from '../components/admin/IconSelector';
 import RichTextEditor from '../components/admin/RichTextEditor';
 import CarouselOrderEditor from '../components/admin/CarouselOrderEditor';
+import WomensDay2026Tab from '../components/admin/WomensDay2026Tab';
 
 
 const Section = ({ title, children, t }) => (
@@ -1759,6 +1760,7 @@ const PagesTab = ({ siteSettings, handleSettingsChange, isSaving, handleSaveSett
       {/* Updated PersonalPageSettings props */}
       {activePageSubTab === 'personal' && <PersonalPageSettings settings={siteSettings} handleUpdate={handleSettingsChange} onMediaChange={onMediaChange} onMediaPositionChange={onMediaPositionChange} isSaving={isSaving} handleSaveSettings={handleSaveSettings} t={t} onRichTextChange={onRichTextChange} />}
       {activePageSubTab === 'corporate' && <CorporatePageTab settings={siteSettings} handleSettingsChange={handleSettingsChange} onMediaChange={onMediaChange} onMediaPositionChange={onMediaPositionChange} isSaving={isSaving} handleSaveSettings={handleSaveSettings} t={t} onCorporatePageChange={onCorporatePageChange} onRichTextChange={onRichTextChange} />}
+      {activePageSubTab === 'womensday2026' && <WomensDay2026Tab settings={siteSettings} handleUpdate={handleSettingsChange} onMediaChange={onMediaChange} onMediaPositionChange={onMediaPositionChange} isSaving={isSaving} handleSaveSettings={handleSaveSettings} t={t} />}
       {activePageSubTab === 'testimonials' && <TestimonialsPageTab settings={siteSettings} handleUpdate={handleSettingsChange} onMediaChange={onMediaChange} onMediaPositionChange={onMediaPositionChange} isSaving={isSaving} handleSaveSettings={handleSaveSettings} t={t} onRichTextChange={onRichTextChange} />}
       {activePageSubTab === 'blog' && <BlogPageTab settings={siteSettings} handleUpdate={handleSettingsChange} onMediaChange={onMediaChange} onMediaPositionChange={onMediaPositionChange} isSaving={isSaving} handleSaveSettings={handleSaveSettings} t={t} onRichTextChange={onRichTextChange} />}
       {activePageSubTab === 'podcast' && <PodcastPageTab settings={siteSettings} handleUpdate={handleSettingsChange} onMediaChange={onMediaChange} onMediaPositionChange={onMediaPositionChange} isSaving={isSaving} handleSaveSettings={handleSaveSettings} t={t} onRichTextChange={onRichTextChange} />}
@@ -3851,6 +3853,8 @@ export default function SiteAdmin() {
           contact_page_form_cta_bg_color: contextSettings.contact_page_form_cta_bg_color || '#ffffff',
           contact_page_form_cta_button_bg_color: contextSettings.contact_page_form_cta_button_bg_color || '#005e6c',
           contact_page_form_cta_button_text_color: contextSettings.contact_page_form_cta_button_text_color || '#ffffff',
+          // WomensDay2026PageSettings
+          featured_lecture_ids: contextSettings.featured_lecture_ids || [],
           feature_1_button_text_he: contextSettings.feature_1_button_text_he || '',
           feature_1_button_text_en: contextSettings.feature_1_button_text_en || '',
           feature_1_button_link: contextSettings.feature_1_button_link || '',
@@ -4194,6 +4198,25 @@ export default function SiteAdmin() {
         media_position_contact: s.page_media_position?.contact
       };
 
+      // 10. WomensDay2026PageSettings
+      const womensDay2026Data = {
+        page_title_he: s.page_title_he, page_title_en: s.page_title_en,
+        description_he: s.description_he, description_en: s.description_en,
+        benefits_title_he: s.benefits_title_he, benefits_title_en: s.benefits_title_en,
+        benefit_1_icon: s.benefit_1_icon,
+        benefit_1_title_he: s.benefit_1_title_he, benefit_1_title_en: s.benefit_1_title_en,
+        benefit_1_desc_he: s.benefit_1_desc_he, benefit_1_desc_en: s.benefit_1_desc_en,
+        benefit_2_icon: s.benefit_2_icon,
+        benefit_2_title_he: s.benefit_2_title_he, benefit_2_title_en: s.benefit_2_title_en,
+        benefit_2_desc_he: s.benefit_2_desc_he, benefit_2_desc_en: s.benefit_2_desc_en,
+        benefit_3_icon: s.benefit_3_icon,
+        benefit_3_title_he: s.benefit_3_title_he, benefit_3_title_en: s.benefit_3_title_en,
+        benefit_3_desc_he: s.benefit_3_desc_he, benefit_3_desc_en: s.benefit_3_desc_en,
+        featured_lecture_ids: s.featured_lecture_ids || [],
+        media_womens_day_2026: s.page_media?.womens_day_2026 || [],
+        media_position_womens_day_2026: s.page_media_position?.womens_day_2026
+      };
+
       // Perform updates
       const promises = [];
       
@@ -4223,6 +4246,9 @@ export default function SiteAdmin() {
 
       if (s.contact_id) promises.push(base44.entities.ContactPageSettings.update(s.contact_id, contactData));
       else promises.push(base44.entities.ContactPageSettings.create(contactData));
+
+      if (s.womens_day_2026_id) promises.push(base44.entities.WomensDay2026PageSettings.update(s.womens_day_2026_id, womensDay2026Data));
+      else promises.push(base44.entities.WomensDay2026PageSettings.create(womensDay2026Data));
 
       await Promise.all(promises);
       

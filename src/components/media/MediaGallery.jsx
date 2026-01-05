@@ -54,7 +54,7 @@ export default function MediaGallery({ media, className = "", mediaPosition = "c
                 /* Show video for all cases where mobileAsImage is false or no poster */
                 <video
                   src={item.file_url}
-                  className="w-full h-full object-contain"
+                  className="w-full h-full object-cover md:object-contain"
                   style={{ objectPosition: mediaPosition }}
                   autoPlay
                   loop

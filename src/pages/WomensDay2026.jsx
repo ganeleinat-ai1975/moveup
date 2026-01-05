@@ -88,12 +88,14 @@ export default function WomensDay2026() {
     <div className="min-h-screen bg-[var(--background-color)]">
       {/* Hero Section */}
       <section className="relative">
-        <div className="relative w-full aspect-video overflow-hidden">
-          <MediaGallery 
-            media={siteSettings?.media_womens_day_2026} 
-            className="h-full w-full"
-            mediaPosition={siteSettings?.media_position_womens_day_2026 || "center center"}
-          />
+        <div className="relative w-full aspect-video overflow-hidden md:aspect-video aspect-[4/3]">
+          <div className="h-full w-full [&_img]:object-cover [&_img]:md:object-contain [&_video]:object-cover [&_video]:md:object-contain">
+            <MediaGallery 
+              media={siteSettings?.media_womens_day_2026} 
+              className="h-full w-full"
+              mediaPosition={siteSettings?.media_position_womens_day_2026 || "center center"}
+            />
+          </div>
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-transparent"></div>
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="text-center px-4">

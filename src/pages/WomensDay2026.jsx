@@ -87,16 +87,18 @@ export default function WomensDay2026() {
   return (
     <div className="min-h-screen bg-[var(--background-color)]">
       {/* Hero Section */}
-      <section className="relative bg-white overflow-hidden min-h-[60vh] md:min-h-[70vh] flex items-center justify-center">
+      <section className="relative py-20 lg:py-32 bg-white overflow-hidden">
         {/* Hero Media - Desktop */}
         {(siteSettings?.media_womens_day_2026 && siteSettings.media_womens_day_2026.length > 0) && (
           <div className="absolute inset-0 z-0 hidden md:block">
-            <MediaGallery 
-              media={siteSettings.media_womens_day_2026} 
-              className="h-full"
-              mediaPosition={siteSettings.media_position_womens_day_2026 || "center center"}
-            />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-transparent"></div>
+            <div className="w-full h-full">
+              <MediaGallery 
+                media={siteSettings.media_womens_day_2026} 
+                className="h-full"
+                mediaPosition={siteSettings.media_position_womens_day_2026 || "center center"}
+              />
+            </div>
+            <div className="absolute inset-0 bg-white/80 pointer-events-none"></div>
           </div>
         )}
 
@@ -116,30 +118,22 @@ export default function WomensDay2026() {
                 preload="metadata"
               />
             </div>
-            <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-transparent"></div>
+            <div className="absolute inset-0 bg-white/80 pointer-events-none"></div>
           </div>
         )}
 
-        {/* Title container */}
-        <div className="absolute inset-0 flex items-center justify-center z-10">
-          <h1 className="text-4xl md:text-6xl font-bold text-white px-4">
-            {language === 'he' 
-              ? (siteSettings?.page_title_he || 'יום הנשים 2026')
-              : (siteSettings?.page_title_en || "Women's Day 2026")
-            }
-          </h1>
-        </div>
-
-        {/* Description Section */}
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div 
-            className="text-lg md:text-xl text-[var(--text-color)] leading-relaxed text-center"
-            dangerouslySetInnerHTML={{ 
-              __html: language === 'he' 
-                ? (siteSettings?.description_he || '') 
-                : (siteSettings?.description_en || '') 
-            }}
-          />
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10 pointer-events-none">
+          {(siteSettings?.page_title_he?.trim() || siteSettings?.page_title_en?.trim()) && (
+            <h1 className="text-4xl md:text-5xl font-bold gradient-text mb-8 pointer-events-auto">
+              {language === 'he' ? siteSettings?.page_title_he : siteSettings?.page_title_en}
+            </h1>
+          )}
+          {(siteSettings?.description_he?.trim() || siteSettings?.description_en?.trim()) && (
+            <div
+              className="text-xl text-opacity-80 text-[var(--text-color)] leading-relaxed max-w-3xl mx-auto pointer-events-auto"
+              dangerouslySetInnerHTML={{ __html: language === 'he' ? siteSettings?.description_he : siteSettings?.description_en }}
+            />
+          )}
         </div>
       </section>
 

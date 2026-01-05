@@ -124,13 +124,13 @@ export default function WomensDay2026() {
 
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10 pointer-events-none">
           {(siteSettings?.page_title_he?.trim() || siteSettings?.page_title_en?.trim()) && (
-            <h1 className="text-4xl md:text-5xl font-bold gradient-text mb-8 pointer-events-auto">
+            <h1 className="text-5xl md:text-6xl font-bold gradient-text mb-8 pointer-events-auto">
               {language === 'he' ? siteSettings?.page_title_he : siteSettings?.page_title_en}
             </h1>
           )}
           {(siteSettings?.description_he?.trim() || siteSettings?.description_en?.trim()) && (
             <div
-              className="text-xl text-opacity-80 text-[var(--text-color)] leading-relaxed max-w-3xl mx-auto pointer-events-auto"
+              className="text-2xl md:text-xl text-opacity-80 text-[var(--text-color)] leading-relaxed max-w-3xl mx-auto pointer-events-auto"
               dangerouslySetInnerHTML={{ __html: language === 'he' ? siteSettings?.description_he : siteSettings?.description_en }}
             />
           )}
@@ -185,11 +185,11 @@ export default function WomensDay2026() {
                         </span>
                       </div>
 
-                      <h3 className="text-2xl font-bold text-[var(--text-color)] mb-3">
+                      <h3 className="text-3xl md:text-2xl font-bold text-[var(--text-color)] mb-3">
                         {title}
                       </h3>
 
-                      <div className="text-[var(--text-color)] opacity-80 mb-4 leading-relaxed">
+                      <div className="text-lg md:text-base text-[var(--text-color)] opacity-80 mb-4 leading-relaxed">
                         <div
                           className={shouldTruncate && !isExpanded ? 'line-clamp-3' : ''}
                           dangerouslySetInnerHTML={{ __html: description || '' }}
@@ -215,7 +215,7 @@ export default function WomensDay2026() {
                       </div>
 
                       {(duration || audience) && (
-                        <div className="flex flex-wrap gap-4 mb-4 text-sm text-[var(--text-color)] opacity-70">
+                        <div className="flex flex-wrap gap-4 mb-4 text-base md:text-sm text-[var(--text-color)] opacity-70">
                           {duration && (
                             <div className="flex items-center gap-2">
                               <Clock className="w-4 h-4" />
@@ -260,7 +260,7 @@ export default function WomensDay2026() {
       {(siteSettings?.benefits_title_he || siteSettings?.benefits_title_en) && (
         <section className="py-16 bg-[var(--background-color)]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-center text-[var(--text-color)] mb-12">
+            <h2 className="text-4xl md:text-4xl font-bold text-center text-[var(--text-color)] mb-12">
               {language === 'he' 
                 ? (siteSettings?.benefits_title_he || '')
                 : (siteSettings?.benefits_title_en || '')
@@ -284,12 +284,12 @@ export default function WomensDay2026() {
                       <IconComponent className="w-8 h-8 text-white" />
                     </div>
                     {title?.trim() && (
-                      <h3 className="text-xl font-bold text-[var(--text-color)] mb-4">
+                      <h3 className="text-2xl md:text-xl font-bold text-[var(--text-color)] mb-4">
                         {title}
                       </h3>
                     )}
                     {desc?.trim() && (
-                      <div className="text-opacity-70 text-[var(--text-color)] leading-relaxed">
+                      <div className="text-lg md:text-base text-opacity-70 text-[var(--text-color)] leading-relaxed">
                         <div
                           className={shouldTruncate && !isExpanded ? 'line-clamp-3' : ''}
                           dangerouslySetInnerHTML={{ __html: desc }}

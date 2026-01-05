@@ -289,10 +289,10 @@ export default function WomensDay2026() {
                       </h3>
                     )}
                     {desc?.trim() && (
-                      <div className="text-[var(--text-color)] opacity-70 leading-relaxed">
+                      <div className="text-opacity-70 text-[var(--text-color)] leading-relaxed">
                         <div
                           className={shouldTruncate && !isExpanded ? 'line-clamp-3' : ''}
-                          dangerouslySetInnerHTML={{ __html: desc || '' }}
+                          dangerouslySetInnerHTML={{ __html: desc }}
                         />
                         {shouldTruncate && (
                           <button

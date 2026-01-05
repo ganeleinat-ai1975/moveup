@@ -1716,6 +1716,7 @@ const PagesTab = ({ siteSettings, handleSettingsChange, isSaving, handleSaveSett
     { id: 'about', label: t('אודות', 'About'), icon: Info },
     { id: 'personal', label: t('פרטיות', 'Personal'), icon: User },
     { id: 'corporate', label: t('ארגונים', 'Corporate'), icon: Building2 },
+    { id: 'womensday2026', label: t('יום הנשים 2026', "Women's Day 2026"), icon: Calendar },
     { id: 'testimonials', label: t('המלצות', 'Testimonials'), icon: Star },
     { id: 'blog', label: t('בלוג', 'Blog'), icon: Book },
     { id: 'podcast', label: t('פודקסט', 'Podcast'), icon: Mic },

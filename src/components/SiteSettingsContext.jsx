@@ -21,7 +21,7 @@ export const SiteSettingsProvider = ({ children }) => {
       // Fetch all new settings entities in parallel
       const [
         globalRes, homeRes, aboutRes, personalRes, corporateRes,
-        testimonialsRes, podcastRes, blogRes, contactRes
+        testimonialsRes, podcastRes, blogRes, contactRes, womensDay2026Res
       ] = await Promise.all([
         base44.entities.GlobalSettings.list('-updated_date', 1),
         base44.entities.HomePageSettings.list('-updated_date', 1),
@@ -31,7 +31,8 @@ export const SiteSettingsProvider = ({ children }) => {
         base44.entities.TestimonialsPageSettings.list('-updated_date', 1),
         base44.entities.PodcastPageSettings.list('-updated_date', 1),
         base44.entities.BlogPageSettings.list('-updated_date', 1),
-        base44.entities.ContactPageSettings.list('-updated_date', 1)
+        base44.entities.ContactPageSettings.list('-updated_date', 1),
+        base44.entities.WomensDay2026PageSettings.list('-updated_date', 1)
       ]);
 
       // Helper to get first item or empty object
@@ -46,6 +47,7 @@ export const SiteSettingsProvider = ({ children }) => {
       const podcast = getFirst(podcastRes);
       const blog = getFirst(blogRes);
       const contact = getFirst(contactRes);
+      const womensDay2026 = getFirst(womensDay2026Res);
 
       // Fallback: If GlobalSettings is empty, try legacy SiteSettings
       if (Object.keys(global).length === 0) {
@@ -69,7 +71,8 @@ export const SiteSettingsProvider = ({ children }) => {
             podcast: podcast.media_podcast || [],
             blog: blog.media_blog || [],
             contact: contact.media_contact || [],
-            logo_carousel_logos: global.media_logo_carousel_logos || []
+            logo_carousel_logos: global.media_logo_carousel_logos || [],
+            womens_day_2026: womensDay2026.media_womens_day_2026 || []
           };
 
           const pageMediaPosition = {
@@ -82,7 +85,8 @@ export const SiteSettingsProvider = ({ children }) => {
             testimonials: testimonials.media_position_testimonials,
             podcast: podcast.media_position_podcast,
             blog: blog.media_position_blog,
-            contact: contact.media_position_contact
+            contact: contact.media_position_contact,
+            womens_day_2026: womensDay2026.media_position_womens_day_2026
           };
 
           // Merge all settings into one object to maintain backward compatibility
@@ -96,6 +100,7 @@ export const SiteSettingsProvider = ({ children }) => {
             ...podcast,
             ...blog,
             ...contact,
+            ...womensDay2026,
             page_media: pageMedia,
             page_media_position: pageMediaPosition,
             // Preserve IDs of individual records for updates if needed later
@@ -108,7 +113,8 @@ export const SiteSettingsProvider = ({ children }) => {
             testimonials_id: testimonials.id,
             podcast_id: podcast.id,
             blog_id: blog.id,
-            contact_id: contact.id
+            contact_id: contact.id,
+            womens_day_2026_id: womensDay2026.id
           };
           setSiteSettings(mergedSettings);
       }

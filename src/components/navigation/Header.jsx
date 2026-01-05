@@ -75,6 +75,11 @@ export default function Header() {
       path: 'CorporateLectures'
     },
     {
+      key: 'womensday2026',
+      label: language === 'he' ? 'יום הנשים 2026' : "Women's Day 2026",
+      path: 'WomensDay2026'
+    },
+    {
       key: 'personal',
       label: language === 'he'
         ? (siteSettings?.nav_personal_he || 'לפרטיות')

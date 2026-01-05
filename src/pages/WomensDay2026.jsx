@@ -5,6 +5,7 @@ import { base44 } from '@/api/base44Client';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { Loader2, ArrowLeft, ArrowRight, Clock, Users, Share2, Mail, ChevronDown, ChevronUp } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import MediaGallery from '../components/media/MediaGallery';
 import CtaSection from '../components/shared/CtaSection';
 import { getIconComponent } from '../components/icons';

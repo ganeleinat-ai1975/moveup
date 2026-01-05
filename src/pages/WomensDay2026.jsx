@@ -88,10 +88,10 @@ export default function WomensDay2026() {
     <div className="min-h-screen bg-[var(--background-color)]">
       {/* Hero Section */}
       <section className="relative">
-        <div className="relative h-[50vh] md:h-[60vh] overflow-hidden">
+        <div className="relative w-full aspect-video overflow-hidden">
           <MediaGallery 
             media={siteSettings?.media_womens_day_2026} 
-            className="h-full"
+            className="h-full w-full"
             mediaPosition={siteSettings?.media_position_womens_day_2026 || "center center"}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-transparent"></div>

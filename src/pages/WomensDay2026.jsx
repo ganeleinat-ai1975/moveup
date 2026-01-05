@@ -312,7 +312,7 @@ export default function WomensDay2026() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <Button
             onClick={() => {
-              const url = window.location.origin + window.location.pathname;
+              const url = 'https://moveup.today' + createPageUrl('WomensDay2026');
               navigator.clipboard.writeText(url);
               alert(t('הקישור הועתק ללוח', 'Link copied to clipboard'));
             }}

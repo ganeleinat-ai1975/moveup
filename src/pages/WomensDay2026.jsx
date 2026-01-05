@@ -87,26 +87,47 @@ export default function WomensDay2026() {
   return (
     <div className="min-h-screen bg-[var(--background-color)]">
       {/* Hero Section */}
-      <section className="relative">
-        <div className="relative w-full aspect-video overflow-hidden md:aspect-video aspect-[4/3]">
-          <div className="h-full w-full [&_img]:object-cover [&_img]:md:object-contain [&_video]:object-cover [&_video]:md:object-contain">
+      <section className="relative bg-white overflow-hidden min-h-[60vh] md:min-h-[70vh] flex items-center justify-center">
+        {/* Hero Media - Desktop */}
+        {(siteSettings?.media_womens_day_2026 && siteSettings.media_womens_day_2026.length > 0) && (
+          <div className="absolute inset-0 z-0 hidden md:block">
             <MediaGallery 
-              media={siteSettings?.media_womens_day_2026} 
-              className="h-full w-full"
-              mediaPosition={siteSettings?.media_position_womens_day_2026 || "center center"}
+              media={siteSettings.media_womens_day_2026} 
+              className="h-full"
+              mediaPosition={siteSettings.media_position_womens_day_2026 || "center center"}
             />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-transparent"></div>
           </div>
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-transparent"></div>
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="text-center px-4">
-              <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
-                {language === 'he' 
-                  ? (siteSettings?.page_title_he || 'יום הנשים 2026')
-                  : (siteSettings?.page_title_en || "Women's Day 2026")
-                }
-              </h1>
+        )}
+
+        {/* Hero Media - Mobile */}
+        {(siteSettings?.media_womens_day_2026 && siteSettings.media_womens_day_2026.length > 0) && (
+          <div className="absolute inset-0 z-0 block md:hidden">
+            <div className="w-full h-full">
+              <video
+                src={siteSettings.media_womens_day_2026[0]?.file_url}
+                className="w-full h-full object-cover"
+                style={{ objectPosition: siteSettings.media_position_womens_day_2026 || "center center" }}
+                autoPlay
+                loop
+                muted
+                playsInline
+                webkit-playsinline="true"
+                preload="metadata"
+              />
             </div>
+            <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-transparent"></div>
           </div>
+        )}
+
+        {/* Title container */}
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
+            {language === 'he' 
+              ? (siteSettings?.page_title_he || 'יום הנשים 2026')
+              : (siteSettings?.page_title_en || "Women's Day 2026")
+            }
+          </h1>
         </div>
 
         {/* Description Section */}

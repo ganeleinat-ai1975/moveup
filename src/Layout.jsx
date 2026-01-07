@@ -189,24 +189,6 @@ export default function Layout({ children, currentPageName }) {
     const widgetParamsId = 'alice-and-bot-params';
     const widgetScriptId = 'alice-and-bot-script';
 
-    // Function to customize widget appearance and text
-    const applyAliceAndBotCustomizations = () => {
-      const widgetButton = document.querySelector('.alice-and-bot-widget-button');
-      if (widgetButton) {
-        widgetButton.style.backgroundColor = '#005E6C';
-        widgetButton.style.color = 'white';
-        widgetButton.style.fontFamily = '\'Rubik\', sans-serif';
-        widgetButton.style.fontWeight = '500';
-
-        const buttonTextSpan = widgetButton.querySelector('span');
-        if (buttonTextSpan) {
-          buttonTextSpan.textContent = 'גלי הבוטית';
-        } else {
-          widgetButton.innerText = 'גלי הבוטית';
-        }
-      }
-    };
-
     if (!document.getElementById(widgetParamsId)) {
       const paramsScript = document.createElement('script');
       paramsScript.type = 'application/json';
@@ -227,8 +209,6 @@ export default function Layout({ children, currentPageName }) {
         const widgetParams = JSON.parse(document.getElementById(widgetParamsId).textContent);
         if (window.aliceAndBot) {
           window.aliceAndBot.loadChatWidget(widgetParams);
-          // Apply customizations after widget loads
-          setTimeout(applyAliceAndBotCustomizations, 500);
         }
       };
       document.head.appendChild(widgetScript);

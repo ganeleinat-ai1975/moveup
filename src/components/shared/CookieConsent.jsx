@@ -41,7 +41,7 @@ export default function CookieConsent() {
 
   return (
     <div
-      className={`fixed bottom-4 ${positionClass} max-w-sm w-[calc(100%-2rem)] sm:w-auto bg-white/90 backdrop-blur-sm p-5 rounded-2xl shadow-elegant z-[10000] animate-fade-in`}
+      className={`fixed bottom-4 ${positionClass} max-w-sm w-[calc(100%-2rem)] sm:w-auto bg-white/90 backdrop-blur-sm p-5 rounded-2xl shadow-elegant z-[1000] animate-fade-in`}
     >
       <div className="flex items-start gap-4">
         <div className="flex-shrink-0">

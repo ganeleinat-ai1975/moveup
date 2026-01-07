@@ -185,31 +185,6 @@ export default function Layout({ children, currentPageName }) {
       document.head.appendChild(meta);
     }
 
-    // Alice and Bot widget
-    const botParamsId = 'alice-and-bot-params';
-    if (!document.getElementById(botParamsId)) {
-      const botParams = document.createElement('script');
-      botParams.id = botParamsId;
-      botParams.type = 'application/json';
-      botParams.textContent = JSON.stringify({
-        "participants": ["MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAlTSHc37GdIH4WhF0rIsUonZXEe61zkRbPEZTQ3R7lUs0SXS+C2Qkq7iI06YQv7Odc3r3vwplkQsS1cqybA5OwrX9uqLJEr7xQkAdW1uhmxTF7RZ+J+0OFrsgxi6tVd4ZK04X5ql4veMXKBUxXvQbK+KaUWw0WoZ27Hoy5IelKNESKa+mbZtkE1WuZF/fJmtuIkTFX5NWBB9gSO5WWULFaMWrIxrkZHyz9WUYZ0xopD9JazKG0Ij7wjcuCj/y2wVvdg9fHturtv1HabsD/NAgpwp6z/AWkb3o8HPLskIfW8Xq1AWV03BI3X5Gau5TqAf/MQHCzcaVP1SCWunqoCA+wQIDAQAB"],
-        "startOpen": false
-      });
-      document.body.appendChild(botParams);
-
-      const botScript = document.createElement('script');
-      botScript.id = 'alice-and-bot-widget';
-      botScript.src = 'https://storage.googleapis.com/alice-and-bot/widget/dist/widget.iife.js';
-      botScript.async = true;
-      botScript.onload = () => {
-        if (window.aliceAndBot) {
-          const widgetParams = JSON.parse(document.getElementById(botParamsId).textContent);
-          window.aliceAndBot.loadChatWidget(widgetParams);
-        }
-      };
-      document.body.appendChild(botScript);
-    }
-
     // Cleanup function to remove the script and meta when the component unmounts
     return () => {
       const existingScript = document.getElementById(scriptId);
@@ -219,14 +194,6 @@ export default function Layout({ children, currentPageName }) {
       const existingMeta = document.getElementById(metaId);
       if (existingMeta) {
         document.head.removeChild(existingMeta);
-      }
-      const existingBotParams = document.getElementById(botParamsId);
-      if (existingBotParams) {
-        document.body.removeChild(existingBotParams);
-      }
-      const existingBotScript = document.getElementById('alice-and-bot-widget');
-      if (existingBotScript) {
-        document.body.removeChild(existingBotScript);
       }
     };
   }, []); // Empty dependency array ensures this runs only once

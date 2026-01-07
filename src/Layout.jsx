@@ -6,6 +6,7 @@ import Footer from './components/navigation/Footer';
 import { Loader2 } from 'lucide-react';
 import LogoCarousel from './components/home/LogoCarousel';
 import CookieConsent from './components/shared/CookieConsent';
+import AliceAndBotWidget from './components/shared/AliceAndBotWidget';
 import { migrateSettings } from "@/functions/migrateSettings";
 
 function StyleInjector() {
@@ -120,9 +121,24 @@ function StyleInjector() {
               padding-left: 4px;
               padding-right: 4px;
             }
-          }
-        `}
-      </style>
+            }
+
+            /* Ensure Chat Widget is above Cookie Consent but doesn't block it */
+            /* Assuming the widget has a container class or ID, or simply by z-index management */
+            /* Adjust Cookie Consent z-index to be very high, and maybe move chat widget up if we can target it */
+
+            /* Attempt to target common widget containers or adjust layout to prevent overlap */
+            #alice-chat-widget-container, .alice-chat-widget {
+            z-index: 40 !important; /* Below cookie consent usually */
+            bottom: 90px !important; /* Move it up slightly to avoid immediate overlap with bottom banner */
+            }
+
+            /* Ensure Cookie Consent is on top */
+            .cookie-consent-banner {
+            z-index: 50 !important;
+            }
+            `}
+            </style>
     </>
   );
 }
@@ -204,6 +220,7 @@ export default function Layout({ children, currentPageName }) {
         <StyleInjector />
         <AppContent currentPageName={currentPageName}>
             {children}
+            <AliceAndBotWidget />
         </AppContent>
       </SiteSettingsProvider>
     </LanguageProvider>

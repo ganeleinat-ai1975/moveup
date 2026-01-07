@@ -185,6 +185,54 @@ export default function Layout({ children, currentPageName }) {
       document.head.appendChild(meta);
     }
 
+    // Alice and Bot widget
+    const widgetParamsId = 'alice-and-bot-params';
+    const widgetScriptId = 'alice-and-bot-script';
+
+    if (!document.getElementById(widgetParamsId)) {
+      const paramsScript = document.createElement('script');
+      paramsScript.type = 'application/json';
+      paramsScript.id = widgetParamsId;
+      paramsScript.textContent = JSON.stringify({
+        "participants": ["MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAlTSHc37GdIH4WhF0rIsUonZXEe61zkRbPEZTQ3R7lUs0SXS+C2Qkq7iI06YQv7Odc3r3vwplkQsS1cqybA5OwrX9uqLJEr7xQkAdW1uhmxTF7RZ+J+0OFrsgxi6tVd4ZK04X5ql4veMXKBUxXvQbK+KaUWw0WoZ27Hoy5IelKNESKa+mbZtkE1WuZF/fJmtuIkTFX5NWBB9gSO5WWULFaMWrIxrkZHyz9WUYZ0xopD9JazKG0Ij7wjcuCj/y2wVvdg9fHturtv1HabsD/NAgpwp6z/AWkb3o8HPLskIfW8Xq1AWV03BI3X5Gau5TqAf/MQHCzcaVP1SCWunqoCA+wQIDAQAB"],
+        "startOpen": false
+      });
+      document.head.appendChild(paramsScript);
+    }
+
+    if (!document.getElementById(widgetScriptId)) {
+      const widgetScript = document.createElement('script');
+      widgetScript.id = widgetScriptId;
+      widgetScript.src = 'https://storage.googleapis.com/alice-and-bot/widget/dist/widget.iife.js';
+      widgetScript.async = true;
+      widgetScript.onload = () => {
+        const widgetParams = JSON.parse(document.getElementById(widgetParamsId).textContent);
+        if (window.aliceAndBot) {
+          window.aliceAndBot.loadChatWidget(widgetParams);
+        }
+      };
+      document.head.appendChild(widgetScript);
+    }
+
+    // Custom styling for the widget button
+    const widgetStyleId = 'alice-and-bot-custom-style';
+    if (!document.getElementById(widgetStyleId)) {
+      const style = document.createElement('style');
+      style.id = widgetStyleId;
+      style.textContent = `
+        .alice-and-bot-widget-button {
+          background-color: #005E6C !important;
+          color: white !important;
+          font-family: 'Rubik', sans-serif !important;
+          font-weight: 500 !important;
+        }
+        .alice-and-bot-widget-button:hover {
+          background-color: #006f79 !important;
+        }
+      `;
+      document.head.appendChild(style);
+    }
+
     // Cleanup function to remove the script and meta when the component unmounts
     return () => {
       const existingScript = document.getElementById(scriptId);
@@ -195,8 +243,20 @@ export default function Layout({ children, currentPageName }) {
       if (existingMeta) {
         document.head.removeChild(existingMeta);
       }
+      const existingParams = document.getElementById(widgetParamsId);
+      if (existingParams) {
+        document.head.removeChild(existingParams);
+      }
+      const existingWidget = document.getElementById(widgetScriptId);
+      if (existingWidget) {
+        document.head.removeChild(existingWidget);
+      }
+      const existingStyle = document.getElementById(widgetStyleId);
+      if (existingStyle) {
+        document.head.removeChild(existingStyle);
+      }
     };
-  }, []); // Empty dependency array ensures this runs only once
+    }, []); // Empty dependency array ensures this runs only once
 
   return (
     <LanguageProvider>

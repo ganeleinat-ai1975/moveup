@@ -37,7 +37,8 @@ export default function CookieConsent() {
     return null;
   }
 
-  const positionClass = direction === 'rtl' ? 'right-4 sm:right-6' : 'left-4 sm:left-6';
+  // Move to the opposite side to avoid collision with the chat widget
+  const positionClass = direction === 'rtl' ? 'left-4 sm:left-6' : 'right-4 sm:right-6';
 
   return (
     <div

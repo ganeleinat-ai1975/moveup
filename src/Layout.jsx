@@ -6,6 +6,7 @@ import Footer from './components/navigation/Footer';
 import { Loader2 } from 'lucide-react';
 import LogoCarousel from './components/home/LogoCarousel';
 import CookieConsent from './components/shared/CookieConsent';
+import ChatButton from './components/shared/ChatButton';
 import { migrateSettings } from "@/functions/migrateSettings";
 
 function StyleInjector() {
@@ -121,20 +122,11 @@ function StyleInjector() {
               padding-right: 4px;
             }
           }
-
-          /* Alice and Bot Widget Customization */
-          [class*="chat-button"],
-          button[class*="alice"],
-          #alice-and-bot-widget button,
-          [id*="alice"] button {
-            background-color: #005E6C !important;
-            color: #ffffff !important;
-          }
-          `}
-          </style>
-          </>
-          );
-          }
+        `}
+      </style>
+    </>
+  );
+}
 
 function AppContent({ children, currentPageName }) {
     const { loading } = useSiteSettings();
@@ -155,6 +147,7 @@ function AppContent({ children, currentPageName }) {
             </main>
             {currentPageName !== 'Home' && <LogoCarousel />}
             <Footer />
+            <ChatButton />
             <CookieConsent />
         </div>
     );
@@ -214,16 +207,6 @@ export default function Layout({ children, currentPageName }) {
         if (window.aliceAndBot) {
           const widgetParams = JSON.parse(document.getElementById(botParamsId).textContent);
           window.aliceAndBot.loadChatWidget(widgetParams);
-
-          // Customize button after widget loads
-          setTimeout(() => {
-            const chatButton = document.querySelector('[class*="chat-button"], button[class*="alice"]');
-            if (chatButton) {
-              chatButton.style.backgroundColor = '#005E6C';
-              chatButton.style.color = '#ffffff';
-              chatButton.textContent = 'גלי הבוטית';
-            }
-          }, 500);
         }
       };
       document.body.appendChild(botScript);

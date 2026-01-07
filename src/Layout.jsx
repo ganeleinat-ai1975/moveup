@@ -191,20 +191,39 @@ export default function Layout({ children, currentPageName }) {
 
     // Function to customize widget appearance and text
     const applyAliceAndBotCustomizations = () => {
-      const widgetButton = document.querySelector('.alice-and-bot-widget-button');
-      if (widgetButton) {
-        widgetButton.style.backgroundColor = '#005E6C';
-        widgetButton.style.color = 'white';
-        widgetButton.style.fontFamily = '\'Rubik\', sans-serif';
-        widgetButton.style.fontWeight = '500';
+      // Use an interval to catch the widget when it loads
+      const checkInterval = setInterval(() => {
+        const widgetButton = document.querySelector('.alice-and-bot-widget-button');
+        if (widgetButton) {
+          // Force styling with cssText to override existing styles and gradient
+          widgetButton.style.cssText = `
+            background-color: #005E6C !important;
+            background-image: none !important;
+            color: white !important;
+            font-family: 'Rubik', sans-serif !important;
+            font-weight: 500 !important;
+            border: none !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            z-index: 9999 !important; 
+          `;
 
-        const buttonTextSpan = widgetButton.querySelector('span');
-        if (buttonTextSpan) {
-          buttonTextSpan.textContent = 'גלי הבוטית';
-        } else {
-          widgetButton.innerText = 'גלי הבוטית';
+          // Handle text replacement safely
+          if (!widgetButton.innerText.includes('גלי הבוטית')) {
+             const buttonTextSpan = widgetButton.querySelector('span');
+             if (buttonTextSpan) {
+               buttonTextSpan.textContent = 'גלי הבוטית';
+             } else {
+               // Fallback if no span found
+               widgetButton.innerText = 'גלי הבוטית';
+             }
+          }
         }
-      }
+      }, 200); // Check every 200ms
+
+      // Clear interval after 20 seconds to stop resource usage
+      setTimeout(() => clearInterval(checkInterval), 20000);
     };
 
     if (!document.getElementById(widgetParamsId)) {
@@ -227,8 +246,8 @@ export default function Layout({ children, currentPageName }) {
         const widgetParams = JSON.parse(document.getElementById(widgetParamsId).textContent);
         if (window.aliceAndBot) {
           window.aliceAndBot.loadChatWidget(widgetParams);
-          // Apply customizations after widget loads
-          setTimeout(applyAliceAndBotCustomizations, 500);
+          // Start the customization checking process
+          applyAliceAndBotCustomizations();
         }
       };
       document.head.appendChild(widgetScript);

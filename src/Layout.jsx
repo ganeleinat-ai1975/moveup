@@ -195,19 +195,17 @@ export default function Layout({ children, currentPageName }) {
       const checkInterval = setInterval(() => {
         const widgetButton = document.querySelector('.alice-and-bot-widget-button');
         if (widgetButton) {
-          // Force styling with cssText to override existing styles and gradient
-          widgetButton.style.cssText = `
-            background-color: #005E6C !important;
-            background-image: none !important;
-            color: white !important;
-            font-family: 'Rubik', sans-serif !important;
-            font-weight: 500 !important;
-            border: none !important;
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            z-index: 9999 !important; 
-          `;
+          // Force styling with setProperty to override existing styles and gradient without losing positioning
+          widgetButton.style.setProperty('background-color', '#005E6C', 'important');
+          widgetButton.style.setProperty('background-image', 'none', 'important');
+          widgetButton.style.setProperty('color', 'white', 'important');
+          widgetButton.style.setProperty('font-family', "'Rubik', sans-serif", 'important');
+          widgetButton.style.setProperty('font-weight', '500', 'important');
+          widgetButton.style.setProperty('border', 'none', 'important');
+          widgetButton.style.setProperty('display', 'flex', 'important');
+          widgetButton.style.setProperty('align-items', 'center', 'important');
+          widgetButton.style.setProperty('justify-content', 'center', 'important');
+          widgetButton.style.setProperty('z-index', '9990', 'important'); // Lower than cookie consent (10000)
 
           // Handle text replacement safely
           if (!widgetButton.innerText.includes('גלי הבוטית')) {

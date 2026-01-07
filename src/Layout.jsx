@@ -6,6 +6,7 @@ import Footer from './components/navigation/Footer';
 import { Loader2 } from 'lucide-react';
 import LogoCarousel from './components/home/LogoCarousel';
 import CookieConsent from './components/shared/CookieConsent';
+import ChatButton from './components/shared/ChatButton';
 import { migrateSettings } from "@/functions/migrateSettings";
 
 function StyleInjector() {
@@ -146,6 +147,7 @@ function AppContent({ children, currentPageName }) {
             </main>
             {currentPageName !== 'Home' && <LogoCarousel />}
             <Footer />
+            <ChatButton />
             <CookieConsent />
         </div>
     );

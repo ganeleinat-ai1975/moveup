@@ -8,15 +8,12 @@ const AliceAndBotWidget = () => {
     // Define widget params
     const widgetParams = {
       participants: ["MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAlTSHc37GdIH4WhF0rIsUonZXEe61zkRbPEZTQ3R7lUs0SXS+C2Qkq7iI06YQv7Odc3r3vwplkQsS1cqybA5OwrX9uqLJEr7xQkAdW1uhmxTF7RZ+J+0OFrsgxi6tVd4ZK04X5ql4veMXKBUxXvQbK+KaUWw0WoZ27Hoy5IelKNESKa+mbZtkE1WuZF/fJmtuIkTFX5NWBB9gSO5WWULFaMWrIxrkZHyz9WUYZ0xopD9JazKG0Ij7wjcuCj/y2wVvdg9fHturtv1HabsD/NAgpwp6z/AWkb3o8HPLskIfW8Xq1AWV03BI3X5Gau5TqAf/MQHCzcaVP1SCWunqoCA+wQIDAQAB"],
-      startOpen: false,
-      // Attempting to pass customization params
-      buttonText: "גלי הבוטית",
-      themeColor: "#005E6C",
-      mainColor: "#005E6C",
-      style: {
-        primaryColor: "#005E6C",
-        buttonText: "גלי הבוטית"
-      }
+      colorScheme: {
+        light: {
+          buttonColor: "#005E6C"
+        }
+      },
+      startOpen: false
     };
 
     // Create the script element

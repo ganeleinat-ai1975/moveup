@@ -24,6 +24,20 @@ export default function WomensDay2026() {
     loadLectures();
   }, [siteSettings]);
 
+  // Handle scrolling to anchor after lectures are loaded
+  useEffect(() => {
+    if (lectures.length > 0 && window.location.hash) {
+      const id = window.location.hash.substring(1);
+      // Small timeout to ensure DOM is fully rendered
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 500);
+    }
+  }, [lectures]);
+
   const loadLectures = async () => {
     setLoading(true);
     try {

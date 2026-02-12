@@ -51,7 +51,7 @@ export default function Footer() {
           backgroundColor: siteSettings?.footer_background_color || '#2e2e2e',
           color: siteSettings?.footer_text_color || '#e5e7eb',
           position: 'relative',
-          zIndex: 45
+          zIndex: 60
         }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

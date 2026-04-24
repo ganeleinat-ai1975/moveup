@@ -68,7 +68,12 @@ export default function AccessibilityWidget() {
     });
   };
 
-  const positionClass = direction === 'rtl' ? 'right-4 sm:right-6' : 'left-4 sm:left-6';
+  const positionClass = direction === 'rtl' ? 'right-0' : 'left-0';
+  const translateClass = !isOpen 
+    ? (direction === 'rtl' ? 'translate-x-1/2' : '-translate-x-1/2') 
+    : 'translate-x-0';
+  const buttonRadiusClass = direction === 'rtl' ? 'rounded-l-xl' : 'rounded-r-xl';
+  const panelMarginClass = direction === 'rtl' ? 'mr-4 sm:mr-6' : 'ml-4 sm:ml-6';
 
   return (
     <>
@@ -97,9 +102,9 @@ export default function AccessibilityWidget() {
         }
       `}</style>
       
-      <div className={`fixed bottom-24 ${positionClass} z-[9999]`}>
+      <div className={`fixed bottom-24 ${positionClass} z-[9999] flex flex-col ${direction === 'rtl' ? 'items-end' : 'items-start'} transition-transform duration-300 ${translateClass}`}>
         {isOpen && (
-          <div className="bg-white rounded-2xl shadow-elegant p-4 mb-4 w-64 border border-gray-200 animate-fade-in">
+          <div className={`bg-white rounded-2xl shadow-elegant p-4 mb-4 w-64 border border-gray-200 animate-fade-in ${panelMarginClass}`}>
             <div className="flex justify-between items-center mb-4 border-b pb-2">
               <h3 className="font-bold text-gray-800">{t('תפריט נגישות', 'Accessibility Menu')}</h3>
               <button onClick={() => setIsOpen(false)} className="text-gray-500 hover:text-gray-800" aria-label="Close">
@@ -162,7 +167,7 @@ export default function AccessibilityWidget() {
         
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="bg-[var(--primary-color)] text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center hover:bg-[var(--secondary-color)] transition-all hover:scale-105"
+          className={`bg-[var(--primary-color)] text-white w-14 h-14 shadow-lg flex items-center ${direction === 'rtl' ? 'justify-start pl-3' : 'justify-end pr-3'} hover:bg-[var(--secondary-color)] transition-all ${buttonRadiusClass}`}
           aria-label={t('אפשרויות נגישות', 'Accessibility Options')}
           title={t('אפשרויות נגישות', 'Accessibility Options')}
         >

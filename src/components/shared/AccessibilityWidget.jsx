@@ -69,9 +69,6 @@ export default function AccessibilityWidget() {
   };
 
   const positionClass = direction === 'rtl' ? 'right-0' : 'left-0';
-  const translateClass = !isOpen 
-    ? (direction === 'rtl' ? 'translate-x-1/2' : '-translate-x-1/2') 
-    : 'translate-x-0';
   const buttonRadiusClass = direction === 'rtl' ? 'rounded-l-xl' : 'rounded-r-xl';
   const panelMarginClass = direction === 'rtl' ? 'mr-4 sm:mr-6' : 'ml-4 sm:ml-6';
 
@@ -102,7 +99,7 @@ export default function AccessibilityWidget() {
         }
       `}</style>
       
-      <div className={`fixed bottom-24 ${positionClass} z-[9999] flex flex-col ${direction === 'rtl' ? 'items-end' : 'items-start'} transition-transform duration-300 ${translateClass}`}>
+      <div className={`fixed bottom-24 ${positionClass} z-[9999] flex flex-col ${direction === 'rtl' ? 'items-end' : 'items-start'}`}>
         {isOpen && (
           <div className={`bg-white rounded-2xl shadow-elegant p-4 mb-4 w-64 border border-gray-200 animate-fade-in ${panelMarginClass}`}>
             <div className="flex justify-between items-center mb-4 border-b pb-2">
@@ -167,11 +164,12 @@ export default function AccessibilityWidget() {
         
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className={`bg-[var(--primary-color)] text-white w-14 h-14 shadow-lg flex items-center ${direction === 'rtl' ? 'justify-start pl-3' : 'justify-end pr-3'} hover:bg-[var(--secondary-color)] transition-all ${buttonRadiusClass}`}
+          className={`bg-white/95 backdrop-blur-sm border border-gray-200 text-[var(--primary-color)] h-11 shadow-sm flex items-center gap-1.5 hover:bg-gray-50 transition-all ${buttonRadiusClass} ${direction === 'rtl' ? 'pl-3.5 pr-2.5 border-r-0' : 'pr-3.5 pl-2.5 border-l-0'} opacity-90 hover:opacity-100`}
           aria-label={t('אפשרויות נגישות', 'Accessibility Options')}
           title={t('אפשרויות נגישות', 'Accessibility Options')}
         >
-          <Accessibility className="w-6 h-6" />
+          <Accessibility className="w-5 h-5" />
+          <span className="text-[11px] font-semibold">{t('נגישות', 'Accessibility')}</span>
         </button>
       </div>
     </>

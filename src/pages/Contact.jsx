@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../components/LanguageContext';
 import { useSiteSettings } from '../components/SiteSettingsContext';
 import { Phone, Mail, MessageCircle, Instagram, Linkedin, Facebook, Youtube, Edit3, ChevronDown, ChevronUp } from 'lucide-react';
@@ -13,6 +13,20 @@ export default function Contact() {
   const { siteSettings } = useSiteSettings();
   const [isPrivacyPolicyOpen, setIsPrivacyPolicyOpen] = useState(false);
   const [isAccessibilityPolicyOpen, setIsAccessibilityPolicyOpen] = useState(false);
+
+  useEffect(() => {
+    if (window.location.hash) {
+      const id = window.location.hash.substring(1);
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+          if (id === 'privacy') setIsPrivacyPolicyOpen(true);
+          if (id === 'accessibility') setIsAccessibilityPolicyOpen(true);
+        }
+      }, 500);
+    }
+  }, []);
 
   // Added loading state check
   if (!siteSettings) {

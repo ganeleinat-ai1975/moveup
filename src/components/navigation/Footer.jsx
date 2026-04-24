@@ -219,12 +219,22 @@ export default function Footer() {
 
           {/* Copyright */}
           <div className="mt-12 pt-8 border-t border-gray-600 text-center">
-            <p>
-              {language === 'he' 
-                ? (siteSettings?.footer_copyright_he || `© ${currentYear} MoveUp. כל הזכויות שמורות.`) 
-                : (siteSettings?.footer_copyright_en || `© ${currentYear} MoveUp. All rights reserved.`)
-              }
-            </p>
+            <div className="flex flex-col md:flex-row justify-center items-center gap-6 text-sm">
+              <p>
+                {language === 'he' 
+                  ? (siteSettings?.footer_copyright_he || `© ${currentYear} MoveUp. כל הזכויות שמורות.`) 
+                  : (siteSettings?.footer_copyright_en || `© ${currentYear} MoveUp. All rights reserved.`)
+                }
+              </p>
+              <div className="flex gap-4">
+                <Link to={`${createPageUrl('Contact')}#privacy`} className="hover:text-white smooth-transition underline underline-offset-4">
+                  {language === 'he' ? 'מדיניות פרטיות' : 'Privacy Policy'}
+                </Link>
+                <Link to={`${createPageUrl('Contact')}#accessibility`} className="hover:text-white smooth-transition underline underline-offset-4">
+                  {language === 'he' ? 'הצהרת נגישות' : 'Accessibility Statement'}
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </footer>
@@ -353,7 +363,17 @@ export default function Footer() {
           </div>
           
           <div className="border-t border-white/20 mt-12 pt-8 text-center text-sm">
-            <div dangerouslySetInnerHTML={{ __html: language === 'he' ? (siteSettings?.footer_copyright_he || `© ${currentYear} MoveUp. כל הזכויות שמורות.`) : (siteSettings?.footer_copyright_en || `© ${currentYear} MoveUp. All rights reserved.`) }} />
+            <div className="flex flex-col items-center gap-4">
+              <div dangerouslySetInnerHTML={{ __html: language === 'he' ? (siteSettings?.footer_copyright_he || `© ${currentYear} MoveUp. כל הזכויות שמורות.`) : (siteSettings?.footer_copyright_en || `© ${currentYear} MoveUp. All rights reserved.`) }} />
+              <div className="flex gap-4">
+                <Link to={`${createPageUrl('Contact')}#privacy`} className="hover:text-white smooth-transition underline underline-offset-4">
+                  {language === 'he' ? 'מדיניות פרטיות' : 'Privacy Policy'}
+                </Link>
+                <Link to={`${createPageUrl('Contact')}#accessibility`} className="hover:text-white smooth-transition underline underline-offset-4">
+                  {language === 'he' ? 'הצהרת נגישות' : 'Accessibility Statement'}
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </footer>

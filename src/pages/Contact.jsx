@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useLanguage } from '../components/LanguageContext';
 import { useSiteSettings } from '../components/SiteSettingsContext';
@@ -13,6 +12,7 @@ export default function Contact() {
   const { language, t } = useLanguage();
   const { siteSettings } = useSiteSettings();
   const [isPrivacyPolicyOpen, setIsPrivacyPolicyOpen] = useState(false);
+  const [isAccessibilityPolicyOpen, setIsAccessibilityPolicyOpen] = useState(false);
 
   // Added loading state check
   if (!siteSettings) {
@@ -326,6 +326,61 @@ export default function Contact() {
                 </p>
               </div>
               <p className="pt-4">גרסה באנגלית – זמינה לפי דרישה</p>
+            </div>
+          )}
+        </section>
+
+        {/* Accessibility Policy Section */}
+        <section id="accessibility" className="mt-8 pt-8 border-t border-gray-300">
+          <button
+            onClick={() => setIsAccessibilityPolicyOpen(!isAccessibilityPolicyOpen)}
+            className="w-full flex justify-between items-center text-left py-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--primary-color)] focus-visible:ring-opacity-75 rounded-md"
+            aria-expanded={isAccessibilityPolicyOpen}
+            aria-controls="accessibility-content"
+          >
+            <h2 className="text-xl md:text-2xl font-bold text-[var(--text-color)]">
+              הצהרת נגישות
+            </h2>
+            {isAccessibilityPolicyOpen ? (
+              <ChevronUp className="w-6 h-6 text-[var(--primary-color)] flex-shrink-0" />
+            ) : (
+              <ChevronDown className="w-6 h-6 text-[var(--primary-color)] flex-shrink-0" />
+            )}
+          </button>
+          
+          {isAccessibilityPolicyOpen && (
+            <div id="accessibility-content" className="mt-6 space-y-4 rtl:text-right text-[var(--text-color)] animate-fade-in">
+              <p><strong>עודכן: אוגוסט 2025</strong></p>
+              <p>
+                צוות פורצות קדימה (MoveUp) פועל רבות על מנת להנגיש את הארגון ואת אתר האינטרנט שלנו לאנשים עם מוגבלויות, מתוך אמונה כי לכל אדם מגיע שוויון זכויות והזדמנויות.
+                אנו משקיעים משאבים על מנת לספק שירות שוויוני ונגיש כנדרש בתקנות שוויון זכויות לאנשים עם מוגבלות (התאמות נגישות לשירות), תשע"ג-2013, ובתקן הישראלי 5568 ברמת AA.
+              </p>
+              <div>
+                <h3 className="mt-5 mb-2 font-bold text-lg">מה ביצענו באתר?</h3>
+                <ul className="list-disc pr-5 space-y-1">
+                  <li>הוספנו תפריט נגישות המאפשר הגדלת פונטים, שינוי ניגודיות (קונטרסט), הדגשת קישורים, ועצירת אנימציות.</li>
+                  <li>הוספנו תמיכה בניווט מקלדת.</li>
+                  <li>הקפדנו על עיצוב רספונסיבי וקריא, כולל אפשרות למעבר לפונט קריא יותר.</li>
+                  <li>השתדלנו להוסיף טקסט חלופי (Alt Text) לתמונות משמעותיות באתר.</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="mt-5 mb-2 font-bold text-lg">סייגים לנגישות</h3>
+                <p>
+                  למרות מאמצינו להנגיש את כלל הדפים באתר, ייתכן שיתגלו חלקים או יכולות שטרם הונגשו במלואם. אנו ממשיכים במאמצים לשפר את הנגישות כחלק ממחויבותנו לאפשר שימוש בו לכלל האוכלוסייה.
+                </p>
+              </div>
+              <div>
+                <h3 className="mt-5 mb-2 font-bold text-lg">יצירת קשר ומשוב</h3>
+                <p>
+                  אם נתקלתם בבעיית נגישות כלשהי באתר או שאתם זקוקים לעזרה, נשמח לעמוד לרשותכם.
+                </p>
+                <p>
+                  פרטי יצירת קשר עם צוות פורצות קדימה:<br />
+                  <strong>אימייל:</strong> <a href="mailto:hello@moveup.today" className="text-[var(--primary-color)] hover:underline">hello@moveup.today</a>
+                </p>
+              </div>
+              <p className="pt-4">English accessibility statement available upon request</p>
             </div>
           )}
         </section>

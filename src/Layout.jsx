@@ -7,6 +7,7 @@ import { Loader2 } from 'lucide-react';
 import LogoCarousel from './components/home/LogoCarousel';
 import CookieConsent from './components/shared/CookieConsent';
 import AliceAndBotWidget from './components/shared/AliceAndBotWidget';
+import AccessibilityWidget from './components/shared/AccessibilityWidget';
 import { migrateSettings } from "@/functions/migrateSettings";
 
 function StyleInjector() {
@@ -221,6 +222,7 @@ export default function Layout({ children, currentPageName }) {
         <AppContent currentPageName={currentPageName}>
             {children}
             <AliceAndBotWidget />
+            <AccessibilityWidget />
         </AppContent>
       </SiteSettingsProvider>
     </LanguageProvider>

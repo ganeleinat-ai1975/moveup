@@ -99,9 +99,9 @@ export default function AccessibilityWidget() {
         }
       `}</style>
       
-      <div className={`fixed bottom-24 ${positionClass} z-[9999] flex flex-col ${direction === 'rtl' ? 'items-end' : 'items-start'}`}>
+      <div className={`fixed bottom-24 ${positionClass} z-[9999]`}>
         {isOpen && (
-          <div className={`bg-white rounded-2xl shadow-elegant p-4 mb-4 w-64 border border-gray-200 animate-fade-in ${panelMarginClass}`}>
+          <div className={`absolute bottom-full mb-4 ${direction === 'rtl' ? 'right-0' : 'left-0'} bg-white rounded-2xl shadow-elegant p-4 w-64 border border-gray-200 animate-fade-in ${panelMarginClass}`}>
             <div className="flex justify-between items-center mb-4 border-b pb-2">
               <h3 className="font-bold text-gray-800">{t('תפריט נגישות', 'Accessibility Menu')}</h3>
               <button onClick={() => setIsOpen(false)} className="text-gray-500 hover:text-gray-800" aria-label="Close">
@@ -164,7 +164,7 @@ export default function AccessibilityWidget() {
         
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className={`bg-white/95 backdrop-blur-sm border border-gray-200 text-[var(--primary-color)] h-11 shadow-sm flex items-center gap-1.5 hover:bg-gray-50 transition-all ${buttonRadiusClass} ${direction === 'rtl' ? 'pl-3.5 pr-2.5 border-r-0' : 'pr-3.5 pl-2.5 border-l-0'} opacity-90 hover:opacity-100`}
+          className={`bg-white border border-gray-200 text-[var(--primary-color)] h-11 shadow-md flex items-center gap-1.5 hover:bg-gray-50 transition-all ${buttonRadiusClass} ${direction === 'rtl' ? 'pl-3.5 pr-2.5 border-r-0' : 'pr-3.5 pl-2.5 border-l-0'}`}
           aria-label={t('אפשרויות נגישות', 'Accessibility Options')}
           title={t('אפשרויות נגישות', 'Accessibility Options')}
         >

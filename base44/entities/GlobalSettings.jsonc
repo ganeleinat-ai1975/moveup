@@ -1,0 +1,342 @@
+{
+  "name": "GlobalSettings",
+  "type": "object",
+  "properties": {
+    "site_title_he": {
+      "type": "string",
+      "description": "\u05e9\u05dd \u05d4\u05d0\u05ea\u05e8 \u05d1\u05e2\u05d1\u05e8\u05d9\u05ea"
+    },
+    "site_title_en": {
+      "type": "string",
+      "description": "Site title in English"
+    },
+    "tagline_he": {
+      "type": "string",
+      "description": "\u05e1\u05dc\u05d5\u05d2\u05df \u05d4\u05d0\u05ea\u05e8 \u05d1\u05e2\u05d1\u05e8\u05d9\u05ea"
+    },
+    "tagline_en": {
+      "type": "string",
+      "description": "Site tagline in English"
+    },
+    "logo_url_he": {
+      "type": "string",
+      "description": "\u05e7\u05d9\u05e9\u05d5\u05e8 \u05dc\u05dc\u05d5\u05d2\u05d5 \u05d1\u05e2\u05d1\u05e8\u05d9\u05ea"
+    },
+    "logo_url_en": {
+      "type": "string",
+      "description": "Logo URL in English"
+    },
+    "footer_logo_url_he": {
+      "type": "string",
+      "description": "\u05e7\u05d9\u05e9\u05d5\u05e8 \u05dc\u05dc\u05d5\u05d2\u05d5 \u05d1\u05e4\u05d5\u05d8\u05e8 \u05d1\u05e2\u05d1\u05e8\u05d9\u05ea"
+    },
+    "footer_logo_url_en": {
+      "type": "string",
+      "description": "Footer logo URL in English"
+    },
+    "primary_color": {
+      "type": "string",
+      "default": "#005e6c"
+    },
+    "secondary_color": {
+      "type": "string",
+      "default": "#006f79"
+    },
+    "accent_color": {
+      "type": "string",
+      "default": "#f4f1ee"
+    },
+    "text_color": {
+      "type": "string",
+      "default": "#2e2e2e"
+    },
+    "background_color": {
+      "type": "string",
+      "default": "#f4f1ee"
+    },
+    "header_admin_menu_color": {
+      "type": "string"
+    },
+    "font_family_he": {
+      "type": "string",
+      "default": "Rubik"
+    },
+    "font_family_en": {
+      "type": "string",
+      "default": "Inter"
+    },
+    "font_size_base": {
+      "type": "string",
+      "default": "16px"
+    },
+    "font_weight_bold": {
+      "type": "string",
+      "default": "700"
+    },
+    "newsletter_groups": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "\u05db\u05dc \u05d4\u05e8\u05e9\u05d9\u05de\u05d4",
+        "\u05dc\u05e7\u05d5\u05d7\u05d5\u05ea \u05d7\u05d5\u05d6\u05e8\u05d9\u05dd",
+        "\u05d7\u05d3\u05e9\u05d5\u05ea",
+        "\u05de\u05e0\u05d4\u05dc\u05d5\u05ea",
+        "\u05de\u05e2\u05d5\u05d3\u05db\u05e0\u05d5\u05ea \u05e4\u05d5\u05e8\u05e6\u05d5\u05ea \u05e7\u05d3\u05d9\u05de\u05d4"
+      ]
+    },
+    "nav_home_he": {
+      "type": "string"
+    },
+    "nav_home_en": {
+      "type": "string"
+    },
+    "nav_about_he": {
+      "type": "string"
+    },
+    "nav_about_en": {
+      "type": "string"
+    },
+    "nav_personal_he": {
+      "type": "string"
+    },
+    "nav_personal_en": {
+      "type": "string"
+    },
+    "nav_corporate_he": {
+      "type": "string"
+    },
+    "nav_corporate_en": {
+      "type": "string"
+    },
+    "nav_testimonials_he": {
+      "type": "string"
+    },
+    "nav_testimonials_en": {
+      "type": "string"
+    },
+    "nav_podcast_he": {
+      "type": "string"
+    },
+    "nav_podcast_en": {
+      "type": "string"
+    },
+    "nav_blog_he": {
+      "type": "string"
+    },
+    "nav_blog_en": {
+      "type": "string"
+    },
+    "nav_contact_he": {
+      "type": "string"
+    },
+    "nav_contact_en": {
+      "type": "string"
+    },
+    "contact_phone": {
+      "type": "string"
+    },
+    "contact_email": {
+      "type": "string"
+    },
+    "contact_whatsapp": {
+      "type": "string"
+    },
+    "instagram_url": {
+      "type": "string"
+    },
+    "linkedin_url": {
+      "type": "string"
+    },
+    "facebook_url": {
+      "type": "string"
+    },
+    "youtube_url": {
+      "type": "string"
+    },
+    "footer_background_color": {
+      "type": "string"
+    },
+    "footer_text_color": {
+      "type": "string"
+    },
+    "footer_title_color": {
+      "type": "string"
+    },
+    "footer_nav_title_he": {
+      "type": "string"
+    },
+    "footer_nav_title_en": {
+      "type": "string"
+    },
+    "footer_contact_title_he": {
+      "type": "string"
+    },
+    "footer_contact_title_en": {
+      "type": "string"
+    },
+    "footer_social_title_he": {
+      "type": "string"
+    },
+    "footer_social_title_en": {
+      "type": "string"
+    },
+    "footer_copyright_he": {
+      "type": "string"
+    },
+    "footer_copyright_en": {
+      "type": "string"
+    },
+    "footer_bot_link_enabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "footer_bot_link_text_he": {
+      "type": "string"
+    },
+    "footer_bot_link_text_en": {
+      "type": "string"
+    },
+    "footer_bot_link_url": {
+      "type": "string"
+    },
+    "general_loading_he": {
+      "type": "string"
+    },
+    "general_loading_en": {
+      "type": "string"
+    },
+    "general_coming_soon_he": {
+      "type": "string"
+    },
+    "general_coming_soon_en": {
+      "type": "string"
+    },
+    "general_stay_updated_he": {
+      "type": "string"
+    },
+    "general_stay_updated_en": {
+      "type": "string"
+    },
+    "general_read_more_he": {
+      "type": "string"
+    },
+    "general_read_more_en": {
+      "type": "string"
+    },
+    "general_watch_video_he": {
+      "type": "string"
+    },
+    "general_watch_video_en": {
+      "type": "string"
+    },
+    "general_workshop_he": {
+      "type": "string"
+    },
+    "general_workshop_en": {
+      "type": "string"
+    },
+    "general_consulting_he": {
+      "type": "string"
+    },
+    "general_consulting_en": {
+      "type": "string"
+    },
+    "general_lecture_he": {
+      "type": "string"
+    },
+    "general_lecture_en": {
+      "type": "string"
+    },
+    "general_participants_he": {
+      "type": "string"
+    },
+    "general_participants_en": {
+      "type": "string"
+    },
+    "general_register_he": {
+      "type": "string"
+    },
+    "general_register_en": {
+      "type": "string"
+    },
+    "general_phone_he": {
+      "type": "string"
+    },
+    "general_phone_en": {
+      "type": "string"
+    },
+    "general_email_he": {
+      "type": "string"
+    },
+    "general_email_en": {
+      "type": "string"
+    },
+    "general_send_message_he": {
+      "type": "string"
+    },
+    "general_send_message_en": {
+      "type": "string"
+    },
+    "general_episode_he": {
+      "type": "string"
+    },
+    "general_episode_en": {
+      "type": "string"
+    },
+    "logo_carousel_title_he": {
+      "type": "string"
+    },
+    "logo_carousel_title_en": {
+      "type": "string"
+    },
+    "logo_carousel_bg_color": {
+      "type": "string"
+    },
+    "logo_carousel_controls_enabled": {
+      "type": "boolean"
+    },
+    "logo_carousel_animation": {
+      "type": "string",
+      "enum": [
+        "scroll",
+        "fade"
+      ]
+    },
+    "media_logo_carousel_logos": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "image"
+            ]
+          },
+          "file_url": {
+            "type": "string"
+          },
+          "alt_he": {
+            "type": "string"
+          },
+          "alt_en": {
+            "type": "string"
+          },
+          "order_index": {
+            "type": "number"
+          }
+        }
+      }
+    }
+  },
+  "rls": {
+    "write": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  },
+  "required": []
+}

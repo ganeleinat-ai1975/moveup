@@ -1,0 +1,143 @@
+{
+  "name": "WomensDay2026PageSettings",
+  "type": "object",
+  "properties": {
+    "page_title_he": {
+      "type": "string",
+      "description": "\u05db\u05d5\u05ea\u05e8\u05ea \u05e2\u05de\u05d5\u05d3 \u05d9\u05d5\u05dd \u05d4\u05e0\u05e9\u05d9\u05dd (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "page_title_en": {
+      "type": "string",
+      "description": "Women's Day page title (English)"
+    },
+    "description_he": {
+      "type": "string",
+      "description": "\u05ea\u05d9\u05d0\u05d5\u05e8 \u05e2\u05de\u05d5\u05d3 \u05d9\u05d5\u05dd \u05d4\u05e0\u05e9\u05d9\u05dd (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "description_en": {
+      "type": "string",
+      "description": "Women's Day page description (English)"
+    },
+    "benefits_title_he": {
+      "type": "string",
+      "description": "\u05db\u05d5\u05ea\u05e8\u05ea \u05d9\u05ea\u05e8\u05d5\u05e0\u05d5\u05ea (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "benefits_title_en": {
+      "type": "string",
+      "description": "Benefits title (English)"
+    },
+    "benefit_1_icon": {
+      "type": "string",
+      "description": "\u05d0\u05d9\u05d9\u05e7\u05d5\u05df \u05d9\u05ea\u05e8\u05d5\u05df 1"
+    },
+    "benefit_1_title_he": {
+      "type": "string",
+      "description": "\u05db\u05d5\u05ea\u05e8\u05ea \u05d9\u05ea\u05e8\u05d5\u05df 1 (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "benefit_1_title_en": {
+      "type": "string",
+      "description": "Benefit 1 title (English)"
+    },
+    "benefit_1_desc_he": {
+      "type": "string",
+      "description": "\u05ea\u05d9\u05d0\u05d5\u05e8 \u05d9\u05ea\u05e8\u05d5\u05df 1 (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "benefit_1_desc_en": {
+      "type": "string",
+      "description": "Benefit 1 description (English)"
+    },
+    "benefit_2_icon": {
+      "type": "string",
+      "description": "\u05d0\u05d9\u05d9\u05e7\u05d5\u05df \u05d9\u05ea\u05e8\u05d5\u05df 2"
+    },
+    "benefit_2_title_he": {
+      "type": "string",
+      "description": "\u05db\u05d5\u05ea\u05e8\u05ea \u05d9\u05ea\u05e8\u05d5\u05df 2 (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "benefit_2_title_en": {
+      "type": "string",
+      "description": "Benefit 2 title (English)"
+    },
+    "benefit_2_desc_he": {
+      "type": "string",
+      "description": "\u05ea\u05d9\u05d0\u05d5\u05e8 \u05d9\u05ea\u05e8\u05d5\u05df 2 (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "benefit_2_desc_en": {
+      "type": "string",
+      "description": "Benefit 2 description (English)"
+    },
+    "benefit_3_icon": {
+      "type": "string",
+      "description": "\u05d0\u05d9\u05d9\u05e7\u05d5\u05df \u05d9\u05ea\u05e8\u05d5\u05df 3"
+    },
+    "benefit_3_title_he": {
+      "type": "string",
+      "description": "\u05db\u05d5\u05ea\u05e8\u05ea \u05d9\u05ea\u05e8\u05d5\u05df 3 (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "benefit_3_title_en": {
+      "type": "string",
+      "description": "Benefit 3 title (English)"
+    },
+    "benefit_3_desc_he": {
+      "type": "string",
+      "description": "\u05ea\u05d9\u05d0\u05d5\u05e8 \u05d9\u05ea\u05e8\u05d5\u05df 3 (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "benefit_3_desc_en": {
+      "type": "string",
+      "description": "Benefit 3 description (English)"
+    },
+    "featured_lecture_ids": {
+      "type": "array",
+      "description": "\u05de\u05d6\u05d4\u05d9 \u05d4\u05d4\u05e8\u05e6\u05d0\u05d5\u05ea \u05d4\u05de\u05d5\u05e6\u05d2\u05d5\u05ea \u05d1\u05d3\u05e3",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "6890a18df5b21f3a997805ab",
+        "68922464ba1da699d004b222",
+        "68a495a245d5f2ddafd382af",
+        "68a4b0be86c5f84cc6096e68"
+      ]
+    },
+    "media_womens_day_2026": {
+      "type": "array",
+      "description": "\u05d2\u05dc\u05e8\u05d9\u05d9\u05ea \u05ea\u05de\u05d5\u05e0\u05d5\u05ea/\u05d5\u05d9\u05d3\u05d0\u05d5 \u05dc\u05e2\u05de\u05d5\u05d3 \u05d9\u05d5\u05dd \u05d4\u05e0\u05e9\u05d9\u05dd",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "image",
+              "video"
+            ]
+          },
+          "file_url": {
+            "type": "string"
+          },
+          "alt_he": {
+            "type": "string"
+          },
+          "alt_en": {
+            "type": "string"
+          },
+          "order_index": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "media_position_womens_day_2026": {
+      "type": "string",
+      "description": "\u05de\u05d9\u05e7\u05d5\u05dd \u05ea\u05de\u05d5\u05e0\u05d5\u05ea/\u05d5\u05d9\u05d3\u05d0\u05d5 \u05d1\u05e2\u05de\u05d5\u05d3"
+    }
+  },
+  "rls": {
+    "write": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  },
+  "required": []
+}

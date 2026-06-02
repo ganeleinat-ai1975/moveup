@@ -1,0 +1,117 @@
+{
+  "name": "PersonalPageSettings",
+  "type": "object",
+  "properties": {
+    "personal_page_title_he": {
+      "type": "string"
+    },
+    "personal_page_title_en": {
+      "type": "string"
+    },
+    "personal_description_he": {
+      "type": "string"
+    },
+    "personal_description_en": {
+      "type": "string"
+    },
+    "personal_show_testimonials_button": {
+      "type": "boolean",
+      "default": false
+    },
+    "personal_testimonials_button_text_he": {
+      "type": "string"
+    },
+    "personal_testimonials_button_text_en": {
+      "type": "string"
+    },
+    "personal_benefits_title_he": {
+      "type": "string"
+    },
+    "personal_benefits_title_en": {
+      "type": "string"
+    },
+    "personal_benefit_1_icon": {
+      "type": "string"
+    },
+    "personal_benefit_1_title_he": {
+      "type": "string"
+    },
+    "personal_benefit_1_title_en": {
+      "type": "string"
+    },
+    "personal_benefit_1_desc_he": {
+      "type": "string"
+    },
+    "personal_benefit_1_desc_en": {
+      "type": "string"
+    },
+    "personal_benefit_2_icon": {
+      "type": "string"
+    },
+    "personal_benefit_2_title_he": {
+      "type": "string"
+    },
+    "personal_benefit_2_title_en": {
+      "type": "string"
+    },
+    "personal_benefit_2_desc_he": {
+      "type": "string"
+    },
+    "personal_benefit_2_desc_en": {
+      "type": "string"
+    },
+    "personal_benefit_3_icon": {
+      "type": "string"
+    },
+    "personal_benefit_3_title_he": {
+      "type": "string"
+    },
+    "personal_benefit_3_title_en": {
+      "type": "string"
+    },
+    "personal_benefit_3_desc_he": {
+      "type": "string"
+    },
+    "personal_benefit_3_desc_en": {
+      "type": "string"
+    },
+    "media_personal_workshops": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "image",
+              "video"
+            ]
+          },
+          "file_url": {
+            "type": "string"
+          },
+          "alt_he": {
+            "type": "string"
+          },
+          "alt_en": {
+            "type": "string"
+          },
+          "order_index": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "media_position_personal_workshops": {
+      "type": "string"
+    }
+  },
+  "rls": {
+    "write": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  },
+  "required": []
+}

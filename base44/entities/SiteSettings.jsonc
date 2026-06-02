@@ -1,0 +1,1613 @@
+{
+  "name": "SiteSettings",
+  "type": "object",
+  "properties": {
+    "site_title_he": {
+      "type": "string",
+      "description": "\u05e9\u05dd \u05d4\u05d0\u05ea\u05e8 \u05d1\u05e2\u05d1\u05e8\u05d9\u05ea"
+    },
+    "site_title_en": {
+      "type": "string",
+      "description": "Site title in English"
+    },
+    "tagline_he": {
+      "type": "string",
+      "description": "\u05e1\u05dc\u05d5\u05d2\u05df \u05d4\u05d0\u05ea\u05e8 \u05d1\u05e2\u05d1\u05e8\u05d9\u05ea"
+    },
+    "tagline_en": {
+      "type": "string",
+      "description": "Site tagline in English"
+    },
+    "logo_url_he": {
+      "type": "string",
+      "description": "\u05e7\u05d9\u05e9\u05d5\u05e8 \u05dc\u05dc\u05d5\u05d2\u05d5 \u05d1\u05e2\u05d1\u05e8\u05d9\u05ea"
+    },
+    "logo_url_en": {
+      "type": "string",
+      "description": "Logo URL in English"
+    },
+    "footer_logo_url_he": {
+      "type": "string",
+      "description": "\u05e7\u05d9\u05e9\u05d5\u05e8 \u05dc\u05dc\u05d5\u05d2\u05d5 \u05d1\u05e4\u05d5\u05d8\u05e8 \u05d1\u05e2\u05d1\u05e8\u05d9\u05ea"
+    },
+    "footer_logo_url_en": {
+      "type": "string",
+      "description": "Footer logo URL in English"
+    },
+    "primary_color": {
+      "type": "string",
+      "description": "\u05e6\u05d1\u05e2 \u05e8\u05d0\u05e9\u05d9 \u05e9\u05dc \u05d4\u05d0\u05ea\u05e8",
+      "default": "#005e6c"
+    },
+    "secondary_color": {
+      "type": "string",
+      "description": "\u05e6\u05d1\u05e2 \u05de\u05e9\u05e0\u05d9 \u05e9\u05dc \u05d4\u05d0\u05ea\u05e8",
+      "default": "#006f79"
+    },
+    "accent_color": {
+      "type": "string",
+      "description": "\u05e6\u05d1\u05e2 \u05de\u05d1\u05d8\u05d0",
+      "default": "#f4f1ee"
+    },
+    "text_color": {
+      "type": "string",
+      "description": "\u05e6\u05d1\u05e2 \u05d8\u05e7\u05e1\u05d8",
+      "default": "#2e2e2e"
+    },
+    "background_color": {
+      "type": "string",
+      "description": "\u05e6\u05d1\u05e2 \u05e8\u05e7\u05e2",
+      "default": "#f4f1ee"
+    },
+    "header_admin_menu_color": {
+      "type": "string",
+      "description": "\u05e6\u05d1\u05e2 \u05d8\u05e7\u05e1\u05d8 \u05e4\u05e8\u05d9\u05d8\u05d9 \u05ea\u05e4\u05e8\u05d9\u05d8 \u05d4\u05d0\u05d3\u05de\u05d9\u05df \u05d1\u05d4\u05d3\u05e8"
+    },
+    "font_family_he": {
+      "type": "string",
+      "description": "\u05d2\u05d5\u05e4\u05df \u05e2\u05d1\u05e8\u05d9\u05ea",
+      "default": "Rubik"
+    },
+    "font_family_en": {
+      "type": "string",
+      "description": "English Font",
+      "default": "Inter"
+    },
+    "font_size_base": {
+      "type": "string",
+      "description": "\u05d2\u05d5\u05d3\u05dc \u05d2\u05d5\u05e4\u05df \u05d1\u05e1\u05d9\u05e1\u05d9",
+      "default": "16px"
+    },
+    "font_weight_bold": {
+      "type": "string",
+      "description": "\u05e2\u05d5\u05d1\u05d9 \u05d2\u05d5\u05e4\u05df \u05de\u05d5\u05d3\u05d2\u05e9",
+      "default": "700"
+    },
+    "newsletter_groups": {
+      "type": "array",
+      "description": "\u05e7\u05d1\u05d5\u05e6\u05d5\u05ea \u05dc\u05e0\u05d9\u05d4\u05d5\u05dc \u05e0\u05d9\u05d5\u05d6\u05dc\u05d8\u05e8",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "\u05db\u05dc \u05d4\u05e8\u05e9\u05d9\u05de\u05d4",
+        "\u05dc\u05e7\u05d5\u05d7\u05d5\u05ea \u05d7\u05d5\u05d6\u05e8\u05d9\u05dd",
+        "\u05d7\u05d3\u05e9\u05d5\u05ea",
+        "\u05de\u05e0\u05d4\u05dc\u05d5\u05ea",
+        "\u05de\u05e2\u05d5\u05d3\u05db\u05e0\u05d5\u05ea \u05e4\u05d5\u05e8\u05e6\u05d5\u05ea \u05e7\u05d3\u05d9\u05de\u05d4"
+      ]
+    },
+    "top_cta_title_he": {
+      "type": "string",
+      "description": "\u05db\u05d5\u05ea\u05e8\u05ea \u05d1\u05d0\u05e0\u05e8 CTA \u05e2\u05dc\u05d9\u05d5\u05df - \u05e2\u05d1\u05e8\u05d9\u05ea"
+    },
+    "top_cta_title_en": {
+      "type": "string",
+      "description": "Top CTA banner title - English"
+    },
+    "top_cta_subtitle_he": {
+      "type": "string",
+      "description": "\u05db\u05d5\u05ea\u05e8\u05ea \u05de\u05e9\u05e0\u05d4 \u05d1\u05d0\u05e0\u05e8 CTA \u05e2\u05dc\u05d9\u05d5\u05df - \u05e2\u05d1\u05e8\u05d9\u05ea"
+    },
+    "top_cta_subtitle_en": {
+      "type": "string",
+      "description": "Top CTA banner subtitle - English"
+    },
+    "top_cta_button_he": {
+      "type": "string",
+      "description": "\u05d8\u05e7\u05e1\u05d8 \u05db\u05e4\u05ea\u05d5\u05e8 \u05d1\u05d0\u05e0\u05e8 CTA \u05e2\u05dc\u05d9\u05d5\u05df - \u05e2\u05d1\u05e8\u05d9\u05ea"
+    },
+    "top_cta_button_en": {
+      "type": "string",
+      "description": "Top CTA banner button text - English"
+    },
+    "top_cta_bg_color": {
+      "type": "string",
+      "description": "\u05e6\u05d1\u05e2 \u05e8\u05e7\u05e2 \u05d1\u05d0\u05e0\u05e8 CTA \u05e2\u05dc\u05d9\u05d5\u05df"
+    },
+    "hero_title_he": {
+      "type": "string",
+      "description": "\u05db\u05d5\u05ea\u05e8\u05ea \u05e8\u05d0\u05e9\u05d9\u05ea \u05d1\u05d3\u05e3 \u05d4\u05d1\u05d9\u05ea (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "hero_title_en": {
+      "type": "string",
+      "description": "Main hero title on homepage (English)"
+    },
+    "hero_subtitle_he": {
+      "type": "string",
+      "description": "\u05db\u05d5\u05ea\u05e8\u05ea \u05de\u05e9\u05e0\u05d4 \u05d1\u05d3\u05e3 \u05d4\u05d1\u05d9\u05ea (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "hero_subtitle_en": {
+      "type": "string",
+      "description": "Hero subtitle on homepage (English)"
+    },
+    "hero_subtitle_color": {
+      "type": "string",
+      "description": "\u05e6\u05d1\u05e2 \u05db\u05d5\u05ea\u05e8\u05ea \u05d4\u05de\u05e9\u05e0\u05d4 \u05d1\u05d3\u05e3 \u05d4\u05d1\u05d9\u05ea"
+    },
+    "hero_cta_primary_he": {
+      "type": "string",
+      "description": "\u05db\u05e4\u05ea\u05d5\u05e8 \u05e8\u05d0\u05e9\u05d9 \u05d1\u05d3\u05e3 \u05d4\u05d1\u05d9\u05ea (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "hero_cta_primary_en": {
+      "type": "string",
+      "description": "Primary CTA button on homepage (English)"
+    },
+    "hero_cta_secondary_he": {
+      "type": "string",
+      "description": "\u05db\u05e4\u05ea\u05d5\u05e8 \u05de\u05e9\u05e0\u05d9 \u05d1\u05d3\u05e3 \u05d4\u05d1\u05d9\u05ea (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "hero_cta_secondary_en": {
+      "type": "string",
+      "description": "Secondary CTA button on homepage (English)"
+    },
+    "features_title_he": {
+      "type": "string",
+      "description": "\u05db\u05d5\u05ea\u05e8\u05ea \u05e1\u05e2\u05d9\u05e3 \u05d4\u05ea\u05db\u05d5\u05e0\u05d5\u05ea (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "features_title_en": {
+      "type": "string",
+      "description": "Features section title (English)"
+    },
+    "features_subtitle_he": {
+      "type": "string",
+      "description": "\u05db\u05d5\u05ea\u05e8\u05ea \u05de\u05e9\u05e0\u05d4 \u05e1\u05e2\u05d9\u05e3 \u05d4\u05ea\u05db\u05d5\u05e0\u05d5\u05ea (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "features_subtitle_en": {
+      "type": "string",
+      "description": "Features section subtitle (English)"
+    },
+    "feature_1_icon": {
+      "type": "string",
+      "description": "\u05d0\u05d9\u05d9\u05e7\u05d5\u05df \u05ea\u05db\u05d5\u05e0\u05d4 1"
+    },
+    "feature_1_title_he": {
+      "type": "string",
+      "description": "\u05db\u05d5\u05ea\u05e8\u05ea \u05ea\u05db\u05d5\u05e0\u05d4 1 (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "feature_1_title_en": {
+      "type": "string",
+      "description": "Feature 1 title (English)"
+    },
+    "feature_1_desc_he": {
+      "type": "string",
+      "description": "\u05ea\u05d9\u05d0\u05d5\u05e8 \u05ea\u05db\u05d5\u05e0\u05d4 1 (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "feature_1_desc_en": {
+      "type": "string",
+      "description": "Feature 1 description (English)"
+    },
+    "feature_1_button_text_he": {
+      "type": "string",
+      "description": "\u05d8\u05e7\u05e1\u05d8 \u05db\u05e4\u05ea\u05d5\u05e8 \u05ea\u05db\u05d5\u05e0\u05d4 1 (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "feature_1_button_text_en": {
+      "type": "string",
+      "description": "Feature 1 Button Text (English)"
+    },
+    "feature_1_button_link": {
+      "type": "string",
+      "description": "\u05e7\u05d9\u05e9\u05d5\u05e8 \u05db\u05e4\u05ea\u05d5\u05e8 \u05ea\u05db\u05d5\u05e0\u05d4 1 (\u05e9\u05dd \u05e2\u05de\u05d5\u05d3)"
+    },
+    "feature_2_icon": {
+      "type": "string",
+      "description": "\u05d0\u05d9\u05d9\u05e7\u05d5\u05df \u05ea\u05db\u05d5\u05e0\u05d4 2"
+    },
+    "feature_2_title_he": {
+      "type": "string",
+      "description": "\u05db\u05d5\u05ea\u05e8\u05ea \u05ea\u05db\u05d5\u05e0\u05d4 2 (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "feature_2_title_en": {
+      "type": "string",
+      "description": "Feature 2 title (English)"
+    },
+    "feature_2_desc_he": {
+      "type": "string",
+      "description": "\u05ea\u05d9\u05d0\u05d5\u05e8 \u05ea\u05db\u05d5\u05e0\u05d4 2 (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "feature_2_desc_en": {
+      "type": "string",
+      "description": "Feature 2 description (English)"
+    },
+    "feature_2_button_text_he": {
+      "type": "string",
+      "description": "\u05d8\u05e7\u05e1\u05d8 \u05db\u05e4\u05ea\u05d5\u05e8 \u05ea\u05db\u05d5\u05e0\u05d4 2 (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "feature_2_button_text_en": {
+      "type": "string",
+      "description": "Feature 2 Button Text (English)"
+    },
+    "feature_2_button_link": {
+      "type": "string",
+      "description": "\u05e7\u05d9\u05e9\u05d5\u05e8 \u05db\u05e4\u05ea\u05d5\u05e8 \u05ea\u05db\u05d5\u05e0\u05d4 2 (\u05e9\u05dd \u05e2\u05de\u05d5\u05d3)"
+    },
+    "feature_3_icon": {
+      "type": "string",
+      "description": "\u05d0\u05d9\u05d9\u05e7\u05d5\u05df \u05ea\u05db\u05d5\u05e0\u05d4 3"
+    },
+    "feature_3_title_he": {
+      "type": "string",
+      "description": "\u05db\u05d5\u05ea\u05e8\u05ea \u05ea\u05db\u05d5\u05e0\u05d4 3 (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "feature_3_title_en": {
+      "type": "string",
+      "description": "Feature 3 title (English)"
+    },
+    "feature_3_desc_he": {
+      "type": "string",
+      "description": "\u05ea\u05d9\u05d0\u05d5\u05e8 \u05ea\u05db\u05d5\u05e0\u05d4 3 (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "feature_3_desc_en": {
+      "type": "string",
+      "description": "Feature 3 description (English)"
+    },
+    "feature_3_button_text_he": {
+      "type": "string",
+      "description": "\u05d8\u05e7\u05e1\u05d8 \u05db\u05e4\u05ea\u05d5\u05e8 \u05ea\u05db\u05d5\u05e0\u05d4 3 (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "feature_3_button_text_en": {
+      "type": "string",
+      "description": "Feature 3 Button Text (English)"
+    },
+    "feature_3_button_link": {
+      "type": "string",
+      "description": "\u05e7\u05d9\u05e9\u05d5\u05e8 \u05db\u05e4\u05ea\u05d5\u05e8 \u05ea\u05db\u05d5\u05e0\u05d4 3 (\u05e9\u05dd \u05e2\u05de\u05d5\u05d3)"
+    },
+    "feature_4_enabled": {
+      "type": "boolean",
+      "default": true,
+      "description": "\u05d4\u05d0\u05dd \u05dc\u05d4\u05e6\u05d9\u05d2 \u05d0\u05ea \u05ea\u05db\u05d5\u05e0\u05d4 4 (\u05d1\u05d5\u05d8\u05d9\u05ea)?"
+    },
+    "feature_4_icon": {
+      "type": "string",
+      "default": "Bot",
+      "description": "\u05d0\u05d9\u05d9\u05e7\u05d5\u05df \u05ea\u05db\u05d5\u05e0\u05d4 4"
+    },
+    "feature_4_title_he": {
+      "type": "string",
+      "description": "\u05db\u05d5\u05ea\u05e8\u05ea \u05ea\u05db\u05d5\u05e0\u05d4 4 (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "feature_4_title_en": {
+      "type": "string",
+      "description": "Feature 4 title (English)"
+    },
+    "feature_4_desc_he": {
+      "type": "string",
+      "description": "\u05ea\u05d9\u05d0\u05d5\u05e8 \u05ea\u05db\u05d5\u05e0\u05d4 4 (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "feature_4_desc_en": {
+      "type": "string",
+      "description": "Feature 4 description (English)"
+    },
+    "feature_4_button_text_he": {
+      "type": "string",
+      "description": "\u05d8\u05e7\u05e1\u05d8 \u05db\u05e4\u05ea\u05d5\u05e8 \u05ea\u05db\u05d5\u05e0\u05d4 4 (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "feature_4_button_text_en": {
+      "type": "string",
+      "description": "Feature 4 Button Text (English)"
+    },
+    "feature_4_button_link": {
+      "type": "string",
+      "description": "\u05e7\u05d9\u05e9\u05d5\u05e8 \u05db\u05e4\u05ea\u05d5\u05e8 \u05ea\u05db\u05d5\u05e0\u05d4 4"
+    },
+    "feature_4_bot_image": {
+      "type": "string",
+      "description": "\u05ea\u05de\u05d5\u05e0\u05ea \u05e8\u05e7\u05e2 \u05dc\u05db\u05e8\u05d8\u05d9\u05e1 \u05d4\u05d1\u05d5\u05d8\u05d9\u05ea"
+    },
+    "testimonials_carousel_title_he": {
+      "type": "string",
+      "description": "\u05db\u05d5\u05ea\u05e8\u05ea \u05e7\u05e8\u05d5\u05e1\u05dc\u05ea \u05d4\u05de\u05dc\u05e6\u05d5\u05ea (\u05e2\u05de\u05d5\u05d3 \u05d4\u05d1\u05d9\u05ea)"
+    },
+    "testimonials_carousel_title_en": {
+      "type": "string",
+      "description": "Testimonials carousel title (Homepage)"
+    },
+    "testimonials_carousel_subtitle_he": {
+      "type": "string",
+      "description": "\u05db\u05d5\u05ea\u05e8\u05ea \u05de\u05e9\u05e0\u05d4 \u05e7\u05e8\u05d5\u05e1\u05dc\u05ea \u05d4\u05de\u05dc\u05e6\u05d5\u05ea (\u05e2\u05de\u05d5\u05d3 \u05d4\u05d1\u05d9\u05ea)"
+    },
+    "testimonials_carousel_subtitle_en": {
+      "type": "string",
+      "description": "Testimonials carousel subtitle (Homepage)"
+    },
+    "testimonials_carousel_bg_color": {
+      "type": "string",
+      "description": "\u05e6\u05d1\u05e2 \u05e8\u05e7\u05e2 \u05e7\u05e8\u05d5\u05e1\u05dc\u05ea \u05d4\u05de\u05dc\u05e6\u05d5\u05ea"
+    },
+    "testimonials_carousel_text_color": {
+      "type": "string",
+      "description": "\u05e6\u05d1\u05e2 \u05d8\u05e7\u05e1\u05d8 \u05e7\u05e8\u05d5\u05e1\u05dc\u05ea \u05d4\u05de\u05dc\u05e6\u05d5\u05ea"
+    },
+    "testimonials_carousel_button_text_he": {
+      "type": "string",
+      "description": "\u05d8\u05e7\u05e1\u05d8 \u05db\u05e4\u05ea\u05d5\u05e8 \u05d1\u05e7\u05e8\u05d5\u05e1\u05dc\u05ea \u05d4\u05de\u05dc\u05e6\u05d5\u05ea (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "testimonials_carousel_button_text_en": {
+      "type": "string",
+      "description": "Testimonials carousel button text (English)"
+    },
+    "testimonials_carousel_button_bg_color": {
+      "type": "string",
+      "description": "\u05e6\u05d1\u05e2 \u05e8\u05e7\u05e2 \u05db\u05e4\u05ea\u05d5\u05e8 \u05d1\u05e7\u05e8\u05d5\u05e1\u05dc\u05ea \u05d4\u05de\u05dc\u05e6\u05d5\u05ea"
+    },
+    "testimonials_carousel_button_text_color": {
+      "type": "string",
+      "description": "\u05e6\u05d1\u05e2 \u05d8\u05e7\u05e1\u05d8 \u05db\u05e4\u05ea\u05d5\u05e8 \u05d1\u05e7\u05e8\u05d5\u05e1\u05dc\u05ea \u05d4\u05de\u05dc\u05e6\u05d5\u05ea"
+    },
+    "workshops_carousel_enabled": {
+      "type": "boolean",
+      "default": true,
+      "description": "\u05d4\u05d0\u05dd \u05dc\u05d4\u05e6\u05d9\u05d2 \u05d0\u05ea \u05e7\u05e8\u05d5\u05e1\u05dc\u05ea \u05d4\u05e1\u05d3\u05e0\u05d0\u05d5\u05ea \u05d1\u05d3\u05e3 \u05d4\u05d1\u05d9\u05ea"
+    },
+    "workshops_carousel_show_personal": {
+      "type": "boolean",
+      "default": false,
+      "description": "\u05d4\u05d0\u05dd \u05dc\u05d4\u05e6\u05d9\u05d2 \u05e1\u05d3\u05e0\u05d0\u05d5\u05ea \u05dc\u05e4\u05e8\u05d8\u05d9\u05d5\u05ea \u05d1\u05e7\u05e8\u05d5\u05e1\u05dc\u05ea \u05d4\u05e1\u05d3\u05e0\u05d0\u05d5\u05ea?"
+    },
+    "workshops_carousel_title_he": {
+      "type": "string",
+      "description": "\u05db\u05d5\u05ea\u05e8\u05ea \u05e7\u05e8\u05d5\u05e1\u05dc\u05ea \u05e1\u05d3\u05e0\u05d0\u05d5\u05ea (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "workshops_carousel_title_en": {
+      "type": "string",
+      "description": "Workshops carousel title (English)"
+    },
+    "workshops_carousel_subtitle_he": {
+      "type": "string",
+      "description": "\u05db\u05d5\u05ea\u05e8\u05ea \u05de\u05e9\u05e0\u05d4 \u05e7\u05e8\u05d5\u05e1\u05dc\u05ea \u05e1\u05d3\u05e0\u05d0\u05d5\u05ea (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "workshops_carousel_subtitle_en": {
+      "type": "string",
+      "description": "Workshops carousel subtitle (English)"
+    },
+    "workshops_carousel_bg_color": {
+      "type": "string",
+      "description": "\u05e6\u05d1\u05e2 \u05e8\u05e7\u05e2 \u05e7\u05e8\u05d5\u05e1\u05dc\u05ea \u05e1\u05d3\u05e0\u05d0\u05d5\u05ea"
+    },
+    "workshops_carousel_text_color": {
+      "type": "string",
+      "description": "\u05e6\u05d1\u05e2 \u05d8\u05e7\u05e1\u05d8 \u05db\u05d5\u05ea\u05e8\u05d5\u05ea \u05e7\u05e8\u05d5\u05e1\u05dc\u05ea \u05e1\u05d3\u05e0\u05d0\u05d5\u05ea"
+    },
+    "workshops_carousel_card_bg_color": {
+      "type": "string",
+      "description": "\u05e6\u05d1\u05e2 \u05e8\u05e7\u05e2 \u05db\u05e8\u05d8\u05d9\u05e1\u05d9\u05d4 \u05d1\u05e7\u05e8\u05d5\u05e1\u05dc\u05ea \u05e1\u05d3\u05e0\u05d0\u05d5\u05ea"
+    },
+    "carousel_items_order": {
+      "type": "array",
+      "description": "\u05e1\u05d3\u05e8 \u05e4\u05e8\u05d9\u05d8\u05d9\u05dd \u05d1\u05e7\u05e8\u05d5\u05e1\u05dc\u05ea \u05d4\u05e1\u05d3\u05e0\u05d0\u05d5\u05ea",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "\u05de\u05d6\u05d4\u05d4 \u05d4\u05e4\u05e8\u05d9\u05d8"
+          },
+          "title": {
+            "type": "string",
+            "description": "\u05db\u05d5\u05ea\u05e8\u05ea \u05dc\u05d4\u05e6\u05d2\u05d4"
+          }
+        }
+      }
+    },
+    "cta_section_title_he": {
+      "type": "string",
+      "description": "\u05db\u05d5\u05ea\u05e8\u05ea \u05e1\u05e2\u05d9\u05e3 \u05e7\u05e8\u05d9\u05d0\u05d4 \u05dc\u05e4\u05e2\u05d5\u05dc\u05d4 (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "cta_section_title_en": {
+      "type": "string",
+      "description": "CTA section title (English)"
+    },
+    "cta_section_subtitle_he": {
+      "type": "string",
+      "description": "\u05db\u05d5\u05ea\u05e8\u05ea \u05de\u05e9\u05e0\u05d4 \u05e1\u05e2\u05d9\u05e3 \u05e7\u05e8\u05d9\u05d0\u05d4 \u05dc\u05e4\u05e2\u05d5\u05dc\u05d4 (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "cta_section_subtitle_en": {
+      "type": "string",
+      "description": "CTA section subtitle (English)"
+    },
+    "cta_section_button_he": {
+      "type": "string",
+      "description": "\u05db\u05e4\u05ea\u05d5\u05e8 \u05e1\u05e2\u05d9\u05e3 \u05e7\u05e8\u05d9\u05d0\u05d4 \u05dc\u05e4\u05e2\u05d5\u05dc\u05d4 (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "cta_section_button_en": {
+      "type": "string",
+      "description": "CTA section button (English)"
+    },
+    "nav_home_he": {
+      "type": "string",
+      "description": "\u05e0\u05d9\u05d5\u05d5\u05d8 \u05d3\u05e3 \u05d4\u05d1\u05d9\u05ea (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "nav_home_en": {
+      "type": "string",
+      "description": "Home navigation (English)"
+    },
+    "nav_about_he": {
+      "type": "string",
+      "description": "\u05e0\u05d9\u05d5\u05d5\u05d8 \u05d0\u05d5\u05d3\u05d5\u05ea (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "nav_about_en": {
+      "type": "string",
+      "description": "About navigation (English)"
+    },
+    "nav_personal_he": {
+      "type": "string",
+      "description": "\u05e0\u05d9\u05d5\u05d5\u05d8 \u05dc\u05e4\u05e8\u05d8\u05d9\u05d5\u05ea (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "nav_personal_en": {
+      "type": "string",
+      "description": "Personal navigation (English)"
+    },
+    "nav_corporate_he": {
+      "type": "string",
+      "description": "\u05e0\u05d9\u05d5\u05d5\u05d8 \u05dc\u05d0\u05e8\u05d2\u05d5\u05e0\u05d9\u05dd (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "nav_corporate_en": {
+      "type": "string",
+      "description": "Corporate navigation (English)"
+    },
+    "nav_testimonials_he": {
+      "type": "string",
+      "description": "\u05e0\u05d9\u05d5\u05d5\u05d8 \u05d4\u05de\u05dc\u05e6\u05d5\u05ea (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "nav_testimonials_en": {
+      "type": "string",
+      "description": "Testimonials navigation (English)"
+    },
+    "nav_podcast_he": {
+      "type": "string",
+      "description": "\u05e0\u05d9\u05d5\u05d5\u05d8 \u05e4\u05d5\u05d3\u05e7\u05e1\u05d8 (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "nav_podcast_en": {
+      "type": "string",
+      "description": "Podcast navigation (English)"
+    },
+    "nav_blog_he": {
+      "type": "string",
+      "description": "\u05e0\u05d9\u05d5\u05d5\u05d8 \u05d1\u05dc\u05d5\u05d2 (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "nav_blog_en": {
+      "type": "string",
+      "description": "Blog navigation (English)"
+    },
+    "nav_contact_he": {
+      "type": "string",
+      "description": "\u05e0\u05d9\u05d5\u05d5\u05d8 \u05e6\u05d5\u05e8 \u05e7\u05e9\u05e8 (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "nav_contact_en": {
+      "type": "string",
+      "description": "Contact navigation (English)"
+    },
+    "contact_phone": {
+      "type": "string",
+      "description": "\u05de\u05e1\u05e4\u05e8 \u05d8\u05dc\u05e4\u05d5\u05df \u05dc\u05d9\u05e6\u05d9\u05e8\u05ea \u05e7\u05e9\u05e8"
+    },
+    "contact_email": {
+      "type": "string",
+      "description": "\u05db\u05ea\u05d5\u05d1\u05ea \u05d0\u05d9\u05de\u05d9\u05d9\u05dc \u05dc\u05d9\u05e6\u05d9\u05e8\u05ea \u05e7\u05e9\u05e8"
+    },
+    "contact_whatsapp": {
+      "type": "string",
+      "description": "\u05de\u05e1\u05e4\u05e8 WhatsApp"
+    },
+    "instagram_url": {
+      "type": "string",
+      "description": "\u05e7\u05d9\u05e9\u05d5\u05e8 \u05dc\u05d0\u05d9\u05e0\u05e1\u05d8\u05d2\u05e8\u05dd"
+    },
+    "linkedin_url": {
+      "type": "string",
+      "description": "\u05e7\u05d9\u05e9\u05d5\u05e8 \u05dc\u05dc\u05d9\u05e0\u05e7\u05d3\u05d0\u05d9\u05df"
+    },
+    "facebook_url": {
+      "type": "string",
+      "description": "\u05e7\u05d9\u05e9\u05d5\u05e8 \u05dc\u05e4\u05d9\u05d9\u05e1\u05d1\u05d5\u05e7"
+    },
+    "youtube_url": {
+      "type": "string",
+      "description": "\u05e7\u05d9\u05e9\u05d5\u05e8 \u05dc\u05d9\u05d5\u05d8\u05d9\u05d5\u05d1"
+    },
+    "footer_background_color": {
+      "type": "string",
+      "description": "\u05e6\u05d1\u05e2 \u05e8\u05e7\u05e2 \u05e4\u05d5\u05d8\u05e8"
+    },
+    "footer_text_color": {
+      "type": "string",
+      "description": "\u05e6\u05d1\u05e2 \u05d8\u05e7\u05e1\u05d8 \u05e4\u05d5\u05d8\u05e8"
+    },
+    "footer_title_color": {
+      "type": "string",
+      "description": "\u05e6\u05d1\u05e2 \u05db\u05d5\u05ea\u05e8\u05d5\u05ea \u05e4\u05d5\u05d8\u05e8"
+    },
+    "footer_nav_title_he": {
+      "type": "string",
+      "description": "\u05db\u05d5\u05ea\u05e8\u05ea \u05e0\u05d9\u05d5\u05d5\u05d8 \u05d1\u05e4\u05d5\u05d8\u05e8 (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "footer_nav_title_en": {
+      "type": "string",
+      "description": "Footer navigation title (English)"
+    },
+    "footer_contact_title_he": {
+      "type": "string",
+      "description": "\u05db\u05d5\u05ea\u05e8\u05ea \u05e6\u05d5\u05e8 \u05e7\u05e9\u05e8 \u05d1\u05e4\u05d5\u05d8\u05e8 (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "footer_contact_title_en": {
+      "type": "string",
+      "description": "Footer contact title (English)"
+    },
+    "footer_social_title_he": {
+      "type": "string",
+      "description": "\u05db\u05d5\u05ea\u05e8\u05ea \u05e8\u05e9\u05ea\u05d5\u05ea \u05d7\u05d1\u05e8\u05ea\u05d9\u05d5\u05ea \u05d1\u05e4\u05d5\u05d8\u05e8 (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "footer_social_title_en": {
+      "type": "string",
+      "description": "Footer social media title (English)"
+    },
+    "footer_copyright_he": {
+      "type": "string",
+      "description": "\u05d6\u05db\u05d5\u05d9\u05d5\u05ea \u05d9\u05d5\u05e6\u05e8\u05d9\u05dd \u05d1\u05e4\u05d5\u05d8\u05e8 (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "footer_copyright_en": {
+      "type": "string",
+      "description": "Footer copyright (English)"
+    },
+    "footer_bot_link_enabled": {
+      "type": "boolean",
+      "default": true,
+      "description": "\u05d4\u05d0\u05dd \u05dc\u05d4\u05e6\u05d9\u05d2 \u05e7\u05d9\u05e9\u05d5\u05e8 \u05dc\u05d1\u05d5\u05d8\u05d9\u05ea \u05d1\u05e4\u05d5\u05d8\u05e8?"
+    },
+    "footer_bot_link_text_he": {
+      "type": "string",
+      "description": "\u05d8\u05e7\u05e1\u05d8 \u05e7\u05d9\u05e9\u05d5\u05e8 \u05dc\u05d1\u05d5\u05d8\u05d9\u05ea \u05d1\u05e4\u05d5\u05d8\u05e8 (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "footer_bot_link_text_en": {
+      "type": "string",
+      "description": "Footer bot link text (English)"
+    },
+    "footer_bot_link_url": {
+      "type": "string",
+      "description": "\u05db\u05ea\u05d5\u05d1\u05ea URL \u05e9\u05dc \u05d4\u05d1\u05d5\u05d8\u05d9\u05ea"
+    },
+    "about_page_title_he": {
+      "type": "string",
+      "description": "\u05db\u05d5\u05ea\u05e8\u05ea \u05e2\u05de\u05d5\u05d3 \u05d0\u05d5\u05d3\u05d5\u05ea (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "about_page_title_en": {
+      "type": "string",
+      "description": "About page title (English)"
+    },
+    "about_intro_text_he": {
+      "type": "string",
+      "description": "\u05d8\u05e7\u05e1\u05d8 \u05e4\u05ea\u05d9\u05d7\u05d4 \u05e2\u05de\u05d5\u05d3 \u05d0\u05d5\u05d3\u05d5\u05ea (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "about_intro_text_en": {
+      "type": "string",
+      "description": "About page intro text (English)"
+    },
+    "about_intro_section_bg_color": {
+      "type": "string",
+      "description": "\u05e6\u05d1\u05e2 \u05e8\u05e7\u05e2 \u05d0\u05d6\u05d5\u05e8 \u05d8\u05e7\u05e1\u05d8 \u05e4\u05ea\u05d9\u05d7\u05d4 (\u05d0\u05d5\u05d3\u05d5\u05ea)"
+    },
+    "about_intro_text_color": {
+      "type": "string",
+      "description": "\u05e6\u05d1\u05e2 \u05d8\u05e7\u05e1\u05d8 \u05d1\u05d0\u05d6\u05d5\u05e8 \u05d8\u05e7\u05e1\u05d8 \u05e4\u05ea\u05d9\u05d7\u05d4 (\u05d0\u05d5\u05d3\u05d5\u05ea)"
+    },
+    "about_mission_title_he": {
+      "type": "string",
+      "description": "\u05db\u05d5\u05ea\u05e8\u05ea \u05de\u05e9\u05d9\u05de\u05d4 \u05e2\u05de\u05d5\u05d3 \u05d0\u05d5\u05d3\u05d5\u05ea (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "about_mission_title_en": {
+      "type": "string",
+      "description": "About page mission title (English)"
+    },
+    "about_mission_text_he": {
+      "type": "string",
+      "description": "\u05d8\u05e7\u05e1\u05d8 \u05de\u05e9\u05d9\u05de\u05d4 \u05e2\u05de\u05d5\u05d3 \u05d0\u05d5\u05d3\u05d5\u05ea (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "about_mission_text_en": {
+      "type": "string",
+      "description": "About page mission text (English)"
+    },
+    "managers_section_title_he": {
+      "type": "string",
+      "description": "\u05db\u05d5\u05ea\u05e8\u05ea \u05e1\u05e2\u05d9\u05e3 \u05de\u05e0\u05d4\u05dc\u05d5\u05ea (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "managers_section_title_en": {
+      "type": "string",
+      "description": "Managers section title (English)"
+    },
+    "managers_section_bg_color": {
+      "type": "string",
+      "description": "\u05e6\u05d1\u05e2 \u05e8\u05e7\u05e2 \u05e1\u05e2\u05d9\u05e3 \u05de\u05e0\u05d4\u05dc\u05d5\u05ea"
+    },
+    "managers_section_text_color": {
+      "type": "string",
+      "description": "\u05e6\u05d1\u05e2 \u05d8\u05e7\u05e1\u05d8 \u05e1\u05e2\u05d9\u05e3 \u05de\u05e0\u05d4\u05dc\u05d5\u05ea"
+    },
+    "managers_section_title_color": {
+      "type": "string",
+      "description": "\u05e6\u05d1\u05e2 \u05db\u05d5\u05ea\u05e8\u05ea \u05e1\u05e2\u05d9\u05e3 \u05de\u05e0\u05d4\u05dc\u05d5\u05ea"
+    },
+    "managers": {
+      "type": "array",
+      "description": "\u05e8\u05e9\u05d9\u05de\u05ea \u05de\u05e0\u05d4\u05dc\u05d5\u05ea",
+      "items": {
+        "type": "object",
+        "properties": {
+          "manager_name_he": {
+            "type": "string"
+          },
+          "manager_name_en": {
+            "type": "string"
+          },
+          "manager_desc_he": {
+            "type": "string"
+          },
+          "manager_desc_en": {
+            "type": "string"
+          },
+          "manager_media": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "manager_media_position": {
+            "type": "string"
+          },
+          "order_index": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "personal_page_title_he": {
+      "type": "string",
+      "description": "\u05db\u05d5\u05ea\u05e8\u05ea \u05e2\u05de\u05d5\u05d3 \u05dc\u05e4\u05e8\u05d8\u05d9\u05d5\u05ea (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "personal_page_title_en": {
+      "type": "string",
+      "description": "Personal page title (English)"
+    },
+    "personal_description_he": {
+      "type": "string",
+      "description": "\u05ea\u05d9\u05d0\u05d5\u05e8 \u05e2\u05de\u05d5\u05d3 \u05dc\u05e4\u05e8\u05d8\u05d9\u05d5\u05ea (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "personal_description_en": {
+      "type": "string",
+      "description": "Personal page description (English)"
+    },
+    "personal_show_testimonials_button": {
+      "type": "boolean",
+      "default": false,
+      "description": "\u05d4\u05d0\u05dd \u05dc\u05d4\u05e6\u05d9\u05d2 \u05db\u05e4\u05ea\u05d5\u05e8 \u05dc\u05d4\u05de\u05dc\u05e6\u05d5\u05ea \u05d1\u05e2\u05de\u05d5\u05d3 \u05e4\u05e8\u05d8\u05d9\u05d5\u05ea"
+    },
+    "personal_testimonials_button_text_he": {
+      "type": "string",
+      "description": "\u05d8\u05e7\u05e1\u05d8 \u05db\u05e4\u05ea\u05d5\u05e8 \u05d4\u05de\u05dc\u05e6\u05d5\u05ea (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "personal_testimonials_button_text_en": {
+      "type": "string",
+      "description": "Testimonials button text (English)"
+    },
+    "personal_benefits_title_he": {
+      "type": "string",
+      "description": "\u05db\u05d5\u05ea\u05e8\u05ea \u05d9\u05ea\u05e8\u05d5\u05e0\u05d5\u05ea \u05dc\u05e4\u05e8\u05d8\u05d9\u05d5\u05ea (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "personal_benefits_title_en": {
+      "type": "string",
+      "description": "Personal benefits title (English)"
+    },
+    "personal_benefit_1_icon": {
+      "type": "string",
+      "description": "\u05d0\u05d9\u05d9\u05e7\u05d5\u05df \u05d9\u05ea\u05e8\u05d5\u05df 1 (\u05e4\u05e8\u05d8\u05d9\u05d5\u05ea)"
+    },
+    "personal_benefit_1_title_he": {
+      "type": "string",
+      "description": "\u05db\u05d5\u05ea\u05e8\u05ea \u05d9\u05ea\u05e8\u05d5\u05df 1 \u05dc\u05e4\u05e8\u05d8\u05d9\u05d5\u05ea (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "personal_benefit_1_title_en": {
+      "type": "string",
+      "description": "Personal benefit 1 title (English)"
+    },
+    "personal_benefit_1_desc_he": {
+      "type": "string",
+      "description": "\u05ea\u05d9\u05d0\u05d5\u05e8 \u05d9\u05ea\u05e8\u05d5\u05df 1 \u05dc\u05e4\u05e8\u05d8\u05d9\u05d5\u05ea (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "personal_benefit_1_desc_en": {
+      "type": "string",
+      "description": "Personal benefit 1 description (English)"
+    },
+    "personal_benefit_2_icon": {
+      "type": "string",
+      "description": "\u05d0\u05d9\u05d9\u05e7\u05d5\u05df \u05d9\u05ea\u05e8\u05d5\u05df 2 (\u05e4\u05e8\u05d8\u05d9\u05d5\u05ea)"
+    },
+    "personal_benefit_2_title_he": {
+      "type": "string",
+      "description": "\u05db\u05d5\u05ea\u05e8\u05ea \u05d9\u05ea\u05e8\u05d5\u05df 2 \u05dc\u05e4\u05e8\u05d8\u05d9\u05d5\u05ea (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "personal_benefit_2_title_en": {
+      "type": "string",
+      "description": "Personal benefit 2 title (English)"
+    },
+    "personal_benefit_2_desc_he": {
+      "type": "string",
+      "description": "\u05ea\u05d9\u05d0\u05d5\u05e8 \u05d9\u05ea\u05e8\u05d5\u05df 2 \u05dc\u05e4\u05e8\u05d8\u05d9\u05d5\u05ea (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "personal_benefit_2_desc_en": {
+      "type": "string",
+      "description": "Personal benefit 2 description (English)"
+    },
+    "personal_benefit_3_icon": {
+      "type": "string",
+      "description": "\u05d0\u05d9\u05d9\u05e7\u05d5\u05df \u05d9\u05ea\u05e8\u05d5\u05df 3 (\u05e4\u05e8\u05d8\u05d9\u05d5\u05ea)"
+    },
+    "personal_benefit_3_title_he": {
+      "type": "string",
+      "description": "\u05db\u05d5\u05ea\u05e8\u05ea \u05d9\u05ea\u05e8\u05d5\u05df 3 \u05dc\u05e4\u05e8\u05d8\u05d9\u05d5\u05ea (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "personal_benefit_3_title_en": {
+      "type": "string",
+      "description": "Personal benefit 3 title (English)"
+    },
+    "personal_benefit_3_desc_he": {
+      "type": "string",
+      "description": "\u05ea\u05d9\u05d0\u05d5\u05e8 \u05d9\u05ea\u05e8\u05d5\u05df 3 \u05dc\u05e4\u05e8\u05d8\u05d9\u05d5\u05ea (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "personal_benefit_3_desc_en": {
+      "type": "string",
+      "description": "Personal benefit 3 description (English)"
+    },
+    "corporate_pages": {
+      "type": "object",
+      "description": "\u05ea\u05d5\u05db\u05df \u05e2\u05de\u05d5\u05d3\u05d9 \u05d0\u05e8\u05d2\u05d5\u05e0\u05d9\u05dd",
+      "properties": {
+        "women": {
+          "type": "object",
+          "properties": {
+            "title_he": {
+              "type": "string"
+            },
+            "title_en": {
+              "type": "string"
+            },
+            "description_he": {
+              "type": "string"
+            },
+            "description_en": {
+              "type": "string"
+            },
+            "benefits_title_he": {
+              "type": "string"
+            },
+            "benefits_title_en": {
+              "type": "string"
+            },
+            "benefit_1_icon": {
+              "type": "string"
+            },
+            "benefit_1_title_he": {
+              "type": "string"
+            },
+            "benefit_1_title_en": {
+              "type": "string"
+            },
+            "benefit_1_desc_he": {
+              "type": "string"
+            },
+            "benefit_1_desc_en": {
+              "type": "string"
+            },
+            "benefit_2_icon": {
+              "type": "string"
+            },
+            "benefit_2_title_he": {
+              "type": "string"
+            },
+            "benefit_2_title_en": {
+              "type": "string"
+            },
+            "benefit_2_desc_he": {
+              "type": "string"
+            },
+            "benefit_2_desc_en": {
+              "type": "string"
+            },
+            "benefit_3_icon": {
+              "type": "string"
+            },
+            "benefit_3_title_he": {
+              "type": "string"
+            },
+            "benefit_3_title_en": {
+              "type": "string"
+            },
+            "benefit_3_desc_he": {
+              "type": "string"
+            },
+            "benefit_3_desc_en": {
+              "type": "string"
+            }
+          }
+        },
+        "leaders": {
+          "type": "object",
+          "properties": {
+            "title_he": {
+              "type": "string"
+            },
+            "title_en": {
+              "type": "string"
+            },
+            "description_he": {
+              "type": "string"
+            },
+            "description_en": {
+              "type": "string"
+            },
+            "benefits_title_he": {
+              "type": "string"
+            },
+            "benefits_title_en": {
+              "type": "string"
+            },
+            "benefit_1_icon": {
+              "type": "string"
+            },
+            "benefit_1_title_he": {
+              "type": "string"
+            },
+            "benefit_1_title_en": {
+              "type": "string"
+            },
+            "benefit_1_desc_he": {
+              "type": "string"
+            },
+            "benefit_1_desc_en": {
+              "type": "string"
+            },
+            "benefit_2_icon": {
+              "type": "string"
+            },
+            "benefit_2_title_he": {
+              "type": "string"
+            },
+            "benefit_2_title_en": {
+              "type": "string"
+            },
+            "benefit_2_desc_he": {
+              "type": "string"
+            },
+            "benefit_2_desc_en": {
+              "type": "string"
+            },
+            "benefit_3_icon": {
+              "type": "string"
+            },
+            "benefit_3_title_he": {
+              "type": "string"
+            },
+            "benefit_3_title_en": {
+              "type": "string"
+            },
+            "benefit_3_desc_he": {
+              "type": "string"
+            },
+            "benefit_3_desc_en": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "testimonials_page_title_he": {
+      "type": "string",
+      "description": "\u05db\u05d5\u05ea\u05e8\u05ea \u05e2\u05de\u05d5\u05d3 \u05d4\u05de\u05dc\u05e6\u05d5\u05ea (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "testimonials_page_title_en": {
+      "type": "string",
+      "description": "Testimonials page title (English)"
+    },
+    "testimonials_description_he": {
+      "type": "string",
+      "description": "\u05ea\u05d9\u05d0\u05d5\u05e8 \u05e2\u05de\u05d5\u05d3 \u05d4\u05de\u05dc\u05e6\u05d5\u05ea (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "testimonials_description_en": {
+      "type": "string",
+      "description": "Testimonials page description (English)"
+    },
+    "home_stats_section_bg_color": {
+      "type": "string",
+      "description": "\u05e6\u05d1\u05e2 \u05e8\u05e7\u05e2 \u05e1\u05e2\u05d9\u05e3 \u05e1\u05d8\u05d8\u05d9\u05e1\u05d8\u05d9\u05e7\u05d5\u05ea \u05d1\u05d3\u05e3 \u05d4\u05d1\u05d9\u05ea"
+    },
+    "home_stats_section_text_color": {
+      "type": "string",
+      "description": "\u05e6\u05d1\u05e2 \u05d8\u05e7\u05e1\u05d8 \u05e1\u05e2\u05d9\u05e3 \u05e1\u05d8\u05d8\u05d9\u05e1\u05d8\u05d9\u05e7\u05d5\u05ea \u05d1\u05d3\u05e3 \u05d4\u05d1\u05d9\u05ea"
+    },
+    "stats_section_title_he": {
+      "type": "string",
+      "description": "\u05db\u05d5\u05ea\u05e8\u05ea \u05e1\u05e2\u05d9\u05e3 \u05e1\u05d8\u05d8\u05d9\u05e1\u05d8\u05d9\u05e7\u05d5\u05ea (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "stats_section_title_en": {
+      "type": "string",
+      "description": "Stats section title (English)"
+    },
+    "contact_page_title_he": {
+      "type": "string",
+      "description": "\u05db\u05d5\u05ea\u05e8\u05ea \u05e2\u05de\u05d5\u05d3 \u05e6\u05d5\u05e8 \u05e7\u05e9\u05e8 (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "contact_page_title_en": {
+      "type": "string",
+      "description": "Contact page title (English)"
+    },
+    "contact_page_subtitle_he": {
+      "type": "string",
+      "description": "\u05db\u05d5\u05ea\u05e8\u05ea \u05de\u05e9\u05e0\u05d4 \u05e2\u05de\u05d5\u05d3 \u05e6\u05d5\u05e8 \u05e7\u05e9\u05e8 (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "contact_page_subtitle_en": {
+      "type": "string",
+      "description": "Contact page subtitle (English)"
+    },
+    "contact_methods_title_he": {
+      "type": "string",
+      "description": "\u05db\u05d5\u05ea\u05e8\u05ea \u05e9\u05d9\u05d8\u05d5\u05ea \u05d9\u05e6\u05d9\u05e8\u05ea \u05e7\u05e9\u05e8 (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "contact_methods_title_en": {
+      "type": "string",
+      "description": "Contact methods title (English)"
+    },
+    "contact_social_title_he": {
+      "type": "string",
+      "description": "\u05db\u05d5\u05ea\u05e8\u05ea \u05e8\u05e9\u05ea\u05d5\u05ea \u05d7\u05d1\u05e8\u05ea\u05d9\u05d5\u05ea (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "contact_social_title_en": {
+      "type": "string",
+      "description": "Social media title (English)"
+    },
+    "contact_form_enabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "contact_form_title_he": {
+      "type": "string",
+      "description": "\u05db\u05d5\u05ea\u05e8\u05ea \u05d8\u05d5\u05e4\u05e1 \u05d9\u05e6\u05d9\u05e8\u05ea \u05e7\u05e9\u05e8 (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "contact_form_title_en": {
+      "type": "string",
+      "description": "Contact form title (English)"
+    },
+    "contact_form_subtitle_he": {
+      "type": "string",
+      "description": "\u05db\u05d5\u05ea\u05e8\u05ea \u05de\u05e9\u05e0\u05d4 \u05d8\u05d5\u05e4\u05e1 \u05d9\u05e6\u05d9\u05e8\u05ea \u05e7\u05e9\u05e8 (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "contact_form_subtitle_en": {
+      "type": "string",
+      "description": "Contact form subtitle (English)"
+    },
+    "contact_form_success_message_he": {
+      "type": "string",
+      "description": "\u05ea\u05d5\u05db\u05df \u05d4\u05d5\u05d3\u05e2\u05ea \u05d4\u05d4\u05e6\u05dc\u05d7\u05d4 (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "contact_form_success_message_en": {
+      "type": "string",
+      "description": "Success message content (English)"
+    },
+    "contact_form_email_recipient": {
+      "type": "string",
+      "description": "\u05d0\u05d9\u05de\u05d9\u05d9\u05dc \u05dc\u05e7\u05d1\u05dc\u05ea \u05d4\u05e4\u05e0\u05d9\u05d5\u05ea"
+    },
+    "contact_form_honeypot_field": {
+      "type": "string"
+    },
+    "contact_page_form_cta_title_he": {
+      "type": "string",
+      "description": "\u05db\u05d5\u05ea\u05e8\u05ea \u05d4\u05e0\u05e2\u05d4 \u05dc\u05e4\u05e2\u05d5\u05dc\u05d4 \u05dc\u05d8\u05d5\u05e4\u05e1 (\u05e2\u05de\u05d5\u05d3 \u05e6\u05d5\u05e8 \u05e7\u05e9\u05e8, \u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "contact_page_form_cta_title_en": {
+      "type": "string",
+      "description": "Form CTA Title (Contact Page, English)"
+    },
+    "contact_page_form_cta_subtitle_he": {
+      "type": "string",
+      "description": "\u05db\u05d5\u05ea\u05e8\u05ea \u05de\u05e9\u05e0\u05d4 \u05d4\u05e0\u05e2\u05d4 \u05dc\u05e4\u05e2\u05d5\u05dc\u05d4 \u05dc\u05d8\u05d5\u05e4\u05e1 (\u05e2\u05de\u05d5\u05d3 \u05e6\u05d5\u05e8 \u05e7\u05e9\u05e8, \u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "contact_page_form_cta_subtitle_en": {
+      "type": "string",
+      "description": "Form CTA Subtitle (Contact Page, English)"
+    },
+    "contact_page_form_cta_button_he": {
+      "type": "string",
+      "description": "\u05d8\u05e7\u05e1\u05d8 \u05db\u05e4\u05ea\u05d5\u05e8 \u05d4\u05e0\u05e2\u05d4 \u05dc\u05e4\u05e2\u05d5\u05dc\u05d4 \u05dc\u05d8\u05d5\u05e4\u05e1 (\u05e2\u05de\u05d5\u05d3 \u05e6\u05d5\u05e8 \u05e7\u05e9\u05e8, \u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "contact_page_form_cta_button_en": {
+      "type": "string",
+      "description": "Form CTA Button Text (Contact Page, English)"
+    },
+    "contact_page_form_cta_bg_color": {
+      "type": "string",
+      "description": "\u05e6\u05d1\u05e2 \u05e8\u05e7\u05e2 \u05d0\u05d6\u05d5\u05e8 \u05d4\u05e0\u05e2\u05d4 \u05dc\u05e4\u05e2\u05d5\u05dc\u05d4 \u05dc\u05d8\u05d5\u05e4\u05e1 (\u05e2\u05de\u05d5\u05d3 \u05e6\u05d5\u05e8 \u05e7\u05e9\u05e8)"
+    },
+    "contact_page_form_cta_button_bg_color": {
+      "type": "string",
+      "description": "\u05e6\u05d1\u05e2 \u05e8\u05e7\u05e2 \u05db\u05e4\u05ea\u05d5\u05e8 \u05d4\u05e0\u05e2\u05d4 \u05dc\u05e4\u05e2\u05d5\u05dc\u05d4 \u05dc\u05d8\u05d5\u05e4\u05e1 (\u05e2\u05de\u05d5\u05d3 \u05e6\u05d5\u05e8 \u05e7\u05e9\u05e8)"
+    },
+    "contact_page_form_cta_button_text_color": {
+      "type": "string",
+      "description": "\u05e6\u05d1\u05e2 \u05d8\u05e7\u05e1\u05d8 \u05db\u05e4\u05ea\u05d5\u05e8 \u05d4\u05e0\u05e2\u05d4 \u05dc\u05e4\u05e2\u05d5\u05dc\u05d4 \u05dc\u05d8\u05d5\u05e4\u05e1 (\u05e2\u05de\u05d5\u05d3 \u05e6\u05d5\u05e8 \u05e7\u05e9\u05e8)"
+    },
+    "podcast_page_title_he": {
+      "type": "string",
+      "description": "\u05db\u05d5\u05ea\u05e8\u05ea \u05e2\u05de\u05d5\u05d3 \u05e4\u05d5\u05d3\u05e7\u05e1\u05d8 (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "podcast_page_title_en": {
+      "type": "string",
+      "description": "Podcast page title (English)"
+    },
+    "podcast_description_he": {
+      "type": "string",
+      "description": "\u05ea\u05d9\u05d0\u05d5\u05e8 \u05e2\u05de\u05d5\u05d3 \u05e4\u05d5\u05d3\u05e7\u05e1\u05d8 (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "podcast_description_en": {
+      "type": "string",
+      "description": "Podcast page description (English)"
+    },
+    "podcast_bg_color": {
+      "type": "string",
+      "description": "\u05e6\u05d1\u05e2 \u05e8\u05e7\u05e2 \u05e2\u05de\u05d5\u05d3 \u05e4\u05d5\u05d3\u05e7\u05e1\u05d8"
+    },
+    "podcast_spotify_url": {
+      "type": "string",
+      "description": "\u05e7\u05d9\u05e9\u05d5\u05e8 \u05dc\u05e4\u05d5\u05d3\u05e7\u05e1\u05d8 \u05d1-Spotify"
+    },
+    "podcast_apple_url": {
+      "type": "string",
+      "description": "\u05e7\u05d9\u05e9\u05d5\u05e8 \u05dc\u05e4\u05d5\u05d3\u05e7\u05e1\u05d8 \u05d1-Apple Podcasts"
+    },
+    "podcast_youtube_url": {
+      "type": "string",
+      "description": "\u05e7\u05d9\u05e9\u05d5\u05e8 \u05dc\u05e4\u05d5\u05d3\u05e7\u05e1\u05d8 \u05d1-YouTube"
+    },
+    "podcast_google_url": {
+      "type": "string",
+      "description": "\u05e7\u05d9\u05e9\u05d5\u05e8 \u05dc\u05e4\u05d5\u05d3\u05e7\u05e1\u05d8 \u05d1-Google Podcasts"
+    },
+    "blog_page_title_he": {
+      "type": "string",
+      "description": "\u05db\u05d5\u05ea\u05e8\u05ea \u05e2\u05de\u05d5\u05d3 \u05d1\u05dc\u05d5\u05d2 (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "blog_page_title_en": {
+      "type": "string",
+      "description": "Blog page title (English)"
+    },
+    "blog_description_he": {
+      "type": "string",
+      "description": "\u05ea\u05d9\u05d0\u05d5\u05e8 \u05e2\u05de\u05d5\u05d3 \u05d1\u05dc\u05d5\u05d2 (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "blog_description_en": {
+      "type": "string",
+      "description": "Blog page description (English)"
+    },
+    "logo_carousel_title_he": {
+      "type": "string",
+      "description": "\u05db\u05d5\u05ea\u05e8\u05ea \u05e7\u05e8\u05d5\u05e1\u05dc\u05ea \u05dc\u05d5\u05d2\u05d5\u05d0\u05d9\u05dd (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "logo_carousel_title_en": {
+      "type": "string",
+      "description": "Logo carousel title (English)"
+    },
+    "logo_carousel_bg_color": {
+      "type": "string",
+      "description": "\u05e6\u05d1\u05e2 \u05e8\u05e7\u05e2 \u05e7\u05e8\u05d5\u05e1\u05dc\u05ea \u05dc\u05d5\u05d2\u05d5\u05d0\u05d9\u05dd"
+    },
+    "logo_carousel_controls_enabled": {
+      "type": "boolean",
+      "description": "\u05d4\u05d0\u05dd \u05dc\u05d0\u05e4\u05e9\u05e8 \u05db\u05e4\u05ea\u05d5\u05e8\u05d9 \u05d1\u05e7\u05e8\u05d4 \u05d1\u05e7\u05e8\u05d5\u05e1\u05dc\u05ea \u05dc\u05d5\u05d2\u05d5\u05d0\u05d9\u05dd"
+    },
+    "logo_carousel_animation": {
+      "type": "string",
+      "enum": [
+        "scroll",
+        "fade"
+      ],
+      "description": "\u05e1\u05d5\u05d2 \u05d0\u05e0\u05d9\u05de\u05e6\u05d9\u05d4 \u05d1\u05e7\u05e8\u05d5\u05e1\u05dc\u05ea \u05dc\u05d5\u05d2\u05d5\u05d0\u05d9\u05dd"
+    },
+    "page_media": {
+      "type": "object",
+      "description": "\u05ea\u05de\u05d5\u05e0\u05d5\u05ea \u05d5\u05d5\u05d9\u05d3\u05d0\u05d5 \u05dc\u05e2\u05de\u05d5\u05d3\u05d9\u05dd \u05e9\u05d5\u05e0\u05d9\u05dd",
+      "properties": {
+        "home": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "image",
+                  "video"
+                ]
+              },
+              "file_url": {
+                "type": "string"
+              },
+              "alt_he": {
+                "type": "string"
+              },
+              "alt_en": {
+                "type": "string"
+              },
+              "order_index": {
+                "type": "number"
+              }
+            }
+          }
+        },
+        "home_features": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "image",
+                  "video"
+                ]
+              },
+              "file_url": {
+                "type": "string"
+              },
+              "alt_he": {
+                "type": "string"
+              },
+              "alt_en": {
+                "type": "string"
+              },
+              "order_index": {
+                "type": "number"
+              }
+            }
+          }
+        },
+        "about": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "image",
+                  "video"
+                ]
+              },
+              "file_url": {
+                "type": "string"
+              },
+              "alt_he": {
+                "type": "string"
+              },
+              "alt_en": {
+                "type": "string"
+              },
+              "order_index": {
+                "type": "number"
+              }
+            }
+          }
+        },
+        "personal_workshops": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "image",
+                  "video"
+                ]
+              },
+              "file_url": {
+                "type": "string"
+              },
+              "alt_he": {
+                "type": "string"
+              },
+              "alt_en": {
+                "type": "string"
+              },
+              "order_index": {
+                "type": "number"
+              }
+            }
+          }
+        },
+        "corporate_lectures_women": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "image",
+                  "video"
+                ]
+              },
+              "file_url": {
+                "type": "string"
+              },
+              "alt_he": {
+                "type": "string"
+              },
+              "alt_en": {
+                "type": "string"
+              },
+              "order_index": {
+                "type": "number"
+              }
+            }
+          }
+        },
+        "corporate_lectures_leaders": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "image",
+                  "video"
+                ]
+              },
+              "file_url": {
+                "type": "string"
+              },
+              "alt_he": {
+                "type": "string"
+              },
+              "alt_en": {
+                "type": "string"
+              },
+              "order_index": {
+                "type": "number"
+              }
+            }
+          }
+        },
+        "testimonials": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "image",
+                  "video"
+                ]
+              },
+              "file_url": {
+                "type": "string"
+              },
+              "alt_he": {
+                "type": "string"
+              },
+              "alt_en": {
+                "type": "string"
+              },
+              "order_index": {
+                "type": "number"
+              }
+            }
+          }
+        },
+        "podcast": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "image",
+                  "video"
+                ]
+              },
+              "file_url": {
+                "type": "string"
+              },
+              "alt_he": {
+                "type": "string"
+              },
+              "alt_en": {
+                "type": "string"
+              },
+              "order_index": {
+                "type": "number"
+              }
+            }
+          }
+        },
+        "blog": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "image",
+                  "video"
+                ]
+              },
+              "file_url": {
+                "type": "string"
+              },
+              "alt_he": {
+                "type": "string"
+              },
+              "alt_en": {
+                "type": "string"
+              },
+              "order_index": {
+                "type": "number"
+              }
+            }
+          }
+        },
+        "contact": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "image",
+                  "video"
+                ]
+              },
+              "file_url": {
+                "type": "string"
+              },
+              "alt_he": {
+                "type": "string"
+              },
+              "alt_en": {
+                "type": "string"
+              },
+              "order_index": {
+                "type": "number"
+              }
+            }
+          }
+        },
+        "logo_carousel_logos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "image"
+                ]
+              },
+              "file_url": {
+                "type": "string"
+              },
+              "alt_he": {
+                "type": "string"
+              },
+              "alt_en": {
+                "type": "string"
+              },
+              "order_index": {
+                "type": "number"
+              }
+            }
+          }
+        }
+      }
+    },
+    "page_media_position": {
+      "type": "object",
+      "description": "\u05de\u05d9\u05e7\u05d5\u05dd \u05de\u05d3\u05d9\u05d4 \u05d1\u05e2\u05de\u05d5\u05d3\u05d9\u05dd \u05e9\u05d5\u05e0\u05d9\u05dd",
+      "properties": {
+        "home": {
+          "type": "string"
+        },
+        "home_features": {
+          "type": "string"
+        },
+        "about": {
+          "type": "string"
+        },
+        "personal_workshops": {
+          "type": "string"
+        },
+        "corporate_lectures_women": {
+          "type": "string"
+        },
+        "corporate_lectures_leaders": {
+          "type": "string"
+        },
+        "testimonials": {
+          "type": "string"
+        },
+        "podcast": {
+          "type": "string"
+        },
+        "blog": {
+          "type": "string"
+        },
+        "contact": {
+          "type": "string"
+        }
+      }
+    },
+    "stats": {
+      "type": "array",
+      "description": "\u05e0\u05ea\u05d5\u05e0\u05d9 \u05e1\u05d8\u05d8\u05d9\u05e1\u05d8\u05d9\u05e7\u05d5\u05ea",
+      "items": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "description": "\u05d4\u05e2\u05e8\u05da \u05d4\u05de\u05e1\u05e4\u05e8\u05d9"
+          },
+          "label_he": {
+            "type": "string",
+            "description": "\u05d4\u05ea\u05d5\u05d5\u05d9\u05ea \u05d1\u05e2\u05d1\u05e8\u05d9\u05ea"
+          },
+          "label_en": {
+            "type": "string",
+            "description": "\u05d4\u05ea\u05d5\u05d5\u05d9\u05ea \u05d1\u05d0\u05e0\u05d2\u05dc\u05d9\u05ea"
+          }
+        }
+      }
+    },
+    "general_loading_he": {
+      "type": "string",
+      "description": "\u05d8\u05e7\u05e1\u05d8 \u05d8\u05e2\u05d9\u05e0\u05d4 \u05db\u05dc\u05dc\u05d9 (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "general_loading_en": {
+      "type": "string",
+      "description": "General loading text (English)"
+    },
+    "general_coming_soon_he": {
+      "type": "string",
+      "description": "\u05d8\u05e7\u05e1\u05d8 '\u05d1\u05e7\u05e8\u05d5\u05d1' \u05db\u05dc\u05dc\u05d9 (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "general_coming_soon_en": {
+      "type": "string",
+      "description": "General 'coming soon' text (English)"
+    },
+    "general_stay_updated_he": {
+      "type": "string",
+      "description": "\u05d8\u05e7\u05e1\u05d8 '\u05d4\u05d9\u05e9\u05d0\u05e8\u05d9 \u05de\u05e2\u05d5\u05d3\u05db\u05e0\u05ea' \u05db\u05dc\u05dc\u05d9 (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "general_stay_updated_en": {
+      "type": "string",
+      "description": "General 'stay updated' text (English)"
+    },
+    "general_read_more_he": {
+      "type": "string",
+      "description": "\u05d8\u05e7\u05e1\u05d8 '\u05e7\u05e8\u05d0 \u05e2\u05d5\u05d3' \u05db\u05dc\u05dc\u05d9 (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "general_read_more_en": {
+      "type": "string",
+      "description": "General 'read more' text (English)"
+    },
+    "general_watch_video_he": {
+      "type": "string",
+      "description": "\u05d8\u05e7\u05e1\u05d8 '\u05e6\u05e4\u05d4 \u05d1\u05e1\u05e8\u05d8\u05d5\u05df' \u05db\u05dc\u05dc\u05d9 (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "general_watch_video_en": {
+      "type": "string",
+      "description": "General 'watch video' text (English)"
+    },
+    "general_workshop_he": {
+      "type": "string",
+      "description": "\u05d8\u05e7\u05e1\u05d8 '\u05e1\u05d3\u05e0\u05d4' \u05db\u05dc\u05dc\u05d9 (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "general_workshop_en": {
+      "type": "string",
+      "description": "General 'workshop' text (English)"
+    },
+    "general_consulting_he": {
+      "type": "string",
+      "description": "\u05d8\u05e7\u05e1\u05d8 '\u05d9\u05d9\u05e2\u05d5\u05e5' \u05db\u05dc\u05dc\u05d9 (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "general_consulting_en": {
+      "type": "string",
+      "description": "General 'consulting' text (English)"
+    },
+    "general_lecture_he": {
+      "type": "string",
+      "description": "\u05d8\u05e7\u05e1\u05d8 '\u05d4\u05e8\u05e6\u05d0\u05d4' \u05db\u05dc\u05dc\u05d9 (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "general_lecture_en": {
+      "type": "string",
+      "description": "General 'lecture' text (English)"
+    },
+    "general_participants_he": {
+      "type": "string",
+      "description": "\u05d8\u05e7\u05e1\u05d8 '\u05de\u05e9\u05ea\u05ea\u05e4\u05d5\u05ea' \u05db\u05dc\u05dc\u05d9 (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "general_participants_en": {
+      "type": "string",
+      "description": "General 'participants' text (English)"
+    },
+    "general_register_he": {
+      "type": "string",
+      "description": "\u05d8\u05e7\u05e1\u05d8 '\u05d4\u05e8\u05e9\u05de\u05d4' \u05db\u05dc\u05dc\u05d9 (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "general_register_en": {
+      "type": "string",
+      "description": "General 'register' text (English)"
+    },
+    "general_phone_he": {
+      "type": "string",
+      "description": "\u05d8\u05e7\u05e1\u05d8 '\u05d8\u05dc\u05e4\u05d5\u05df' \u05db\u05dc\u05dc\u05d9 (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "general_phone_en": {
+      "type": "string",
+      "description": "General 'phone' text (English)"
+    },
+    "general_email_he": {
+      "type": "string",
+      "description": "\u05d8\u05e7\u05e1\u05d8 '\u05d0\u05d9\u05de\u05d9\u05d9\u05dc' \u05db\u05dc\u05dc\u05d9 (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "general_email_en": {
+      "type": "string",
+      "description": "General 'email' text (English)"
+    },
+    "general_send_message_he": {
+      "type": "string",
+      "description": "\u05d8\u05e7\u05e1\u05d8 '\u05e9\u05dc\u05d7\u05d9 \u05d4\u05d5\u05d3\u05e2\u05d4' \u05db\u05dc\u05dc\u05d9 (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "general_send_message_en": {
+      "type": "string",
+      "description": "General 'send message' text (English)"
+    },
+    "general_episode_he": {
+      "type": "string",
+      "description": "\u05d8\u05e7\u05e1\u05d8 '\u05e4\u05e8\u05e7' \u05db\u05dc\u05dc\u05d9 (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "general_episode_en": {
+      "type": "string",
+      "description": "General 'episode' text (English)"
+    }
+  },
+  "required": [],
+  "rls": {
+    "write": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

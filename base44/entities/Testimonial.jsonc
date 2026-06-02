@@ -1,0 +1,59 @@
+{
+  "name": "Testimonial",
+  "type": "object",
+  "properties": {
+    "name_he": {
+      "type": "string",
+      "description": "\u05e9\u05dd \u05d4\u05de\u05de\u05dc\u05d9\u05e5/\u05d4 (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "name_en": {
+      "type": "string",
+      "description": "Recommender's Name (English)"
+    },
+    "title_he": {
+      "type": "string",
+      "description": "\u05ea\u05e4\u05e7\u05d9\u05d3 (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "title_en": {
+      "type": "string",
+      "description": "Title (English)"
+    },
+    "text_he": {
+      "type": "string",
+      "description": "\u05ea\u05d5\u05db\u05df \u05d4\u05d4\u05de\u05dc\u05e6\u05d4 (\u05e2\u05d1\u05e8\u05d9\u05ea)"
+    },
+    "text_en": {
+      "type": "string",
+      "description": "Testimonial Text (English)"
+    },
+    "rating": {
+      "type": "number",
+      "minimum": 1,
+      "maximum": 5,
+      "description": "\u05d3\u05d9\u05e8\u05d5\u05d2 (1-5)"
+    },
+    "photo_url": {
+      "type": "string",
+      "description": "\u05e7\u05d9\u05e9\u05d5\u05e8 \u05dc\u05ea\u05de\u05d5\u05e0\u05d4"
+    },
+    "is_published": {
+      "type": "boolean",
+      "default": true,
+      "description": "\u05d4\u05d0\u05dd \u05d4\u05d4\u05de\u05dc\u05e6\u05d4 \u05de\u05e4\u05d5\u05e8\u05e1\u05de\u05ea?"
+    }
+  },
+  "required": [
+    "name_he",
+    "name_en",
+    "text_he",
+    "text_en",
+    "rating"
+  ],
+  "rls": {
+    "write": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

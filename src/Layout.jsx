@@ -8,6 +8,7 @@ import LogoCarousel from './components/home/LogoCarousel';
 import CookieConsent from './components/shared/CookieConsent';
 import AliceAndBotWidget from './components/shared/AliceAndBotWidget';
 import AccessibilityWidget from './components/shared/AccessibilityWidget';
+import ChatWidget from './components/shared/ChatWidget';
 import { migrateSettings } from "@/functions/migrateSettings";
 
 function StyleInjector() {
@@ -223,6 +224,7 @@ export default function Layout({ children, currentPageName }) {
             {children}
             <AliceAndBotWidget />
             <AccessibilityWidget />
+            <ChatWidget />
         </AppContent>
       </SiteSettingsProvider>
     </LanguageProvider>

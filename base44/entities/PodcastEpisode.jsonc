@@ -1,0 +1,104 @@
+{
+  "name": "PodcastEpisode",
+  "type": "object",
+  "properties": {
+    "title_he": {
+      "type": "string",
+      "description": "\u05db\u05d5\u05ea\u05e8\u05ea \u05d4\u05e4\u05e8\u05e7 \u05d1\u05e2\u05d1\u05e8\u05d9\u05ea"
+    },
+    "title_en": {
+      "type": "string",
+      "description": "Episode title in English"
+    },
+    "description_he": {
+      "type": "string",
+      "description": "\u05ea\u05d9\u05d0\u05d5\u05e8 \u05d4\u05e4\u05e8\u05e7 \u05d1\u05e2\u05d1\u05e8\u05d9\u05ea"
+    },
+    "description_en": {
+      "type": "string",
+      "description": "Episode description in English"
+    },
+    "episode_number": {
+      "type": "number",
+      "description": "\u05de\u05e1\u05e4\u05e8 \u05d4\u05e4\u05e8\u05e7"
+    },
+    "duration": {
+      "type": "string",
+      "description": "\u05de\u05e9\u05da \u05d4\u05e4\u05e8\u05e7 (\u05db\u05d2\u05d5\u05df '45:30')"
+    },
+    "publish_date": {
+      "type": "string",
+      "format": "date",
+      "description": "\u05ea\u05d0\u05e8\u05d9\u05da \u05e4\u05e8\u05e1\u05d5\u05dd"
+    },
+    "featured_image": {
+      "type": "string",
+      "description": "\u05ea\u05de\u05d5\u05e0\u05d4 \u05e8\u05d0\u05e9\u05d9\u05ea \u05dc\u05e4\u05e8\u05e7"
+    },
+    "spotify_url": {
+      "type": "string",
+      "description": "\u05e7\u05d9\u05e9\u05d5\u05e8 \u05dc\u05e1\u05e4\u05d5\u05d8\u05d9\u05e4\u05d9\u05d9"
+    },
+    "apple_url": {
+      "type": "string",
+      "description": "\u05e7\u05d9\u05e9\u05d5\u05e8 \u05dc\u05d0\u05e4\u05dc \u05e4\u05d5\u05d3\u05e7\u05e1\u05d8"
+    },
+    "youtube_url": {
+      "type": "string",
+      "description": "\u05e7\u05d9\u05e9\u05d5\u05e8 \u05dc\u05d9\u05d5\u05d8\u05d9\u05d5\u05d1"
+    },
+    "google_url": {
+      "type": "string",
+      "description": "\u05e7\u05d9\u05e9\u05d5\u05e8 \u05dc\u05d2\u05d5\u05d2\u05dc \u05e4\u05d5\u05d3\u05e7\u05e1\u05d8"
+    },
+    "is_published": {
+      "type": "boolean",
+      "default": true,
+      "description": "\u05d4\u05d0\u05dd \u05d4\u05e4\u05e8\u05e7 \u05de\u05e4\u05d5\u05e8\u05e1\u05dd"
+    },
+    "order_index": {
+      "type": "number",
+      "description": "\u05e1\u05d3\u05e8 \u05d4\u05e6\u05d2\u05d4"
+    },
+    "media_gallery": {
+      "type": "array",
+      "description": "\u05d2\u05dc\u05e8\u05d9\u05d9\u05ea \u05ea\u05de\u05d5\u05e0\u05d5\u05ea/\u05d5\u05d9\u05d3\u05d0\u05d5 \u05dc\u05e4\u05e8\u05e7",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "image",
+              "video"
+            ]
+          },
+          "file_url": {
+            "type": "string"
+          },
+          "alt_he": {
+            "type": "string"
+          },
+          "alt_en": {
+            "type": "string"
+          },
+          "order_index": {
+            "type": "number"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "title_he",
+    "title_en",
+    "episode_number"
+  ],
+  "rls": {
+    "write": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

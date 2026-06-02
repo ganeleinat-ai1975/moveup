@@ -1,0 +1,33 @@
+{
+  "name": "BotSettings",
+  "type": "object",
+  "properties": {
+    "system_prompt": {
+      "type": "string",
+      "description": "System Prompt (Brain)"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    },
+    "bot_name": {
+      "type": "string",
+      "default": "\u05d2\u05dc\u05d9"
+    },
+    "welcome_message": {
+      "type": "string",
+      "description": "Welcome Message"
+    }
+  },
+  "required": [],
+  "rls": {
+    "read": {
+      "public": true
+    },
+    "write": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

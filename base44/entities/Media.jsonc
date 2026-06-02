@@ -1,0 +1,48 @@
+{
+  "name": "Media",
+  "type": "object",
+  "properties": {
+    "file_url": {
+      "type": "string",
+      "description": "URL of the media file"
+    },
+    "alt_he": {
+      "type": "string",
+      "description": "Alt text in Hebrew"
+    },
+    "alt_en": {
+      "type": "string",
+      "description": "Alt text in English"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "image",
+        "video"
+      ],
+      "default": "image",
+      "description": "Media type"
+    },
+    "category": {
+      "type": "string",
+      "description": "Usage category (e.g. home_hero, logo, etc.)"
+    },
+    "name": {
+      "type": "string",
+      "description": "Internal name for easy identification"
+    }
+  },
+  "rls": {
+    "write": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  },
+  "required": []
+}

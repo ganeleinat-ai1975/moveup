@@ -1,0 +1,215 @@
+{
+  "name": "CorporatePageSettings",
+  "type": "object",
+  "properties": {
+    "corporate_pages": {
+      "type": "object",
+      "properties": {
+        "women": {
+          "type": "object",
+          "properties": {
+            "title_he": {
+              "type": "string"
+            },
+            "title_en": {
+              "type": "string"
+            },
+            "description_he": {
+              "type": "string"
+            },
+            "description_en": {
+              "type": "string"
+            },
+            "benefits_title_he": {
+              "type": "string"
+            },
+            "benefits_title_en": {
+              "type": "string"
+            },
+            "benefit_1_icon": {
+              "type": "string"
+            },
+            "benefit_1_title_he": {
+              "type": "string"
+            },
+            "benefit_1_title_en": {
+              "type": "string"
+            },
+            "benefit_1_desc_he": {
+              "type": "string"
+            },
+            "benefit_1_desc_en": {
+              "type": "string"
+            },
+            "benefit_2_icon": {
+              "type": "string"
+            },
+            "benefit_2_title_he": {
+              "type": "string"
+            },
+            "benefit_2_title_en": {
+              "type": "string"
+            },
+            "benefit_2_desc_he": {
+              "type": "string"
+            },
+            "benefit_2_desc_en": {
+              "type": "string"
+            },
+            "benefit_3_icon": {
+              "type": "string"
+            },
+            "benefit_3_title_he": {
+              "type": "string"
+            },
+            "benefit_3_title_en": {
+              "type": "string"
+            },
+            "benefit_3_desc_he": {
+              "type": "string"
+            },
+            "benefit_3_desc_en": {
+              "type": "string"
+            }
+          }
+        },
+        "leaders": {
+          "type": "object",
+          "properties": {
+            "title_he": {
+              "type": "string"
+            },
+            "title_en": {
+              "type": "string"
+            },
+            "description_he": {
+              "type": "string"
+            },
+            "description_en": {
+              "type": "string"
+            },
+            "benefits_title_he": {
+              "type": "string"
+            },
+            "benefits_title_en": {
+              "type": "string"
+            },
+            "benefit_1_icon": {
+              "type": "string"
+            },
+            "benefit_1_title_he": {
+              "type": "string"
+            },
+            "benefit_1_title_en": {
+              "type": "string"
+            },
+            "benefit_1_desc_he": {
+              "type": "string"
+            },
+            "benefit_1_desc_en": {
+              "type": "string"
+            },
+            "benefit_2_icon": {
+              "type": "string"
+            },
+            "benefit_2_title_he": {
+              "type": "string"
+            },
+            "benefit_2_title_en": {
+              "type": "string"
+            },
+            "benefit_2_desc_he": {
+              "type": "string"
+            },
+            "benefit_2_desc_en": {
+              "type": "string"
+            },
+            "benefit_3_icon": {
+              "type": "string"
+            },
+            "benefit_3_title_he": {
+              "type": "string"
+            },
+            "benefit_3_title_en": {
+              "type": "string"
+            },
+            "benefit_3_desc_he": {
+              "type": "string"
+            },
+            "benefit_3_desc_en": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "media_corporate_lectures_women": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "image",
+              "video"
+            ]
+          },
+          "file_url": {
+            "type": "string"
+          },
+          "alt_he": {
+            "type": "string"
+          },
+          "alt_en": {
+            "type": "string"
+          },
+          "order_index": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "media_corporate_lectures_leaders": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "image",
+              "video"
+            ]
+          },
+          "file_url": {
+            "type": "string"
+          },
+          "alt_he": {
+            "type": "string"
+          },
+          "alt_en": {
+            "type": "string"
+          },
+          "order_index": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "media_position_corporate_lectures_women": {
+      "type": "string"
+    },
+    "media_position_corporate_lectures_leaders": {
+      "type": "string"
+    }
+  },
+  "rls": {
+    "write": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  },
+  "required": []
+}

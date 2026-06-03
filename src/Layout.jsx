@@ -6,7 +6,6 @@ import Footer from './components/navigation/Footer';
 import { Loader2 } from 'lucide-react';
 import LogoCarousel from './components/home/LogoCarousel';
 import CookieConsent from './components/shared/CookieConsent';
-import AliceAndBotWidget from './components/shared/AliceAndBotWidget';
 import AccessibilityWidget from './components/shared/AccessibilityWidget';
 import ChatWidget from './components/shared/ChatWidget';
 import { migrateSettings } from "@/functions/migrateSettings";
@@ -222,7 +221,6 @@ export default function Layout({ children, currentPageName }) {
         <StyleInjector />
         <AppContent currentPageName={currentPageName}>
             {children}
-            <AliceAndBotWidget />
             <AccessibilityWidget />
             <ChatWidget />
         </AppContent>

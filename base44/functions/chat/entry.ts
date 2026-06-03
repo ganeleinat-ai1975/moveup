@@ -10,17 +10,13 @@ Deno.serve(async (req) => {
         const base44 = createClientFromRequest(req);
         const { messages, sessionId } = await req.json();
 
-        // Get bot settings (using service role to allow public users to read it if RLS blocks, though it's public anyway)
-        const settingsList = await base44.asServiceRole.entities.BotSettings.list();
-        const settings = settingsList[0] || {
-            system_prompt: 'את/ה עוזרת וירטואלית.',
-            is_active: true,
-            bot_name: 'גלי'
-        };
-
-        if (!settings.is_active) {
-            return Response.json({ reply: 'הצ\'אט לא פעיל כרגע.' });
+        const settingsList = await base44.asServiceRole.entities.BotSettings.filter({ is_active: true });
+        
+        if (!settingsList || settingsList.length === 0) {
+            return Response.json({ error: 'No active BotSettings found' }, { status: 404 });
         }
+        
+        const settings = settingsList[0];
 
         const apiKey = Deno.env.get('OPENAI_API_KEY');
         if (!apiKey) {

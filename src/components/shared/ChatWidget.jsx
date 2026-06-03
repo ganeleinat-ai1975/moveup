@@ -13,7 +13,7 @@ export default function ChatWidget() {
   useEffect(() => {
     const fetchSettings = async () => {
       try {
-        const list = await base44.entities.BotSettings.list();
+        const list = await base44.entities.BotSettings.filter({ is_active: true });
         if (list.length > 0) {
           setSettings(list[0]);
           if (list[0].welcome_message) {
@@ -56,7 +56,7 @@ export default function ChatWidget() {
   return (
     <div className="fixed bottom-6 right-6 z-[9999]" dir="rtl">
       {isOpen ? (
-        <div className="bg-white rounded-2xl shadow-xl w-[320px] sm:w-[380px] overflow-hidden flex flex-col border border-gray-200 h-[500px]">
+        <div className="bg-white rounded-2xl shadow-xl w-[300px] overflow-hidden flex flex-col border border-gray-200 h-[450px]">
           <div className="bg-[#005e6c] text-white p-4 flex justify-between items-center">
             <div className="font-bold flex items-center gap-2">
               <MessageCircle className="w-5 h-5" />

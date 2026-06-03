@@ -48,7 +48,7 @@ const AuthenticatedApp = () => {
           <MainPage />
         </LayoutWrapper>
       } />
-      <Route path="/bot-admin" element={
+      <Route path="/admin/bot" element={
         <LayoutWrapper currentPageName="BotAdmin">
           <BotAdmin />
         </LayoutWrapper>

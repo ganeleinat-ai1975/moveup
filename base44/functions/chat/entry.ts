@@ -14,7 +14,7 @@ Deno.serve(async (req) => {
         // Fetch bot settings
         let systemPrompt = '';
         try {
-            const settingsList = await base44.entities.BotSettings.filter({ is_active: true });
+            const settingsList = await base44.entities.BotSettings.list();
             if (settingsList && settingsList.length > 0) {
                 systemPrompt = settingsList[0].system_prompt || '';
             }

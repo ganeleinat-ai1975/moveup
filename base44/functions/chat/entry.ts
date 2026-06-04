@@ -8,36 +8,41 @@ Deno.serve(async (req) => {
         }
         
         const base44 = createClientFromRequest(req);
-        const { messages, sessionId } = await req.json();
+        const body = await req.json();
+        const { messages } = body;
 
-        const settingsList = await base44.asServiceRole.entities.BotSettings.filter({ is_active: true });
-        
-        if (!settingsList || settingsList.length === 0) {
-            return Response.json({ error: 'No active BotSettings found' }, { status: 404 });
+        // Fetch bot settings
+        let systemPrompt = '';
+        try {
+            const settingsList = await base44.entities.BotSettings.filter({ is_active: true });
+            if (settingsList && settingsList.length > 0) {
+                systemPrompt = settingsList[0].system_prompt || '';
+            }
+        } catch (e) {
+            console.error('BotSettings fetch error:', e.message);
         }
-        
-        const settings = settingsList[0];
 
         const apiKey = Deno.env.get('OPENAI_API_KEY');
         if (!apiKey) {
-            return Response.json({ error: 'OPENAI_API_KEY is not set in environment variables' }, { status: 500 });
+            return Response.json({ error: 'OPENAI_API_KEY not set' }, { status: 500 });
         }
 
         const openai = new OpenAI({ apiKey });
         
         const formattedMessages = [
-            { role: 'system', content: settings.system_prompt },
-            ...(messages || []).map(m => ({ role: m.role, content: m.content }))
+            ...(systemPrompt ? [{ role: 'system', content: systemPrompt }] : []),
+            ...(messages || []).map((m: { role: string; content: string }) => ({ role: m.role, content: m.content }))
         ];
 
         const response = await openai.chat.completions.create({
             model: 'gpt-4o-mini',
-            messages: formattedMessages
+            messages: formattedMessages,
+            max_tokens: 300
         });
 
         return Response.json({ reply: response.choices[0].message.content });
     } catch (error) {
-        console.error('Chat error:', error);
-        return Response.json({ error: error.message }, { status: 500 });
+        console.error('Chat function error:', error);
+        return Response.json({ error: error.message || 'Unknown error' }, { status: 500 });
     }
 });

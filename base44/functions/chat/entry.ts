@@ -11,11 +11,11 @@ Deno.serve(async (req) => {
         const body = await req.json();
         const { messages } = body;
 
-        let systemPrompt = '';
+        let systemPrompt = 'את/ה עוזרת וירטואלית בשם גלי מטעם פורצות קדימה. תפקידך לעזור למשתמשים, לענות באדיבות, ולספק מידע על פעילות הארגון.';
         try {
-            const settingsList = await base44.entities.BotSettings.list();
-            if (settingsList && settingsList.length > 0) {
-                systemPrompt = settingsList[0].system_prompt || '';
+            const settingsList = await base44.asServiceRole.entities.BotSettings.list();
+            if (settingsList && settingsList.length > 0 && settingsList[0].system_prompt) {
+                systemPrompt = settingsList[0].system_prompt;
             }
         } catch (e) {
             console.error('BotSettings fetch error:', e.message);

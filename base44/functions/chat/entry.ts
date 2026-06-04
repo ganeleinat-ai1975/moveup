@@ -11,7 +11,6 @@ Deno.serve(async (req) => {
         const body = await req.json();
         const { messages } = body;
 
-        // Fetch bot settings
         let systemPrompt = '';
         try {
             const settingsList = await base44.entities.BotSettings.list();
@@ -31,7 +30,7 @@ Deno.serve(async (req) => {
         
         const formattedMessages = [
             ...(systemPrompt ? [{ role: 'system', content: systemPrompt }] : []),
-            ...(messages || []).map((m: { role: string; content: string }) => ({ role: m.role, content: m.content }))
+            ...(messages || []).map((m: any) => ({ role: m.role, content: m.content }))
         ];
 
         const response = await openai.chat.completions.create({
@@ -43,6 +42,6 @@ Deno.serve(async (req) => {
         return Response.json({ reply: response.choices[0].message.content });
     } catch (error) {
         console.error('Chat function error:', error);
-        return Response.json({ error: error.message || 'Unknown error' }, { status: 500 });
+        return Response.json({ error: String(error) }, { status: 500 });
     }
 });

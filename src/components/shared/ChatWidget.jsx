@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { MessageCircle, X, Send, Loader2 } from 'lucide-react';
 import { base44 } from '@/api/base44Client';
+import ReactMarkdown from 'react-markdown';
 
 export default function ChatWidget() {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,7 +9,10 @@ export default function ChatWidget() {
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
   const [settings, setSettings] = useState(null);
+  const [conversation, setConversation] = useState(null);
   const messagesEndRef = useRef(null);
+
+  const WELCOME_MSG = "שלום! אני כאן לכל שאלה שיש לך. כדי שאוכל לתת לך את המענה המדויק ביותר, אשמח לדעת האם את פונה אלי כמישהי שהשתתפה כבר בסדנה או בתכנית שלנו ומעוניינת בליווי וכלים להמשך הדרך, או שאת אשת קשר מארגון שמעוניינת לשמוע על הפעילות שלנו עבור העובדים והעובדות?";
 
   useEffect(() => {
     const fetchSettings = async () => {
@@ -16,9 +20,6 @@ export default function ChatWidget() {
         const list = await base44.entities.BotSettings.filter({ is_active: true });
         if (list.length > 0) {
           setSettings(list[0]);
-          if (list[0].welcome_message) {
-            setMessages([{ role: 'assistant', content: list[0].welcome_message }]);
-          }
         }
       } catch (err) {
         console.error('Failed to fetch bot settings', err);
@@ -28,27 +29,60 @@ export default function ChatWidget() {
   }, []);
 
   useEffect(() => {
+    if (isOpen && !conversation) {
+      const initConv = async () => {
+        try {
+          const conv = await base44.agents.createConversation({
+            agent_name: "gali",
+            metadata: { name: "Web Chat" }
+          });
+          setConversation(conv);
+          setMessages([{ role: 'assistant', content: WELCOME_MSG }]);
+        } catch (err) {
+          console.error("Failed to create conversation", err);
+        }
+      };
+      initConv();
+    }
+  }, [isOpen, conversation]);
+
+  useEffect(() => {
+    if (!conversation?.id) return;
+    const unsubscribe = base44.agents.subscribeToConversation(conversation.id, (data) => {
+      if (data.messages) {
+        setMessages([{ role: 'assistant', content: WELCOME_MSG }, ...data.messages]);
+        
+        const lastMsg = data.messages[data.messages.length - 1];
+        if (lastMsg && lastMsg.role === 'user') {
+          setLoading(true);
+        } else if (lastMsg && lastMsg.role === 'assistant') {
+          setLoading(false);
+        }
+      }
+    });
+    return () => unsubscribe();
+  }, [conversation?.id]);
+
+  useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
   if (settings && !settings.is_active) return null;
 
   const handleSend = async () => {
-    if (!input.trim() || loading) return;
+    if (!input.trim() || !conversation) return;
     
-    const userMsg = { role: 'user', content: input.trim() };
-    setMessages(prev => [...prev, userMsg]);
+    const userMsg = input.trim();
     setInput('');
     setLoading(true);
 
     try {
-      const history = [...messages, userMsg];
-      const res = await base44.functions.invoke('chat', { messages: history, sessionId: 'client-session' });
-      setMessages(prev => [...prev, { role: 'assistant', content: res.data.reply }]);
+      await base44.agents.addMessage(conversation, {
+        role: 'user',
+        content: userMsg
+      });
     } catch (err) {
       console.error(err);
-      setMessages(prev => [...prev, { role: 'assistant', content: 'אופס, משהו השתבש (אולי חסר מפתח API). נסה שוב מאוחר יותר.' }]);
-    } finally {
       setLoading(false);
     }
   };
@@ -70,7 +104,20 @@ export default function ChatWidget() {
             {messages.map((msg, idx) => (
               <div key={idx} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
                 <div className={`p-3 rounded-2xl max-w-[85%] text-sm ${msg.role === 'user' ? 'bg-[#005e6c] text-white rounded-br-none' : 'bg-white text-gray-800 border border-gray-200 rounded-bl-none shadow-sm'}`}>
-                  {msg.content}
+                  {msg.role === 'user' ? (
+                    msg.content
+                  ) : (
+                    <ReactMarkdown
+                      components={{
+                        a: ({ node, ...props }) => <a {...props} target="_blank" rel="noopener noreferrer" className="underline font-semibold" />,
+                        p: ({ node, ...props }) => <p {...props} className="mb-2 last:mb-0 leading-relaxed" />,
+                        ul: ({ node, ...props }) => <ul {...props} className="list-disc mr-4 mb-2" />,
+                        li: ({ node, ...props }) => <li {...props} className="mb-1" />
+                      }}
+                    >
+                      {msg.content}
+                    </ReactMarkdown>
+                  )}
                 </div>
               </div>
             ))}

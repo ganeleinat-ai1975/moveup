@@ -154,8 +154,8 @@ https://www.vanleer.org.il/wp-content/uploads/2025/12/%D7%9E%D7%93%D7%93-%D7%94%
             
             console.log("Found BotSettings records:", settingsList ? settingsList.length : 0);
             if (settingsList && settingsList.length > 0 && settingsList[0].system_prompt) {
-                systemPrompt = settingsList[0].system_prompt;
-                console.log("Using prompt from DB, length:", systemPrompt.length);
+                systemPrompt = systemPrompt + "\n\nהנחיות נוספות:\n" + settingsList[0].system_prompt;
+                console.log("Using combined prompt, length:", systemPrompt.length);
             }
         } catch (e) {
             console.error('BotSettings fetch error:', e.message);

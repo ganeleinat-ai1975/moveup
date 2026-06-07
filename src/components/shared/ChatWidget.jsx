@@ -56,7 +56,12 @@ export default function ChatWidget() {
         if (lastMsg && lastMsg.role === 'user') {
           setLoading(true);
         } else if (lastMsg && lastMsg.role === 'assistant') {
-          setLoading(false);
+          // If the assistant is reasoning or preparing the message, content might be empty
+          if (!lastMsg.content) {
+            setLoading(true);
+          } else {
+            setLoading(false);
+          }
         }
       }
     });
@@ -81,6 +86,11 @@ export default function ChatWidget() {
         role: 'user',
         content: userMsg
       });
+      
+      // Fallback: clear loading state if no response after 20 seconds
+      setTimeout(() => {
+        setLoading(prev => prev ? false : prev);
+      }, 20000);
     } catch (err) {
       console.error(err);
       setLoading(false);
@@ -101,7 +111,9 @@ export default function ChatWidget() {
             </button>
           </div>
           <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50">
-            {messages.map((msg, idx) => (
+            {messages.map((msg, idx) => {
+              if (msg.role === 'assistant' && !msg.content) return null;
+              return (
               <div key={idx} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
                 <div className={`p-3 rounded-2xl max-w-[85%] text-sm ${msg.role === 'user' ? 'bg-[#005e6c] text-white rounded-br-none' : 'bg-white text-gray-800 border border-gray-200 rounded-bl-none shadow-sm'}`}>
                   {msg.role === 'user' ? (
@@ -115,12 +127,12 @@ export default function ChatWidget() {
                         li: ({ node, ...props }) => <li {...props} className="mb-1" />
                       }}
                     >
-                      {msg.content}
+                      {msg.content || ''}
                     </ReactMarkdown>
                   )}
                 </div>
               </div>
-            ))}
+            )})}
             {loading && (
               <div className="flex justify-start">
                 <div className="bg-white border border-gray-200 text-gray-500 p-3 rounded-2xl rounded-bl-none max-w-[85%] shadow-sm">

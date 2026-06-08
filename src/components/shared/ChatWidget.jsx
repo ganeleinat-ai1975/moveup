@@ -36,12 +36,13 @@ export default function ChatWidget() {
     isInitRef.current = true;
     try {
       setInitError(false);
-      const conv = await base44.agents.createConversation({
-        agent_name: "gali",
-        metadata: { name: "Web Chat" }
-      });
-      setConversation(conv);
-      setMessages([{ role: 'assistant', content: WELCOME_MSG }]);
+      const res = await base44.functions.invoke("guestChat", { action: "create" });
+      if (res.data?.success) {
+        setConversation({ id: res.data.convId });
+        setMessages([{ role: 'assistant', content: WELCOME_MSG }]);
+      } else {
+        throw new Error(res.data?.error || "Unknown error creating chat");
+      }
     } catch (err) {
       console.error("Failed to create conversation", err);
       setInitError(err?.message || String(err));
@@ -57,28 +58,6 @@ export default function ChatWidget() {
   }, [isOpen, conversation, initError]);
 
   useEffect(() => {
-    if (!conversation?.id) return;
-    const unsubscribe = base44.agents.subscribeToConversation(conversation.id, (data) => {
-      if (data.messages) {
-        setMessages([{ role: 'assistant', content: WELCOME_MSG }, ...data.messages]);
-        
-        const lastMsg = data.messages[data.messages.length - 1];
-        if (lastMsg && lastMsg.role === 'user') {
-          setLoading(true);
-        } else if (lastMsg && lastMsg.role === 'assistant') {
-          // If the assistant is reasoning or preparing the message, content might be empty
-          if (!lastMsg.content) {
-            setLoading(true);
-          } else {
-            setLoading(false);
-          }
-        }
-      }
-    });
-    return () => unsubscribe();
-  }, [conversation?.id]);
-
-  useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
@@ -90,19 +69,23 @@ export default function ChatWidget() {
     const userMsg = input.trim();
     setInput('');
     setLoading(true);
+    setMessages(prev => [...prev, { role: 'user', content: userMsg }]);
 
     try {
-      await base44.agents.addMessage(conversation, {
-        role: 'user',
-        content: userMsg
+      const res = await base44.functions.invoke("guestChat", {
+        action: "message",
+        convId: conversation.id,
+        message: userMsg
       });
       
-      // Fallback: clear loading state if no response after 20 seconds
-      setTimeout(() => {
-        setLoading(prev => prev ? false : prev);
-      }, 20000);
+      if (res.data?.success && res.data.messages) {
+        setMessages([{ role: 'assistant', content: WELCOME_MSG }, ...res.data.messages]);
+      } else {
+        console.error("Error from proxy:", res.data?.error);
+      }
     } catch (err) {
       console.error(err);
+    } finally {
       setLoading(false);
     }
   };

@@ -29,7 +29,11 @@ export default function ChatWidget() {
     fetchSettings();
   }, []);
 
+  const isInitRef = useRef(false);
+
   const initConv = async () => {
+    if (isInitRef.current) return;
+    isInitRef.current = true;
     try {
       setInitError(false);
       const conv = await base44.agents.createConversation({
@@ -40,7 +44,9 @@ export default function ChatWidget() {
       setMessages([{ role: 'assistant', content: WELCOME_MSG }]);
     } catch (err) {
       console.error("Failed to create conversation", err);
-      setInitError(true);
+      setInitError(err?.message || String(err));
+    } finally {
+      isInitRef.current = false;
     }
   };
 
@@ -123,6 +129,7 @@ export default function ChatWidget() {
             {initError && (
               <div className="absolute inset-0 flex flex-col items-center justify-center bg-gray-50 z-10 p-4 text-center">
                 <div className="text-red-500 mb-2">אירעה שגיאה בחיבור לצ'אט</div>
+                <div className="text-xs text-gray-500 mb-4 max-w-full overflow-hidden break-words">{typeof initError === 'string' ? initError : ''}</div>
                 <button 
                   onClick={initConv}
                   className="bg-[#005e6c] text-white px-4 py-2 rounded-full text-sm hover:bg-[#004b56] transition-colors"

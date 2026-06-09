@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { MessageCircle, X, Send, Loader2 } from 'lucide-react';
+import { MessageCircle, X, Send, Loader2, Maximize2, Minimize2 } from 'lucide-react';
 import { base44 } from '@/api/base44Client';
 import ReactMarkdown from 'react-markdown';
 
 export default function ChatWidget() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
@@ -36,8 +37,21 @@ export default function ChatWidget() {
     isInitRef.current = true;
     try {
       setInitError(false);
+      const savedConvId = localStorage.getItem('gali_convId');
+      
+      if (savedConvId) {
+        const loadRes = await base44.functions.invoke("guestChat", { action: "load", convId: savedConvId });
+        if (loadRes.data?.success) {
+          setConversation({ id: savedConvId });
+          setMessages([{ role: 'assistant', content: WELCOME_MSG }, ...loadRes.data.messages]);
+          isInitRef.current = false;
+          return;
+        }
+      }
+
       const res = await base44.functions.invoke("guestChat", { action: "create" });
       if (res.data?.success) {
+        localStorage.setItem('gali_convId', res.data.convId);
         setConversation({ id: res.data.convId });
         setMessages([{ role: 'assistant', content: WELCOME_MSG }]);
       } else {
@@ -93,15 +107,20 @@ export default function ChatWidget() {
   return (
     <div className="fixed bottom-6 right-6 z-[9999]" dir="rtl">
       {isOpen ? (
-        <div className="bg-white rounded-2xl shadow-xl w-[300px] overflow-hidden flex flex-col border border-gray-200 h-[450px]">
-          <div className="bg-[#005e6c] text-white p-4 flex justify-between items-center">
+        <div className={`bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col border border-gray-200 transition-all duration-300 ${isExpanded ? 'w-[calc(100vw-3rem)] md:w-[450px] h-[calc(100vh-3rem)] md:h-[650px]' : 'w-[300px] h-[450px]'}`}>
+          <div className="bg-[#005e6c] text-white p-4 flex justify-between items-center shrink-0">
             <div className="font-bold flex items-center gap-2">
               <MessageCircle className="w-5 h-5" />
               {settings?.bot_name || 'גלי - פורצות קדימה'}
             </div>
-            <button onClick={() => setIsOpen(false)} className="text-white hover:text-gray-200 transition-colors">
-              <X className="w-5 h-5" />
-            </button>
+            <div className="flex items-center gap-3">
+              <button onClick={() => setIsExpanded(!isExpanded)} className="text-white hover:text-gray-200 transition-colors" title={isExpanded ? "הקטן" : "הגדל"}>
+                {isExpanded ? <Minimize2 className="w-4 h-4" /> : <Maximize2 className="w-4 h-4" />}
+              </button>
+              <button onClick={() => setIsOpen(false)} className="text-white hover:text-gray-200 transition-colors" title="סגור">
+                <X className="w-5 h-5" />
+              </button>
+            </div>
           </div>
           <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50 relative">
             {!conversation && !initError && (

@@ -15,6 +15,15 @@ Deno.serve(async (req) => {
         const base44 = createClientFromRequest(req);
         const { action, convId, message } = await req.json();
 
+        if (action === 'load') {
+            try {
+                const conv = await base44.asServiceRole.agents.getConversation(convId);
+                return Response.json({ success: true, messages: conv.messages || [] });
+            } catch (e) {
+                return Response.json({ success: false, error: e.message });
+            }
+        }
+
         if (action === 'create') {
             const conv = await base44.asServiceRole.agents.createConversation({
                 agent_name: "gali",
